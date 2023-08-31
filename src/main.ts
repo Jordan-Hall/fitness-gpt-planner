@@ -557,6 +557,12 @@ async function streamOpenAIResponse(stage: ApiRequestType, currentWeek = 1, hasP
       exportButton.onclick = () => exportPlan();
       app.appendChild(exportButton);
 
+      const shareToXButton = document.createElement('button');
+      shareToXButton.className = 'bg-blue-500 text-white p-2 rounded mt-4 mr-2';
+      shareToXButton.textContent = 'Share to X';
+      shareToXButton.onclick = () => shareToX();
+      app.appendChild(shareToXButton);
+
 
       const printButton = document.createElement('button');
       printButton.className = 'bg-blue-500 text-white p-2 rounded mt-4';
@@ -696,4 +702,12 @@ async function query(data: { messages: any; }) {
     })
   });
   return response;
+}
+
+function shareToX() {
+  const text = "Check out this amazing Fitness GPT Planner! by @JordanHall_dev";
+  const url = "https://fitness.libertyware.io";
+  const hashtags = "fitness,ai,libertyware";
+  const XUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}&hashtags=${hashtags}`;
+  window.open(XUrl, "_blank");
 }
