@@ -2,6 +2,7 @@ import './style.css'
 import MarkdownIt from 'markdown-it';
 import OpenAI from "openai";
 
+console.log(import.meta.env)
 const md = new MarkdownIt();
 const app = document.getElementById('app') as HTMLElement;
 
