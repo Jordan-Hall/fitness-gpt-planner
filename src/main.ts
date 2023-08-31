@@ -366,11 +366,13 @@ async function* streamChunks(response: Response) {
       for (const line of text.split('\n')) {
         if (line.startsWith('data: ')) {
           const data = line.slice(6).trim();  // strip off the 'data: ' prefix
-          try {
-            const jsonData = JSON.parse(data);
-            yield jsonData;  // yield the parsed JSON object
-          } catch (err) {
-            console.error("Failed to parse JSON data:", data, err);
+          if (data !== '[DONE]') {
+            try {
+              const jsonData = JSON.parse(data);
+              yield jsonData;  // yield the parsed JSON object
+            } catch (err) {
+              console.error("Failed to parse JSON data:", data, err);
+            }
           }
         }
       }
