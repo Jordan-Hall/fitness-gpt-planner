@@ -12,9 +12,10 @@ class FormField {
   placeholder: string;
   options?: string[];
   subFields?: FormField[];
+  rows?: number;
   customLogic?: (domRef: HTMLElement, formInstance: FitnessGPTForm) => void;
 
-  constructor(label: string, type: string, id: string, placeholder: string, options?: string[], customLogic?: (domRef: HTMLElement, formInstance: FitnessGPTForm) => void, subFields?: FormField[]) {
+  constructor(label: string, type: string, id: string, placeholder: string, options?: string[], customLogic?: (domRef: HTMLElement, formInstance: FitnessGPTForm) => void, subFields?: FormField[], rows?: number) {
     this.label = label;
     this.type = type;
     this.id = id;
@@ -28,12 +29,15 @@ class FormField {
     if (customLogic) {
       this.customLogic = customLogic;
     }
+    if (rows) {
+      this.rows = rows;
+    }
   }
 }
 
 class FitnessGPTForm {
-  private domReferences = {};
-  private formFields: FormField[] = [
+  public domReferences: Record<string, HTMLElement> = {};
+  public formFields: FormField[] = [
     new FormField('Age', 'number', 'age', 'Enter your age'),
     new FormField('Gender', 'select', 'gender', '', ['Male', 'Female', 'Non-Binary', 'Other']),
     new FormField('Height (in cm)', 'number', 'height', 'Enter your height in cm'),
@@ -49,7 +53,7 @@ class FitnessGPTForm {
     new FormField('Injuries or Physical Limitations', 'text', 'injuries', 'List any injuries or limitations'),
     new FormField('Primary Fitness Goals', 'textarea', 'goals', 'Describe your fitness goals'),
     new FormField('Dietary Preference', 'select', 'dietPreference', '', ['Vegetarian', 'Vegan', 'Pescatarian', 'No Preference']),
-    new FormField('Have Food Allergies?', 'radio', 'allergies', '', ['Yes', 'No'], (domRef: HTMLElement, formInstance: FitnessGPTForm) => {
+    new FormField('Have Food Allergies?', 'radio', 'allergies', '', ['Yes', 'No'], (domRef: HTMLElement, _formInstance: FitnessGPTForm) => {
       const allergiesTextArea = this.domReferences['allergiesList'] as HTMLTextAreaElement;
       if ((<HTMLInputElement>domRef.querySelector('input[value="Yes"]')).checked) {
         allergiesTextArea.style.display = 'block';
@@ -156,7 +160,7 @@ class FitnessGPTForm {
         case 'url':
         case 'email':
         case 'textarea':
-          formElement.value = storedValue;
+          (formElement as HTMLInputElement).value = storedValue;
           break;
 
         case 'select':
@@ -168,7 +172,7 @@ class FitnessGPTForm {
           if (field.options) {
             field.options.forEach(option => {
               const optionId = `${field.id}-${option}`;
-              const optionElement = this.domReferences[optionId];
+              const optionElement = this.domReferences[optionId] as HTMLInputElement;
               if (optionElement) {
                 optionElement.checked = option === storedValue;
               }
@@ -201,8 +205,10 @@ class FitnessGPTForm {
     }
 
     if (field.customLogic) {
-      formElement.addEventListener('change', (e: Event) => {
-        field.customLogic(formElement, this);
+      formElement.addEventListener('change', (_e: Event) => {
+        if (field.customLogic) {
+          field.customLogic(formElement, this);
+        }
       });
       // Execute the custom logic once after setting up the event listener to initialize the state
       field.customLogic(formElement, this);
@@ -223,7 +229,7 @@ class FitnessGPTForm {
         case 'email':
         case 'textarea':
         case 'select':
-          const value = this.domReferences[field.id].value;
+          const value = (this.domReferences[field.id] as HTMLInputElement)?.value;
           if (value) {
             localStorage.setItem(field.id, value);
           }
@@ -246,7 +252,7 @@ class FitnessGPTForm {
       // Save subFields to localStorage
       if (field.subFields) {
         field.subFields.forEach(subField => {
-          const value = this.domReferences[subField.id]?.value;
+          const value = (this.domReferences[subField.id] as HTMLInputElement)?.value;
           if (value) {
             localStorage.setItem(subField.id, value);
           }
@@ -299,7 +305,7 @@ function renderLandingPage() {
 }
 
 function storeAPIKey() {
-  const apiKey = document.getElementById('apiKey').value;
+  const apiKey = (document.getElementById('apiKey') as HTMLInputElement)?.value;
   localStorage.setItem('apiKey', apiKey);
 }
 
@@ -308,7 +314,7 @@ function getStoreAPIKey() {
 }
 
 async function streamOpenAIResponse() {
-  const apiKey = getStoreAPIKey('apiKey');
+  const apiKey = getStoreAPIKey();
   const openai = new OpenAI({ apiKey: apiKey, dangerouslyAllowBrowser: true });
 
   // Dynamically get all form data
@@ -383,7 +389,9 @@ async function streamOpenAIResponse() {
       stream: true,
     });
     for await (const chunk of completion) {
-      processChunk(chunk.choices[0].delta.content);
+      if (chunk.choices[0].delta.content) {
+        processChunk(chunk.choices[0].delta.content);
+      }
     }
   } catch (error) {
     console.error("Error streaming from OpenAI:", error);
@@ -391,7 +399,7 @@ async function streamOpenAIResponse() {
 }
 
 function getFormData(formInstance: FitnessGPTForm): Record<string, any> {
-  const data = {};
+  const data: Record<string, any> = {};
 
   formInstance.formFields.forEach(field => {
     const element = formInstance.domReferences[field.id];
@@ -439,7 +447,7 @@ function getFormData(formInstance: FitnessGPTForm): Record<string, any> {
 
 
 let markdownBuffer = '';
-function processChunk(chunk) {
+function processChunk(chunk: string) {
   markdownBuffer += chunk;
 
   // Split buffer by newline to identify complete lines
@@ -456,7 +464,7 @@ function processChunk(chunk) {
   }
 }
 
-function renderMarkdown(markdown) {
+function renderMarkdown(markdown: string) {
   // If the markdown container doesn't exist, create it and the back button.
   if (!document.getElementById('markdownContainer')) {
     app.innerHTML = '';
@@ -492,7 +500,9 @@ function renderMarkdown(markdown) {
 
   // Append the markdown chunk to the existing markdown container
   const markdownContainer = document.getElementById('markdownContainer');
-  markdownContainer.innerHTML += md.render(markdown);
+  if (markdownContainer) {
+    markdownContainer.innerHTML += md.render(markdown);
+  }
 }
 
 renderLandingPage();
@@ -513,7 +523,7 @@ function createDisclaimer(): HTMLElement {
 }
 
 function exportPlan() {
-  const blob = new Blob([document.getElementById('markdownContainer').textContent], { type: 'text/plain' });
+  const blob = new Blob([document.getElementById('markdownContainer')?.textContent ?? ''], { type: 'text/plain' });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
