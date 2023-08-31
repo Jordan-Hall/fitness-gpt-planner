@@ -4,6 +4,10 @@ import OpenAI from "openai";
 const md = new MarkdownIt();
 const app = document.getElementById('app') as HTMLElement;
 
+
+type ApiRequestType = 'introduction' | 'exercise' | 'diet' | 'mentalWellbeing' | 'progressTracking' | 'recoveryRest' | 'safetyPrecautions' | 'nutritionTips';
+
+
 class FormField {
   label: string;
   type: string;
@@ -85,7 +89,19 @@ class FitnessGPTForm {
     submitButton.textContent = 'Submit';
     submitButton.onclick = () => {
       this.saveToLocalStorage();
-      streamOpenAIResponse();
+      streamOpenAIResponse('introduction');
+      app.innerHTML = '';
+      if (!document.getElementById('markdownContainer')) {
+        const markdownContainer = document.createElement('div');
+        markdownContainer.id = 'markdownContainer';
+        markdownContainer.className = 'bg-white p-8 rounded-lg shadow-md w-3/4';
+        app.appendChild(markdownContainer);
+      }
+
+      // Then show the loadingText
+      loadingText.style.display = 'block';
+      updateLoadingText();
+      app.appendChild(loadingText);
     };
     this.container.appendChild(submitButton);
   }
@@ -262,6 +278,39 @@ class FitnessGPTForm {
 
 }
 
+const loadingText = document.createElement('div');
+loadingText.textContent = "Generating plan...";
+loadingText.className = "text-blue-500 font-bold mt-4";
+loadingText.style.display = 'none'; // initially hidden
+
+
+let dotsCount = 0;
+let animationFrameId: number;
+let timeoutId: number | null = null;
+const animationDelay = 500;  // 500ms delay for half a second between each update
+
+function updateLoadingText() {
+    if (loadingText.style.display === 'none') {
+        // If the loadingText is hidden, stop the animation
+        if (animationFrameId !== undefined) {
+            cancelAnimationFrame(animationFrameId);
+        }
+        if (timeoutId !== null) {
+            clearTimeout(timeoutId);
+        }
+        return;
+    }
+
+    dotsCount = (dotsCount + 1) % 4; // Cycle between 0 to 3 dots
+    const dots = '.'.repeat(dotsCount);
+    loadingText.textContent = "Generating plan" + dots;
+
+    // Call the next animation frame after a delay
+    timeoutId = setTimeout(() => {
+        animationFrameId = requestAnimationFrame(updateLoadingText);
+    }, animationDelay);
+}
+
 function renderLandingPage() {
   const container = document.createElement('div');
   container.className = 'bg-white p-8 rounded-lg shadow-md';
@@ -312,7 +361,10 @@ function getStoreAPIKey() {
   return localStorage.getItem('apiKey') ?? import.meta.env.VITE_OPENAI_KEY ?? process.env.VITE_OPENAI_KEY;
 }
 
-async function streamOpenAIResponse() {
+
+let messageHistory: { role: OpenAI.Chat.CreateChatCompletionRequestMessage['role'], content: string }[] = [];
+async function streamOpenAIResponse(stage: ApiRequestType) {
+
   const apiKey = getStoreAPIKey();
   const openai = new OpenAI({ apiKey: apiKey, dangerouslyAllowBrowser: true });
 
@@ -325,76 +377,140 @@ async function streamOpenAIResponse() {
   const userMessage = `I am a ${formData['age']} years old ${formData['gender']} with a height of ${formData['height']}cm and weight of ${formData['weight']} kilograms. My target weight is ${formData['targetWeight']} kilograms. I work as a ${formData['jobType']}, and identify my fitness level as ${formData['fitnessLevel']}. I prefer a ${formData['dietPreference']} diet and have access to the following equipment: ${formData['equipment']}. My injuries or limitations include: ${formData['injuries']}. My workout preference is around ${formData['workoutDuration']} minutes, and I avoid the following foods: ${formData['dietRestrictions']}. Typically, I consume ${formData['mealFrequency']} meals a day, drink ${formData['waterIntake']} liters of water daily, and sleep for ${formData['sleepDuration']} hours. I take the following supplements: ${formData['supplements']}. I have ${allergiesSelection === 'Yes' ? 'the following' : 'no'} food allergies${allergiesSelection === 'Yes' ? (': ' + allergiesDescription) : ''}. My primary fitness and health goals are: ${formData['goals']}. I aim to achieve these goals in ${formData['timeframe']} weeks, committing to ${formData['workoutDays']} workout days per week. I primarily enjoy ${formData['exerciseStyle']} exercises.`;
 
 
-
-  const systemMessage = `
-  You are Fitness GPT, a highly renowned health and nutrition expert.
-
-  Based on the user's profile and preferences, create a detailed and custom diet and exercise plan broken down week-by-week over a 12-week period. Adhere to the following structured format:
-  
-  1. **Introduction**: A 2-sentence overview of the entire plan tailored to the user's profile.
-  
-  2. **Exercise Plan**:
-    - **Flexibility and Mobility**: Provide a list of stretching and mobility exercises to be incorporated weekly.
-    - **Cardiovascular Recommendations**: Detail on types, duration, and intensity of cardiovascular workouts.
-    - **Strength Training**: Breakdown of exercises into compound and isolation movements, with specifics on sets, reps, rest intervals, and progression.
-    - **Summary**: 3 sentences about the overall exercise strategy considering the user's fitness level, available equipment, preferred workout duration, and any injuries.
-    - **Week-by-Week Breakdown**:
-        - For each week, specify:
-            - Key focus or theme for the week.
-            - **Day-by-Day Breakdown**:
-                - For each day, specify:
-                    - Warm-Up: Suggest specific warm-up routines.
-                    - Primary exercises to be performed. For each exercise, specify:
-                        - Repetitions or duration.
-                        - Rest intervals between sets or exercises.
-                        - Number of sets.
-                    - Cool Down: Suggest specific cool-down routines.
-                    - If it's a rest day, clearly mention it.
-            - Any specific progressions or modifications from the previous week.
-      
-  3. **Diet Plan**:
-    - **Overview**: A general guideline on the nutritional approach considering the user's diet preference, restrictions, meal frequency, and water intake.
-    - **Nutritional Timing**: Recommendations on when to consume proteins, fats, carbohydrates, and other nutrients around workouts.
-    - **Week-by-Week Breakdown**:
-        - For each week, suggest:
-            - Primary nutritional focus or theme.
-            - **Day-by-Day Breakdown**:
-                - For each day, provide:
-                    - Daily meal recommendations, considering any food allergies.
-                    - Suggestions for supplements, if any.
-      
-  4. **Sleep & Recovery**: Recommendations on sleep duration and any other recovery practices tailored to the user.
-  
-  5. **Mental Wellbeing**: Tips on mindfulness, meditation, or other practices to maintain mental health alongside physical fitness.
-  
-  6. **Progress Tracking**: Recommendations on how to track progress, such as taking measurements, photos, or maintaining a workout log.
-  
-  7. **Safety and Precautions**: Guidelines to ensure exercises are performed safely, avoiding common mistakes, and recommendations on when to consult professionals.
-  
-  8. **Conclusion**: A 2-sentence wrap-up on how to stay consistent, achieve the stated goals, and ensure long-term success.
-  
-  Remember to provide an exhaustive list of all planned exercises. Avoid any superfluous pre and post descriptive text. Maintain a consistent and clear format throughout. Don't break character under any circumstance.
-  `;
-
-
-
-  try {
-    const completion = await openai.chat.completions.create({
-      model: "gpt-4",
-      messages: [
-        { role: "system", content: systemMessage },
-        { "role": "user", "content": userMessage }
-      ],
-      stream: true,
-    });
-    for await (const chunk of completion) {
-      if (chunk.choices[0].delta.content) {
-        processChunk(chunk.choices[0].delta.content);
-      }
-    }
-  } catch (error) {
-    console.error("Error streaming from OpenAI:", error);
+  let systemMessageSegment;
+  switch (stage) {
+    case "introduction":
+      systemMessageSegment = `
+      1. Provide the section titled 'Introduction'. This should be a 2-sentence overview of the entire plan tailored to the user's profile.`;
+      break;
+    case "exercise":
+      systemMessageSegment = `Now, for the 'Exercise Plan' section.
+      2. **Exercise Plan**:
+      - **Flexibility and Mobility**: Provide a list of stretching and mobility exercises to be incorporated weekly.
+      - **Cardiovascular Recommendations**: Detail on types, duration, and intensity of cardiovascular workouts.
+      - **Strength Training**: Breakdown of exercises into compound and isolation movements, with specifics on sets, reps, rest intervals, and progression.
+      - **Summary**: 3 sentences about the overall exercise strategy considering the user's fitness level, available equipment, preferred workout duration, and any injuries.
+      - **Week-by-Week Breakdown**:
+          - For each week, specify:
+              - Key focus or theme for the week.
+              - **Day-by-Day Breakdown**:
+                  - For each day, specify:
+                      - Warm-Up: Suggest specific warm-up routines.
+                      - Primary exercises to be performed. For each exercise, specify:
+                          - Repetitions or duration.
+                          - Rest intervals between sets or exercises.
+                          - Number of sets.
+                      - Cool Down: Suggest specific cool-down routines.
+                      - If it's a rest day, clearly mention it.`;
+      break;
+    case "diet":
+      systemMessageSegment = `Next, the 'Diet Plan' section.
+      3. **Diet Plan**:
+        - **Overview**: A general guideline on the nutritional approach considering the user's diet preference, restrictions, meal frequency, and water intake.
+        - **Nutritional Timing**: Recommendations on when to consume proteins, fats, carbohydrates, and other nutrients around workouts.
+        - **Week-by-Week Breakdown**:
+            - For each week, suggest:
+                - Primary nutritional focus or theme.
+                - **Day-by-Day Breakdown**:
+                    - For each day, provide:
+                        - Daily meal recommendations, considering any food allergies.
+                        - Suggestions for supplements, if any.`;
+      break;
+    case "mentalWellbeing":
+      systemMessageSegment = "Incorporate a section titled 'Mental Wellbeing'. Provide tips on stress management, the benefits of meditation, and relaxation techniques.\n";
+      break;
+    case "progressTracking":
+      systemMessageSegment = "Add a 'Progress Tracking' section. Offer guidelines on how users can track their progress and recommend tools or apps.\n";
+      break;
+    case "recoveryRest":
+      systemMessageSegment = "Detail a 'Recovery and Rest' section. Emphasize recovery, provide strategies for optimizing sleep, and suggest relaxation techniques post-workout.\n";
+      break;
+    case "safetyPrecautions":
+      systemMessageSegment = "Include a 'Safety Precautions' section. This should offer guidelines on safe exercise practices and scenarios when it's best to consult a professional.\n";
+      break;
+    case "nutritionTips":
+      systemMessageSegment = "Lastly, incorporate a 'Nutrition Tips and Recipes' section. Offer quick healthy recipes, snack ideas, and general nutrition advice.\n";
+      break;
+    default:
+      console.log("All sections completed.");
+      return;
   }
+
+  messageHistory.push({ role: "user", content: userMessage });
+
+
+  const completion = await openai.chat.completions.create({
+    model: "gpt-4",
+    messages: [
+      { role: 'system', content: `You are Fitness GPT, a highly renowned health and nutrition expert. Based on the user's profile and preferences, create a detailed and custom diet and exercise plan broken down week-by-week and day by day. Adhere structured format of each system prompt, including titles provided` },
+      ...messageHistory,
+      { role: "system", content: systemMessageSegment }
+    ],
+    stream: true,
+  });
+
+  for await (const chunk of completion) {
+    if (chunk.choices[0].delta.content) {
+      processChunk(chunk.choices[0].delta.content);
+      messageHistory.push({ role: "assistant", content: chunk.choices[0].delta.content });
+    }
+  }
+
+  // Transition to the next section based on your plan
+  switch (stage) {
+    case "introduction":
+      streamOpenAIResponse('exercise');
+      break;
+    case "exercise":
+      streamOpenAIResponse('diet');
+      break;
+    case "diet":
+      streamOpenAIResponse('nutritionTips');
+      break;
+    case 'nutritionTips':
+      streamOpenAIResponse('mentalWellbeing');
+      break;
+    case "mentalWellbeing":
+      streamOpenAIResponse('progressTracking');
+      break;
+    case "progressTracking":
+      streamOpenAIResponse('recoveryRest');
+      break;
+    case "recoveryRest":
+      streamOpenAIResponse('safetyPrecautions');
+      break;
+    case "safetyPrecautions":
+      streamOpenAIResponse('nutritionTips');
+      break;
+    default:
+      const markdownContainer = document.getElementById('markdownContainer') as HTMLElement;
+      markdownContainer.appendChild(createDisclaimer());
+      const backButton = document.createElement('button');
+      backButton.className = 'bg-blue-500 text-white p-2 rounded mt-4';
+      backButton.textContent = 'Go Back';
+      backButton.onclick = () => {
+        app.innerHTML = ''
+        app.appendChild(formElement)
+      };
+      app.appendChild(backButton);
+
+      const exportButton = document.createElement('button');
+      exportButton.className = 'bg-blue-500 text-white p-2 rounded mt-4 mr-2';
+      exportButton.textContent = 'Export';
+      exportButton.onclick = () => exportPlan();
+      app.appendChild(exportButton);
+
+
+      const printButton = document.createElement('button');
+      printButton.className = 'bg-blue-500 text-white p-2 rounded mt-4';
+      printButton.textContent = 'Print';
+      printButton.onclick = () => window.print();
+      app.appendChild(printButton);
+      loadingText.style.display = 'none';
+      break;
+  }
+
+
 }
 
 function getFormData(formInstance: FitnessGPTForm): Record<string, any> {
@@ -466,35 +582,12 @@ function processChunk(chunk: string) {
 function renderMarkdown(markdown: string) {
   // If the markdown container doesn't exist, create it and the back button.
   if (!document.getElementById('markdownContainer')) {
-    app.innerHTML = '';
 
     const markdownContainer = document.createElement('div');
     markdownContainer.id = 'markdownContainer';
     markdownContainer.className = 'bg-white p-8 rounded-lg shadow-md w-3/4';
-    markdownContainer.appendChild(createDisclaimer());
     app.appendChild(markdownContainer);
 
-    const backButton = document.createElement('button');
-    backButton.className = 'bg-blue-500 text-white p-2 rounded mt-4';
-    backButton.textContent = 'Go Back';
-    backButton.onclick = () => {
-      markdownContainer.style.display = 'none';
-      formElement.style.display = 'block'; // Show the form again
-    };
-    app.appendChild(backButton);
-
-    const exportButton = document.createElement('button');
-    exportButton.className = 'bg-blue-500 text-white p-2 rounded mt-4 mr-2';
-    exportButton.textContent = 'Export';
-    exportButton.onclick = () => exportPlan();
-    app.appendChild(exportButton);
-
-
-    const printButton = document.createElement('button');
-    printButton.className = 'bg-blue-500 text-white p-2 rounded mt-4';
-    printButton.textContent = 'Print';
-    printButton.onclick = () => window.print();
-    app.appendChild(printButton);
   }
 
   // Append the markdown chunk to the existing markdown container
@@ -510,7 +603,6 @@ formElement.className = 'bg-white p-8 rounded-lg shadow-md w-1/2 mx-auto mt-10';
 formElement.style.display = 'none'; // initially hidden
 
 app.appendChild(formElement);
-
 const form = new FitnessGPTForm(formElement);
 form.render();
 
