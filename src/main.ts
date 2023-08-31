@@ -91,91 +91,91 @@ class FitnessGPTForm {
     let formElement: HTMLElement;
 
     switch (field.type) {
+      case 'text':
+      case 'number':
+      case 'tel':
+      case 'url':
+      case 'email':
+        formElement = document.createElement('input');
+        formElement.setAttribute('type', field.type);
+        formElement.setAttribute('id', field.id);
+        formElement.setAttribute('placeholder', field.placeholder || '');
+        formElement.classList.add('border', 'rounded-md', 'p-2', 'w-full', 'mt-2');
+        break;
+      case 'select':
+        formElement = document.createElement('select');
+        formElement.setAttribute('id', field.id);
+        formElement.classList.add('border', 'rounded-md', 'p-2', 'w-full', 'mt-2');
+        if (field.options && field.options.length) {
+          field.options.forEach(option => {
+            const optionElement = document.createElement('option');
+            optionElement.value = option;
+            optionElement.textContent = option;
+            formElement.appendChild(optionElement);
+          });
+        }
+        break;
+      case 'textarea':
+        formElement = document.createElement('textarea');
+        formElement.setAttribute('id', field.id);
+        formElement.setAttribute('placeholder', field.placeholder || '');
+        formElement.classList.add('border', 'rounded-md', 'p-2', 'w-full', 'mt-2');
+        if (field.rows) {
+          formElement.setAttribute('rows', field.rows.toString());
+        }
+        break;
+      case 'radio':
+      case 'checkbox':
+        formElement = document.createElement('div');
+        if (field.options) {
+          field.options.forEach(option => {
+            const optionElement = document.createElement('input');
+            optionElement.setAttribute('type', field.type);
+            optionElement.setAttribute('id', `${field.id}-${option}`);
+            optionElement.setAttribute('name', field.id);
+            optionElement.setAttribute('value', option);
+            const label = document.createElement('label');
+            label.setAttribute('for', `${field.id}-${option}`);
+            label.textContent = option;
+            formElement.appendChild(optionElement);
+            formElement.appendChild(label);
+          });
+        }
+        break;
+      default:
+        throw new Error(`Unsupported field type: ${field.type}`);
+    }
+
+    // Populate the value from localStorage if available
+    const storedValue = localStorage.getItem(field.id);
+    if (storedValue !== null) {
+      switch (field.type) {
         case 'text':
         case 'number':
         case 'tel':
         case 'url':
         case 'email':
-            formElement = document.createElement('input');
-            formElement.setAttribute('type', field.type);
-            formElement.setAttribute('id', field.id);
-            formElement.setAttribute('placeholder', field.placeholder || '');
-            formElement.classList.add('border', 'rounded-md', 'p-2', 'w-full', 'mt-2');
-            break;
-        case 'select':
-            formElement = document.createElement('select');
-            formElement.setAttribute('id', field.id);
-            formElement.classList.add('border', 'rounded-md', 'p-2', 'w-full', 'mt-2');
-            if (field.options && field.options.length) {
-                field.options.forEach(option => {
-                    const optionElement = document.createElement('option');
-                    optionElement.value = option;
-                    optionElement.textContent = option;
-                    formElement.appendChild(optionElement);
-                });
-            }
-            break;
         case 'textarea':
-            formElement = document.createElement('textarea');
-            formElement.setAttribute('id', field.id);
-            formElement.setAttribute('placeholder', field.placeholder || '');
-            formElement.classList.add('border', 'rounded-md', 'p-2', 'w-full', 'mt-2');
-            if (field.rows) {
-                formElement.setAttribute('rows', field.rows.toString());
-            }
-            break;
+          formElement.value = storedValue;
+          break;
+
+        case 'select':
+          (formElement as HTMLSelectElement).value = storedValue;
+          break;
+
         case 'radio':
         case 'checkbox':
-            formElement = document.createElement('div');
-            if (field.options) {
-                field.options.forEach(option => {
-                    const optionElement = document.createElement('input');
-                    optionElement.setAttribute('type', field.type);
-                    optionElement.setAttribute('id', `${field.id}-${option}`);
-                    optionElement.setAttribute('name', field.id);
-                    optionElement.setAttribute('value', option);
-                    const label = document.createElement('label');
-                    label.setAttribute('for', `${field.id}-${option}`);
-                    label.textContent = option;
-                    formElement.appendChild(optionElement);
-                    formElement.appendChild(label);
-                });
-            }
-            break;
-        default:
-            throw new Error(`Unsupported field type: ${field.type}`);
-    }
-
-        // Populate the value from localStorage if available
-    const storedValue = localStorage.getItem(field.id);
-    if (storedValue !== null) {
-        switch (field.type) {
-            case 'text':
-            case 'number':
-            case 'tel':
-            case 'url':
-            case 'email':
-            case 'textarea':
-                formElement.value = storedValue;
-                break;
-            
-            case 'select':
-                (formElement as HTMLSelectElement).value = storedValue;
-                break;
-            
-            case 'radio':
-            case 'checkbox':
-                if (field.options) {
-                    field.options.forEach(option => {
-                        const optionId = `${field.id}-${option}`;
-                        const optionElement = this.domReferences[optionId];
-                        if (optionElement) {
-                            optionElement.checked = option === storedValue;
-                        }
-                    });
-                }
-                break;
-        }
+          if (field.options) {
+            field.options.forEach(option => {
+              const optionId = `${field.id}-${option}`;
+              const optionElement = this.domReferences[optionId];
+              if (optionElement) {
+                optionElement.checked = option === storedValue;
+              }
+            });
+          }
+          break;
+      }
     }
     // Store the DOM reference
     this.domReferences[field.id] = formElement;
@@ -194,10 +194,10 @@ class FitnessGPTForm {
 
     // If field has subFields, render and populate them
     if (field.subFields) {
-        field.subFields.forEach(subField => {
-            const renderedSubField = this.renderFormField(subField);
-            wrapper.appendChild(renderedSubField);
-        });
+      field.subFields.forEach(subField => {
+        const renderedSubField = this.renderFormField(subField);
+        wrapper.appendChild(renderedSubField);
+      });
     }
 
     if (field.customLogic) {
@@ -215,43 +215,43 @@ class FitnessGPTForm {
 
   saveToLocalStorage() {
     this.formFields.forEach(field => {
-        switch (field.type) {
-            case 'text':
-            case 'number':
-            case 'tel':
-            case 'url':
-            case 'email':
-            case 'textarea':
-            case 'select':
-                const value = this.domReferences[field.id].value;
-                if (value) {
-                    localStorage.setItem(field.id, value);
-                }
-                break;
+      switch (field.type) {
+        case 'text':
+        case 'number':
+        case 'tel':
+        case 'url':
+        case 'email':
+        case 'textarea':
+        case 'select':
+          const value = this.domReferences[field.id].value;
+          if (value) {
+            localStorage.setItem(field.id, value);
+          }
+          break;
 
-            case 'radio':
-            case 'checkbox':
-                if (field.options) {
-                    field.options.forEach(option => {
-                        const optionId = `${field.id}-${option}`;
-                        const optionElement = this.domReferences[optionId] as HTMLInputElement;
-                        if (optionElement && optionElement.checked) {
-                            localStorage.setItem(field.id, option);
-                        }
-                    });
-                }
-                break;
-        }
-
-        // Save subFields to localStorage
-        if (field.subFields) {
-            field.subFields.forEach(subField => {
-                const value = this.domReferences[subField.id]?.value;
-                if (value) {
-                    localStorage.setItem(subField.id, value);
-                }
+        case 'radio':
+        case 'checkbox':
+          if (field.options) {
+            field.options.forEach(option => {
+              const optionId = `${field.id}-${option}`;
+              const optionElement = this.domReferences[optionId] as HTMLInputElement;
+              if (optionElement && optionElement.checked) {
+                localStorage.setItem(field.id, option);
+              }
             });
-        }
+          }
+          break;
+      }
+
+      // Save subFields to localStorage
+      if (field.subFields) {
+        field.subFields.forEach(subField => {
+          const value = this.domReferences[subField.id]?.value;
+          if (value) {
+            localStorage.setItem(subField.id, value);
+          }
+        });
+      }
     });
   }
 
@@ -268,9 +268,14 @@ function renderLandingPage() {
 
   const description = document.createElement('p');
   description.className = 'mb-4';
-  description.textContent = 'Get a personalized fitness plan powered by AI. Start by entering your OpenAI API key.';
+  description.innerHTML = `
+    Get a personalized fitness plan powered by AI. We have provided a key by default, 
+    but there's a hard limit of $120, and will be removed shortly. Please consider 
+    <a href="https://platform.openai.com/" target="_blank" rel="noopener noreferrer">signing up for your own key</a> 
+    at OpenAI. It helps keep this service going as it's open-source and self-funded.
+`;
   container.appendChild(description);
-  
+
   const apiKeyInput = document.createElement('input');
   apiKeyInput.type = 'text';
   apiKeyInput.id = 'apiKey';
@@ -299,7 +304,7 @@ function storeAPIKey() {
 }
 
 function getStoreAPIKey() {
-  return localStorage.getItem('apiKey') ?? '';
+  return localStorage.getItem('apiKey') ?? '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';
 }
 
 async function streamOpenAIResponse() {
@@ -389,43 +394,43 @@ function getFormData(formInstance: FitnessGPTForm): Record<string, any> {
   const data = {};
 
   formInstance.formFields.forEach(field => {
-      const element = formInstance.domReferences[field.id];
+    const element = formInstance.domReferences[field.id];
 
-      if (!element) {
-          console.warn(`Element with ID "${field.id}" not found.`);
-          return;
-      }
+    if (!element) {
+      console.warn(`Element with ID "${field.id}" not found.`);
+      return;
+    }
 
-      switch (field.type) {
-          case 'text':
-          case 'number':
-          case 'tel':
-          case 'url':
-          case 'email':
-          case 'textarea':
-              data[field.id] = (element as HTMLInputElement).value;
-              break;
-          case 'select':
-              data[field.id] = (element as HTMLSelectElement).value;
-              break;
-          case 'radio':
-          case 'checkbox':
-              const checkedElement = document.querySelector(`input[name="${field.id}"]:checked`);
-              if (checkedElement) {
-                  data[field.id] = (checkedElement as HTMLInputElement).value;
-              }
-              break;
-      }
+    switch (field.type) {
+      case 'text':
+      case 'number':
+      case 'tel':
+      case 'url':
+      case 'email':
+      case 'textarea':
+        data[field.id] = (element as HTMLInputElement).value;
+        break;
+      case 'select':
+        data[field.id] = (element as HTMLSelectElement).value;
+        break;
+      case 'radio':
+      case 'checkbox':
+        const checkedElement = document.querySelector(`input[name="${field.id}"]:checked`);
+        if (checkedElement) {
+          data[field.id] = (checkedElement as HTMLInputElement).value;
+        }
+        break;
+    }
 
-      // Handle subFields
-      if (field.subFields) {
-          field.subFields.forEach(subField => {
-              const subElement = formInstance.domReferences[subField.id];
-              if (subElement) {
-                  data[subField.id] = (subElement as HTMLInputElement).value;
-              }
-          });
-      }
+    // Handle subFields
+    if (field.subFields) {
+      field.subFields.forEach(subField => {
+        const subElement = formInstance.domReferences[subField.id];
+        if (subElement) {
+          data[subField.id] = (subElement as HTMLInputElement).value;
+        }
+      });
+    }
   });
 
   return data;
@@ -492,8 +497,8 @@ function renderMarkdown(markdown) {
 
 renderLandingPage();
 const formElement = document.createElement('div');
-  formElement.className = 'bg-white p-8 rounded-lg shadow-md w-1/2 mx-auto mt-10';
-  formElement.style.display = 'none'; // initially hidden
+formElement.className = 'bg-white p-8 rounded-lg shadow-md w-1/2 mx-auto mt-10';
+formElement.style.display = 'none'; // initially hidden
 
 app.appendChild(formElement);
 
