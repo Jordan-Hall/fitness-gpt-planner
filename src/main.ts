@@ -290,25 +290,25 @@ let timeoutId: number | null = null;
 const animationDelay = 500;  // 500ms delay for half a second between each update
 
 function updateLoadingText() {
-    if (loadingText.style.display === 'none') {
-        // If the loadingText is hidden, stop the animation
-        if (animationFrameId !== undefined) {
-            cancelAnimationFrame(animationFrameId);
-        }
-        if (timeoutId !== null) {
-            clearTimeout(timeoutId);
-        }
-        return;
+  if (loadingText.style.display === 'none') {
+    // If the loadingText is hidden, stop the animation
+    if (animationFrameId !== undefined) {
+      cancelAnimationFrame(animationFrameId);
     }
+    if (timeoutId !== null) {
+      clearTimeout(timeoutId);
+    }
+    return;
+  }
 
-    dotsCount = (dotsCount + 1) % 4; // Cycle between 0 to 3 dots
-    const dots = '.'.repeat(dotsCount);
-    loadingText.textContent = "Generating plan" + dots;
+  dotsCount = (dotsCount + 1) % 4; // Cycle between 0 to 3 dots
+  const dots = '.'.repeat(dotsCount);
+  loadingText.textContent = "Generating plan" + dots;
 
-    // Call the next animation frame after a delay
-    timeoutId = setTimeout(() => {
-        animationFrameId = requestAnimationFrame(updateLoadingText);
-    }, animationDelay);
+  // Call the next animation frame after a delay
+  timeoutId = setTimeout(() => {
+    animationFrameId = requestAnimationFrame(updateLoadingText);
+  }, animationDelay);
 }
 
 function renderLandingPage() {
@@ -363,7 +363,7 @@ function getStoreAPIKey() {
 
 
 let messageHistory: { role: OpenAI.Chat.CreateChatCompletionRequestMessage['role'], content: string }[] = [];
-async function streamOpenAIResponse(stage: ApiRequestType) {
+async function streamOpenAIResponse(stage: ApiRequestType, currentWeek = 1, hasProvidedInitialExerciseDetails = false) {
 
   const apiKey = getStoreAPIKey();
   const openai = new OpenAI({ apiKey: apiKey, dangerouslyAllowBrowser: true });
@@ -376,22 +376,31 @@ async function streamOpenAIResponse(stage: ApiRequestType) {
 
   const userMessage = `I am a ${formData['age']} years old ${formData['gender']} with a height of ${formData['height']}cm and weight of ${formData['weight']} kilograms. My target weight is ${formData['targetWeight']} kilograms. I work as a ${formData['jobType']}, and identify my fitness level as ${formData['fitnessLevel']}. I prefer a ${formData['dietPreference']} diet and have access to the following equipment: ${formData['equipment']}. My injuries or limitations include: ${formData['injuries']}. My workout preference is around ${formData['workoutDuration']} minutes, and I avoid the following foods: ${formData['dietRestrictions']}. Typically, I consume ${formData['mealFrequency']} meals a day, drink ${formData['waterIntake']} liters of water daily, and sleep for ${formData['sleepDuration']} hours. I take the following supplements: ${formData['supplements']}. I have ${allergiesSelection === 'Yes' ? 'the following' : 'no'} food allergies${allergiesSelection === 'Yes' ? (': ' + allergiesDescription) : ''}. My primary fitness and health goals are: ${formData['goals']}. I aim to achieve these goals in ${formData['timeframe']} weeks, committing to ${formData['workoutDays']} workout days per week. I primarily enjoy ${formData['exerciseStyle']} exercises.`;
 
+  const userInjuries = formData['injuries'];
+
+  let injurySegment = '';
+  if (userInjuries && userInjuries.toLowerCase() !== 'none' && userInjuries.toLowerCase() !== '') {
+    injurySegment = `Given the reported injury/limitation of "${userInjuries}", please provide both a light training option that is gentler on the affected area, as well as an alternative exercise that avoids targeting the injured part entirely. `;
+  }
 
   let systemMessageSegment;
   switch (stage) {
     case "introduction":
       systemMessageSegment = `
-      1. Provide the section titled 'Introduction'. This should be a 2-sentence overview of the entire plan tailored to the user's profile.`;
+      1. Provide the section titled 'Introduction'. This should be a 2-sentence overview of the entire plan tailored to the user's profile.\n`;
       break;
     case "exercise":
-      systemMessageSegment = `Now, for the 'Exercise Plan' section.
+      if (!hasProvidedInitialExerciseDetails) {
+        systemMessageSegment = `
+      Now, for the 'Exercise Plan' section.
       2. **Exercise Plan**:
       - **Flexibility and Mobility**: Provide a list of stretching and mobility exercises to be incorporated weekly.
       - **Cardiovascular Recommendations**: Detail on types, duration, and intensity of cardiovascular workouts.
       - **Strength Training**: Breakdown of exercises into compound and isolation movements, with specifics on sets, reps, rest intervals, and progression.
-      - **Summary**: 3 sentences about the overall exercise strategy considering the user's fitness level, available equipment, preferred workout duration, and any injuries.
-      - **Week-by-Week Breakdown**:
-          - For each week, specify:
+      ${injurySegment}
+      - **Summary**: 3 sentences about the overall exercise strategy considering the user's fitness level, available equipment, preferred workout duration, and any injuries. \n`;
+      } else {
+        systemMessageSegment = `**Week ${currentWeek} Exercise Breakdown**:
               - Key focus or theme for the week.
               - **Day-by-Day Breakdown**:
                   - For each day, specify:
@@ -400,22 +409,27 @@ async function streamOpenAIResponse(stage: ApiRequestType) {
                           - Repetitions or duration.
                           - Rest intervals between sets or exercises.
                           - Number of sets.
+                      ${injurySegment}
                       - Cool Down: Suggest specific cool-down routines.
-                      - If it's a rest day, clearly mention it.`;
+                      - If it's a rest day, clearly mention it. \n`;
+      }
       break;
     case "diet":
-      systemMessageSegment = `Next, the 'Diet Plan' section.
-      3. **Diet Plan**:
-        - **Overview**: A general guideline on the nutritional approach considering the user's diet preference, restrictions, meal frequency, and water intake.
-        - **Nutritional Timing**: Recommendations on when to consume proteins, fats, carbohydrates, and other nutrients around workouts.
-        - **Week-by-Week Breakdown**:
-            - For each week, suggest:
-                - Primary nutritional focus or theme.
-                - **Day-by-Day Breakdown**:
-                    - For each day, provide:
-                        - Daily meal recommendations, considering any food allergies.
-                        - Suggestions for supplements, if any.`;
-      break;
+      if (!hasProvidedInitialExerciseDetails) {
+        systemMessageSegment = `Next, the 'Diet Plan' section.
+          3. **Diet Plan**:
+          - **Overview**: A general guideline on the nutritional approach considering the user's diet preference, restrictions, meal frequency, and water intake.
+          - **Nutritional Timing**: Recommendations on when to consume proteins, fats, carbohydrates, and other nutrients around workouts. \n`;
+        hasProvidedInitialExerciseDetails = true;
+      } else {
+        systemMessageSegment = `**Week ${currentWeek} Diet Breakdown**:
+              - Primary nutritional focus or theme for the week.
+              - **Day-by-Day Breakdown**:
+                  - For each day, provide:
+                      - Daily meal recommendations, considering any food allergies.
+                      - Suggestions for supplements, if any. \n`;
+      }
+      break
     case "mentalWellbeing":
       systemMessageSegment = "Incorporate a section titled 'Mental Wellbeing'. Provide tips on stress management, the benefits of meditation, and relaxation techniques.\n";
       break;
@@ -449,38 +463,59 @@ async function streamOpenAIResponse(stage: ApiRequestType) {
     stream: true,
   });
 
+  let assistantResponseBuffer = '';
   for await (const chunk of completion) {
     if (chunk.choices[0].delta.content) {
       processChunk(chunk.choices[0].delta.content);
-      messageHistory.push({ role: "assistant", content: chunk.choices[0].delta.content });
+      assistantResponseBuffer += chunk.choices[0].delta.content;
     }
   }
+  messageHistory.push({ role: "assistant", content: assistantResponseBuffer });
 
   // Transition to the next section based on your plan
+  const totalWeeks = Number(getFormData(form).timeframe);
   switch (stage) {
     case "introduction":
-      streamOpenAIResponse('exercise');
+      currentWeek = 1; // Reset currentWeek to 1 here
+      streamOpenAIResponse('exercise', currentWeek, hasProvidedInitialExerciseDetails);
       break;
     case "exercise":
-      streamOpenAIResponse('diet');
+      if (!hasProvidedInitialExerciseDetails) {
+        hasProvidedInitialExerciseDetails = true;
+        streamOpenAIResponse('exercise', currentWeek, hasProvidedInitialExerciseDetails);
+      } else if (currentWeek < totalWeeks) {
+        currentWeek += 1;
+        streamOpenAIResponse('exercise', currentWeek, hasProvidedInitialExerciseDetails);
+      } else {
+        currentWeek = 1; // Reset currentWeek to 1 before starting the diet section
+        streamOpenAIResponse('diet', currentWeek);
+      }
       break;
     case "diet":
-      streamOpenAIResponse('nutritionTips');
+      if (!hasProvidedInitialExerciseDetails) {
+        hasProvidedInitialExerciseDetails = true;
+        streamOpenAIResponse('diet', currentWeek, hasProvidedInitialExerciseDetails);
+      } else if (currentWeek < totalWeeks) {
+        currentWeek += 1;
+        streamOpenAIResponse('diet', currentWeek, hasProvidedInitialExerciseDetails);
+      } else {
+        streamOpenAIResponse('nutritionTips', currentWeek);
+      }
       break;
     case 'nutritionTips':
-      streamOpenAIResponse('mentalWellbeing');
+      streamOpenAIResponse('mentalWellbeing', currentWeek, hasProvidedInitialExerciseDetails);
       break;
     case "mentalWellbeing":
-      streamOpenAIResponse('progressTracking');
+      streamOpenAIResponse('progressTracking', currentWeek, hasProvidedInitialExerciseDetails);
       break;
     case "progressTracking":
-      streamOpenAIResponse('recoveryRest');
+      streamOpenAIResponse('recoveryRest'), currentWeek, hasProvidedInitialExerciseDetails;
       break;
     case "recoveryRest":
-      streamOpenAIResponse('safetyPrecautions');
+      streamOpenAIResponse('safetyPrecautions', currentWeek, hasProvidedInitialExerciseDetails);
       break;
     case "safetyPrecautions":
-      streamOpenAIResponse('nutritionTips');
+      streamOpenAIResponse('nutritionTips', currentWeek, hasProvidedInitialExerciseDetails);
       break;
     default:
       const markdownContainer = document.getElementById('markdownContainer') as HTMLElement;
