@@ -454,7 +454,7 @@ async function streamOpenAIResponse(stage: ApiRequestType, currentWeek = 1, hasP
 
 
   const completion = await openai.chat.completions.create({
-    model: "gpt-4",
+    model: "gpt-3.5-turbo",
     messages: [
       { role: 'system', content: `You are Fitness GPT, a highly renowned health and nutrition expert. Based on the user's profile and preferences, create a detailed and custom diet and exercise plan broken down week-by-week and day by day. Adhere structured format of each system prompt, including titles provided` },
       ...messageHistory,
