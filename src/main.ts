@@ -1,7 +1,6 @@
 import './style.css'
 import MarkdownIt from 'markdown-it';
 import OpenAI from "openai";
-console.log(import.meta.env)
 const md = new MarkdownIt();
 const app = document.getElementById('app') as HTMLElement;
 
@@ -310,7 +309,7 @@ function storeAPIKey() {
 }
 
 function getStoreAPIKey() {
-  return localStorage.getItem('apiKey') ?? import.meta.env.OPENAI_KEY ?? process.env.OPENAI_KEY;
+  return localStorage.getItem('apiKey') ?? import.meta.env.VITE_OPENAI_KEY ?? process.env.VITE_OPENAI_KEY;
 }
 
 async function streamOpenAIResponse() {
