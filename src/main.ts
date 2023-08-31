@@ -310,7 +310,7 @@ function storeAPIKey() {
 }
 
 function getStoreAPIKey() {
-  return localStorage.getItem('apiKey') ?? process.env.OPENAI_KEY;
+  return localStorage.getItem('apiKey') ?? import.meta.env.OPENAI_KEY ?? process.env.OPENAI_KEY;
 }
 
 async function streamOpenAIResponse() {
