@@ -756,7 +756,7 @@ async function query(data: { messages: any; }) {
           'Authorization': `Bearer ${getStoreAPIKey()}`
         },
         body: JSON.stringify({
-          model: "meta-llama/Llama-2-70b-chat-hf",
+          model: "meta-llama/Llama-2-13b-chat-hf",
           messages: data.messages,
           stream
         })
