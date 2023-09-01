@@ -58,13 +58,14 @@ class FitnessGPTForm {
     new FormField('Dietary Preference', 'select', 'dietPreference', '', ['Vegetarian', 'Vegan', 'Pescatarian', 'No Preference']),
     new FormField('Have Food Allergies?', 'radio', 'allergies', '', ['Yes', 'No'], (domRef: HTMLElement, _formInstance: FitnessGPTForm) => {
       const allergiesTextArea = this.domReferences['allergiesList'] as HTMLTextAreaElement;
+      const parent = allergiesTextArea.parentElement as HTMLElement;
       if ((<HTMLInputElement>domRef.querySelector('input[value="Yes"]')).checked) {
-        allergiesTextArea.style.display = 'block';
+        parent.style.display = 'block';
       } else {
-        allergiesTextArea.style.display = 'none';
+        parent.style.display = 'none';
       }
       domRef.addEventListener('change', (e: Event) => {
-        allergiesTextArea.style.display = ((<HTMLInputElement>e.target).value === 'Yes') ? 'block' : 'none';
+        parent.style.display = ((<HTMLInputElement>e.target).value === 'Yes') ? 'block' : 'none';
       });
     }, [
       new FormField('List your food allergies', 'textarea', 'allergiesList', 'Enter your allergies here')
@@ -85,7 +86,7 @@ class FitnessGPTForm {
       this.container.appendChild(renderedField);
     });
     const submitButton = document.createElement('button');
-    submitButton.className = 'bg-blue-500 text-white p-2 rounded w-full mt-4';
+    submitButton.className = 'bg-blue-500 hover:bg-blue-600 text-white p-2 rounded w-full mt-4';
     submitButton.textContent = 'Submit';
     submitButton.onclick = () => {
       this.saveToLocalStorage();
@@ -100,7 +101,6 @@ class FitnessGPTForm {
 
       // Then show the loadingText
       loadingText.style.display = 'block';
-      updateLoadingText();
       app.appendChild(loadingText);
     };
     this.container.appendChild(submitButton);
@@ -138,7 +138,7 @@ class FitnessGPTForm {
         formElement = document.createElement('textarea');
         formElement.setAttribute('id', field.id);
         formElement.setAttribute('placeholder', field.placeholder || '');
-        formElement.classList.add('border', 'rounded-md', 'p-2', 'w-full', 'mt-2');
+        formElement.classList.add('border', 'rounded-md', 'p-2', 'w-full', 'mt-2', 'h-32');
         if (field.rows) {
           formElement.setAttribute('rows', field.rows.toString());
         }
@@ -146,18 +146,26 @@ class FitnessGPTForm {
       case 'radio':
       case 'checkbox':
         formElement = document.createElement('div');
+        formElement.classList.add('space-x-4', 'flex', 'flex-wrap', 'items-center');
         if (field.options) {
           field.options.forEach(option => {
+            const optionWrapper = document.createElement('div');
+            optionWrapper.classList.add('flex', 'items-center', 'mr-4', 'mb-2');
+
             const optionElement = document.createElement('input');
             optionElement.setAttribute('type', field.type);
             optionElement.setAttribute('id', `${field.id}-${option}`);
             optionElement.setAttribute('name', field.id);
             optionElement.setAttribute('value', option);
+
             const label = document.createElement('label');
             label.setAttribute('for', `${field.id}-${option}`);
             label.textContent = option;
-            formElement.appendChild(optionElement);
-            formElement.appendChild(label);
+            label.classList.add('ml-2', 'text-sm');
+
+            optionWrapper.appendChild(optionElement);
+            optionWrapper.appendChild(label);
+            formElement.appendChild(optionWrapper);
           });
         }
         break;
@@ -201,12 +209,13 @@ class FitnessGPTForm {
 
     // Wrap in a div for layout
     const wrapper = document.createElement('div');
-    wrapper.classList.add('form-field-wrapper', 'mb-4');
+    wrapper.id = field.id;
+    wrapper.classList.add('form-field-wrapper', 'mb-4', 'grid', 'grid-cols-[auto,1fr]', 'gap-4');
 
     const label = document.createElement('label');
     label.setAttribute('for', field.id);
     label.textContent = field.label;
-    label.classList.add('block', 'text-lg', 'font-semibold');
+    label.classList.add('block', 'text-lg', 'font-semibold', 'w-full', 'flex', 'items-center');
 
     wrapper.appendChild(label);
     wrapper.appendChild(formElement);
@@ -279,41 +288,14 @@ class FitnessGPTForm {
 }
 
 const loadingText = document.createElement('div');
-loadingText.textContent = "Generating plan...";
-loadingText.className = "text-blue-500 font-bold mt-4";
+loadingText.textContent = "Generating plan";
+loadingText.className = "text-blue-500 font-bold mt-4 relative before:content-[''] before:absolute before:right-0 before:animate-loadingDots before:block before:h-5";
 loadingText.style.display = 'none'; // initially hidden
 
 
-let dotsCount = 0;
-let animationFrameId: number;
-let timeoutId: number | null | NodeJS.Timeout = null;
-const animationDelay = 500;  // 500ms delay for half a second between each update
-
-function updateLoadingText() {
-  if (loadingText.style.display === 'none') {
-    // If the loadingText is hidden, stop the animation
-    if (animationFrameId !== undefined) {
-      cancelAnimationFrame(animationFrameId);
-    }
-    if (timeoutId !== null) {
-      clearTimeout(timeoutId);
-    }
-    return;
-  }
-
-  dotsCount = (dotsCount + 1) % 4; // Cycle between 0 to 3 dots
-  const dots = '.'.repeat(dotsCount);
-  loadingText.textContent = "Generating plan" + dots;
-
-  // Call the next animation frame after a delay
-  timeoutId = setTimeout(() => {
-    animationFrameId = requestAnimationFrame(updateLoadingText);
-  }, animationDelay);
-}
-
 function renderLandingPage() {
   const container = document.createElement('div');
-  container.className = 'bg-white p-8 rounded-lg shadow-md';
+  container.className = 'bg-white p-8 rounded-lg shadow-md my-10 mx-auto max-w-2x';
 
   const heading = document.createElement('h1');
   heading.className = 'text-2xl font-bold mb-4';
@@ -323,10 +305,11 @@ function renderLandingPage() {
   const description = document.createElement('p');
   description.className = 'mb-4';
   description.innerHTML = `
-    Get a personalized fitness plan powered by AI. We have provided a key by default, 
-    but there's a hard limit of $120, and will be removed shortly. Please consider 
-    <a href="https://app.endpoints.anyscale.com/" target="_blank" rel="noopener noreferrer">signing up for your own key</a> 
-    at anyscale. It helps keep this service going as it's open-source and self-funded.
+  Get a personalized fitness plan powered by AI. By default, we use Anyscale. 
+  However, there's a hard limit of $120 on our provided key, which will be removed shortly. 
+  We recommend <a href="https://app.endpoints.anyscale.com/" target="_blank" rel="noopener noreferrer">signing up for your own Anyscale key</a>. 
+  Alternatively, if you wish to use OpenAI GPT-4, please <a href="https://platform.openai.com/" target="_blank" rel="noopener noreferrer">sign up for an OpenAI key</a>.
+  Your support helps keep this open-source service running.
 `;
   container.appendChild(description);
 
@@ -338,7 +321,7 @@ function renderLandingPage() {
   apiKeyInput.value = getStoreAPIKey()
   container.appendChild(apiKeyInput);
   const startButton = document.createElement('button');
-  startButton.className = 'bg-blue-500 text-white p-2 rounded w-full';
+  startButton.className = 'bg-blue-500 hover:bg-blue-600 text-white p-2 rounded w-full mt-4';
   startButton.textContent = 'Start';
   startButton.onclick = () => {
     storeAPIKey();
@@ -355,30 +338,47 @@ function renderLandingPage() {
 async function* streamChunks(response: Response) {
   const reader = response.body?.getReader();
   const decoder = new TextDecoder();
+  let buffer = '';
 
   if (reader) {
     while (true) {
-      const { done, value } = await reader.read();
-      if (done) {
+      const { done: readDone, value } = await reader.read();
+
+      if (readDone) {
         return;
       }
-      const text = decoder.decode(value, { stream: true });
-      for (const line of text.split('\n')) {
-        if (line.startsWith('data: ')) {
-          const data = line.slice(6).trim();  // strip off the 'data: ' prefix
-          if (data !== '[DONE]') {
+
+      buffer += decoder.decode(value, { stream: true });
+
+      // Split buffer into messages
+      const messages = buffer.split('\n'); // Assuming newline as the delimiter
+      for (let i = 0; i < messages.length - 1; i++) {
+        const message = messages[i].trim();
+        if (message.startsWith('data: ')) {
+          const data = message.slice(6).trim();
+
+          if (data === '[DONE]') {
+            return;
+          }
+
+          if (data) {
             try {
               const jsonData = JSON.parse(data);
-              yield jsonData;  // yield the parsed JSON object
-            } catch (err) {
-              console.error("Failed to parse JSON data:", data, err);
+              yield jsonData;
+            } catch (e) {
+              console.error(`Failed to parse message into JSON:`, data);
             }
           }
         }
       }
+      buffer = messages[messages.length - 1];
     }
   }
 }
+
+
+
+
 
 function storeAPIKey() {
   const apiKey = (document.getElementById('apiKey') as HTMLInputElement)?.value;
@@ -393,6 +393,7 @@ function getStoreAPIKey() {
 let messageHistory: { role: OpenAI.Chat.CreateChatCompletionRequestMessage['role'], content: string }[] = [];
 async function streamOpenAIResponse(stage: ApiRequestType, currentWeek = 1, hasProvidedInitialExerciseDetails = false) {
 
+  const apiKey: string = getStoreAPIKey();
 
   // Dynamically get all form data
   const formData = getFormData(form);
@@ -476,25 +477,50 @@ async function streamOpenAIResponse(stage: ApiRequestType, currentWeek = 1, hasP
       return;
   }
 
-  messageHistory.push({ role: "user", content: userMessage });
 
-
-  const response = await query({
-    messages: [
-          ...messageHistory,
-          { role: "system", content: `You are Fitness GPT, a highly renowned health and nutrition expert. Based on the user's profile and preferences, create a detailed and custom diet and exercise plan broken down week-by-week and day by day. Adhere structured format of each system prompt, including titles provided \n ${systemMessageSegment}` }
-        ]
-  })
-
-
-  let assistantResponseBuffer = '';
-  for await (const chunk of streamChunks(response)) {
-    if (chunk.choices[0].delta.content) {
-      processChunk(chunk.choices[0].delta.content);
-      assistantResponseBuffer += chunk.choices[0].delta.content;
+  if (apiKey.startsWith('sk-')) {
+    const openai = new OpenAI({ apiKey: apiKey, dangerouslyAllowBrowser: true });
+    const completion = await openai.chat.completions.create({
+      model: "gpt-4",
+      messages: [
+        { role: 'system', content: `You are Fitness GPT, a highly renowned health and nutrition expert. Based on the user's profile and preferences, create a detailed and custom diet and exercise plan broken down week-by-week and day by day. Adhere structured format of each system prompt, including titles provided` },
+        ...messageHistory,
+        { role: "system", content: systemMessageSegment }
+      ],
+      stream: true,
+    });
+  
+    let assistantResponseBuffer = '';
+    for await (const chunk of completion) {
+      if (chunk.choices[0].delta.content) {
+        processChunk(chunk.choices[0].delta.content);
+        assistantResponseBuffer += chunk.choices[0].delta.content;
+      }
+    }
+    messageHistory.push({ role: "assistant", content: assistantResponseBuffer });
+  } else {
+    const response = await query({
+      messages: [
+        ...messageHistory,
+        { role: "system", content: `You are Fitness GPT, a highly renowned health and nutrition expert. Based on the user's profile and preferences, create a detailed and custom diet and exercise plan broken down week-by-week and day by day. Using markdown code adhere structured format of each system prompt, including titles provided \n ${systemMessageSegment}` },
+        { role: "user", content: userMessage }
+      ]
+    })
+  
+    if (response?.choices) {
+      renderMarkdown(response.choices[0].message.content);
+      messageHistory.push({ role: "assistant", content: response.choices[0].message.content });
+    } else {
+      let assistantResponseBuffer = '';
+      for await (const chunk of streamChunks(response)) {
+        if (chunk.choices[0].delta.content) {
+          processChunk(chunk.choices[0].delta.content);
+          assistantResponseBuffer += chunk.choices[0].delta.content;
+        }
+      }
+      messageHistory.push({ role: "assistant", content: assistantResponseBuffer });
     }
   }
-  messageHistory.push({ role: "assistant", content: assistantResponseBuffer });
 
   // Transition to the next section based on your plan
   const totalWeeks = Number(getFormData(form).timeframe);
@@ -650,7 +676,7 @@ function renderMarkdown(markdown: string) {
 
     const markdownContainer = document.createElement('div');
     markdownContainer.id = 'markdownContainer';
-    markdownContainer.className = 'bg-white p-8 rounded-lg shadow-md w-3/4';
+    markdownContainer.className = 'bg-white p-8 rounded-lg shadow-md w-3/4 mx-auto mt-10 space-y-4';
     app.appendChild(markdownContainer);
 
   }
@@ -664,7 +690,7 @@ function renderMarkdown(markdown: string) {
 
 renderLandingPage();
 const formElement = document.createElement('div');
-formElement.className = 'bg-white p-8 rounded-lg shadow-md w-1/2 mx-auto mt-10';
+formElement.className = 'bg-white p-8 rounded-lg shadow-md w-3/4 mx-auto mt-10';
 formElement.style.display = 'none'; // initially hidden
 
 app.appendChild(formElement);
@@ -673,7 +699,7 @@ form.render();
 
 function createDisclaimer(): HTMLElement {
   const disclaimer = document.createElement('p');
-  disclaimer.className = 'text-sm mt-4 italic';
+  disclaimer.className = 'text-sm mt-4 italic text-gray-600';
   disclaimer.textContent = 'Disclaimer: The provided fitness plan is a suggestion generated by an AI and is intended for informational purposes only. Always consult with a healthcare or fitness professional before starting any new exercise or diet program. Use this plan at your own risk. The creators and maintainers of this tool will not be held legally or criminally liable for any injuries, health complications, or other adverse effects that may arise from following the plan. Remember to always listen to your body and know your limits.';
   return disclaimer;
 }
@@ -691,6 +717,7 @@ function exportPlan() {
 
 async function query(data: { messages: any; }) {
   const OPENAI_API_BASE = "https://api.endpoints.anyscale.com/v1";  // Adjust if necessary
+  const stream = true;
   const response = await fetch(`${OPENAI_API_BASE}/chat/completions`, {
     method: 'POST',
     headers: {
@@ -700,10 +727,13 @@ async function query(data: { messages: any; }) {
     body: JSON.stringify({
       model: "meta-llama/Llama-2-70b-chat-hf",
       messages: data.messages,
-      stream: true
+      stream
     })
   });
-  return response;
+  if (stream) {
+    return response
+  }
+  return response.json();
 }
 
 function shareToX() {
