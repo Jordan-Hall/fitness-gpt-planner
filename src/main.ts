@@ -1,7 +1,6 @@
 import './style.css'
 import MarkdownIt from 'markdown-it';
 import OpenAI from "openai";
-import Replicate from "replicate";
 const md = new MarkdownIt();
 const app = document.getElementById('app') as HTMLElement;
 
@@ -500,7 +499,7 @@ async function streamOpenAIResponse(stage: ApiRequestType, currentWeek = 1, hasP
     }
     
     messageHistory.push({ role: "assistant", content: assistantResponseBuffer });  
-  } else {
+  } else if (apiKey.startsWith('esecret_')) {
     const response = await query({
       messages: [
         ...messageHistory,
@@ -526,6 +525,27 @@ async function streamOpenAIResponse(stage: ApiRequestType, currentWeek = 1, hasP
         messageHistory.push({ role: "assistant", content: assistantResponseBuffer });
       }
     }
+  } else {
+    const openai = new OpenAI({ apiKey: apiKey, dangerouslyAllowBrowser: true, baseURL: 'https://api.deepinfra.com/v1/openai' });
+    const completion = await openai.chat.completions.create({
+      model: "gpt-4",
+      messages: [
+        { role: 'system', content: `You are Fitness GPT, a highly renowned health and nutrition expert. Based on the user's profile and preferences, create a detailed and custom diet and exercise plan broken down week-by-week and day by day. Adhere structured format of each system prompt, including titles provided` },
+        ...messageHistory,
+        { role: "system", content: systemMessageSegment }
+      ],
+      stream: true,
+    });
+
+    let assistantResponseBuffer = '';
+    for await (const chunk of completion) { 
+      if (chunk.choices[0].delta.content) {
+        processChunk(chunk.choices[0].delta.content);
+        assistantResponseBuffer += chunk.choices[0].delta.content;
+      }
+    }
+    
+    messageHistory.push({ role: "assistant", content: assistantResponseBuffer }); 
   }
 
   // Transition to the next section based on your plan
