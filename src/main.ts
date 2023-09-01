@@ -1,6 +1,7 @@
 import './style.css'
 import MarkdownIt from 'markdown-it';
 import OpenAI from "openai";
+import Replicate from "replicate";
 const md = new MarkdownIt();
 const app = document.getElementById('app') as HTMLElement;
 
@@ -414,7 +415,7 @@ async function streamOpenAIResponse(stage: ApiRequestType, currentWeek = 1, hasP
   switch (stage) {
     case "introduction":
       systemMessageSegment = `
-      1. Provide the section titled 'Introduction'. This should be a 2-sentence overview of the entire plan tailored to the user's profile.\n`;
+1. Provide the section titled 'Introduction'. This should briefly describe the type of plan (e.g., high energy, gym-based, home workouts) and the primary goal of the plan tailored to the user's profile. \n`;
       break;
     case "exercise":
       if (!hasProvidedInitialExerciseDetails) {
@@ -489,7 +490,7 @@ async function streamOpenAIResponse(stage: ApiRequestType, currentWeek = 1, hasP
       ],
       stream: true,
     });
-  
+
     let assistantResponseBuffer = '';
     for await (const chunk of completion) {
       if (chunk.choices[0].delta.content) {
@@ -497,7 +498,8 @@ async function streamOpenAIResponse(stage: ApiRequestType, currentWeek = 1, hasP
         assistantResponseBuffer += chunk.choices[0].delta.content;
       }
     }
-    messageHistory.push({ role: "assistant", content: assistantResponseBuffer });
+    
+    messageHistory.push({ role: "assistant", content: assistantResponseBuffer });  
   } else {
     const response = await query({
       messages: [
@@ -506,10 +508,12 @@ async function streamOpenAIResponse(stage: ApiRequestType, currentWeek = 1, hasP
         { role: "user", content: userMessage }
       ]
     })
-  
+
     if (response?.choices) {
       renderMarkdown(response.choices[0].message.content);
-      messageHistory.push({ role: "assistant", content: response.choices[0].message.content });
+      if (stage !== 'introduction') {
+        messageHistory.push({ role: "assistant", content: response.choices[0].message.content });
+      }
     } else {
       let assistantResponseBuffer = '';
       for await (const chunk of streamChunks(response)) {
@@ -518,7 +522,9 @@ async function streamOpenAIResponse(stage: ApiRequestType, currentWeek = 1, hasP
           assistantResponseBuffer += chunk.choices[0].delta.content;
         }
       }
-      messageHistory.push({ role: "assistant", content: assistantResponseBuffer });
+      if (stage !== 'introduction') {
+        messageHistory.push({ role: "assistant", content: assistantResponseBuffer });
+      }
     }
   }
 
@@ -717,24 +723,46 @@ function exportPlan() {
 
 async function query(data: { messages: any; }) {
   const OPENAI_API_BASE = "https://api.endpoints.anyscale.com/v1";  // Adjust if necessary
-  const stream = true;
-  const response = await fetch(`${OPENAI_API_BASE}/chat/completions`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${getStoreAPIKey()}`
-    },
-    body: JSON.stringify({
-      model: "meta-llama/Llama-2-70b-chat-hf",
-      messages: data.messages,
-      stream
-    })
-  });
-  if (stream) {
-    return response
+  const stream = false;
+  const MAX_RETRIES = 3;
+  let retries = 0;
+  
+  while (retries < MAX_RETRIES) {
+    try {
+      const response = await fetch(`${OPENAI_API_BASE}/chat/completions`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${getStoreAPIKey()}`
+        },
+        body: JSON.stringify({
+          model: "meta-llama/Llama-2-70b-chat-hf",
+          messages: data.messages,
+          stream
+        })
+      });
+
+      if (response.status !== 504) {
+        if (stream) {
+          return response;
+        }
+        return response.json();
+      }
+    } catch (error) {
+      console.error("An error occurred while querying the API:", error);
+    }
+
+    retries++;
+    if (retries < MAX_RETRIES) {
+      console.warn(`Retrying request (${retries}/${MAX_RETRIES}) due to 504 Gateway Timeout...`);
+    } else {
+      console.error("Max retries reached. Moving on.");
+    }
   }
-  return response.json();
+  
+  return null;  // Return null or some error object to signal the calling function
 }
+
 
 function shareToX() {
   const text = "Check out this amazing Fitness GPT Planner! by @JordanHall_dev";
