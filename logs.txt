@@ -1,0 +1,1637 @@
+Aug 28 21:35:04 ip-172-31-13-120 systemd-udevd[799318]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:04 ip-172-31-13-120 systemd-networkd[409]: vethe33155f: Link DOWN
+
+Aug 28 21:35:04 ip-172-31-13-120 kernel: [87786.620243] docker_gwbridge: port 2(vethe33155f) entered disabled state
+
+Aug 28 21:35:04 ip-172-31-13-120 kernel: [87786.622125] device vethe33155f left promiscuous mode
+
+Aug 28 21:35:04 ip-172-31-13-120 kernel: [87786.622134] docker_gwbridge: port 2(vethe33155f) entered disabled state
+
+Aug 28 21:35:04 ip-172-31-13-120 systemd-networkd[409]: rtnl: received neighbor for link '57805' we don't know about, ignoring.
+
+Aug 28 21:35:04 ip-172-31-13-120 systemd-networkd[409]: rtnl: received neighbor for link '57805' we don't know about, ignoring.
+
+Aug 28 21:35:04 ip-172-31-13-120 systemd-udevd[799318]: veth42d3e25: Failed to get link config: No such device
+
+Aug 28 21:35:04 ip-172-31-13-120 systemd-udevd[799326]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:04 ip-172-31-13-120 kernel: [87786.656367] br0: port 3(veth14443) entered disabled state
+
+Aug 28 21:35:04 ip-172-31-13-120 kernel: [87786.661040] device veth14443 left promiscuous mode
+
+Aug 28 21:35:04 ip-172-31-13-120 kernel: [87786.661088] br0: port 3(veth14443) entered disabled state
+
+Aug 28 21:35:04 ip-172-31-13-120 systemd[2245909]: run-docker-netns-5c65ab92de70.mount: Succeeded.
+
+Aug 28 21:35:04 ip-172-31-13-120 systemd[1]: run-docker-netns-5c65ab92de70.mount: Succeeded.
+
+Aug 28 21:35:04 ip-172-31-13-120 systemd[1]: var-lib-docker-overlay2-6d53283eba93f133602a5e2327922bdddab941ef3c04a2c85b15f804575729f3-merged.mount: Succeeded.
+
+Aug 28 21:35:04 ip-172-31-13-120 systemd[2245909]: var-lib-docker-overlay2-6d53283eba93f133602a5e2327922bdddab941ef3c04a2c85b15f804575729f3-merged.mount: Succeeded.
+
+Aug 28 21:35:04 ip-172-31-13-120 dockerd[664]: time="2023-08-28T21:35:04.761500363Z" level=error msg="fatal task error" error="task: non-zero exit (1)" module=node/agent/taskmanager node.id=zty32p3j8m2gzqfalm4zctrto service.id=fb8gn0f65kejq7x4v7bj5jzmr task.id=nfzwidoupmqz19pofv3bnkphc
+
+Aug 28 21:35:05 ip-172-31-13-120 systemd[2245909]: var-lib-docker-overlay2-89fe9f746f8d1f41fa63cba127f05a3cbb6c0baf28db2dda28bd5e317fa6e01d\x2dinit-merged.mount: Succeeded.
+
+Aug 28 21:35:05 ip-172-31-13-120 systemd[1]: var-lib-docker-overlay2-89fe9f746f8d1f41fa63cba127f05a3cbb6c0baf28db2dda28bd5e317fa6e01d\x2dinit-merged.mount: Succeeded.
+
+Aug 28 21:35:05 ip-172-31-13-120 systemd[2245909]: var-lib-docker-overlay2-89fe9f746f8d1f41fa63cba127f05a3cbb6c0baf28db2dda28bd5e317fa6e01d-merged.mount: Succeeded.
+
+Aug 28 21:35:05 ip-172-31-13-120 systemd[1]: var-lib-docker-overlay2-89fe9f746f8d1f41fa63cba127f05a3cbb6c0baf28db2dda28bd5e317fa6e01d-merged.mount: Succeeded.
+
+Aug 28 21:35:05 ip-172-31-13-120 systemd[2245909]: var-lib-docker-overlay2-1d35321f9e186750c1985c55ca70136358e40328507d44c8b97d64a567340a6d\x2dinit-merged.mount: Succeeded.
+
+Aug 28 21:35:05 ip-172-31-13-120 systemd[1]: var-lib-docker-overlay2-1d35321f9e186750c1985c55ca70136358e40328507d44c8b97d64a567340a6d\x2dinit-merged.mount: Succeeded.
+
+Aug 28 21:35:05 ip-172-31-13-120 systemd[2245909]: var-lib-docker-overlay2-1d35321f9e186750c1985c55ca70136358e40328507d44c8b97d64a567340a6d-merged.mount: Succeeded.
+
+Aug 28 21:35:05 ip-172-31-13-120 systemd[1]: var-lib-docker-overlay2-1d35321f9e186750c1985c55ca70136358e40328507d44c8b97d64a567340a6d-merged.mount: Succeeded.
+
+Aug 28 21:35:09 ip-172-31-13-120 kernel: [87791.799035] veth14445: renamed from vethb7a8be5
+
+Aug 28 21:35:09 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57810 seen, reloading interface list
+
+Aug 28 21:35:09 ip-172-31-13-120 systemd-udevd[799361]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:09 ip-172-31-13-120 systemd-udevd[799361]: Using default interface naming scheme 'v245'.
+
+Aug 28 21:35:09 ip-172-31-13-120 systemd-udevd[799361]: veth3e64fee: Could not generate persistent MAC: No data available
+
+Aug 28 21:35:09 ip-172-31-13-120 systemd-networkd[409]: vethb7a8be5: Could not find device, waiting for device initialization: No such device
+
+Aug 28 21:35:09 ip-172-31-13-120 systemd-udevd[799363]: vethb7a8be5: Failed to get link config: No such device
+
+Aug 28 21:35:09 ip-172-31-13-120 kernel: [87791.817087] br0: port 3(veth14445) entered blocking state
+
+Aug 28 21:35:09 ip-172-31-13-120 kernel: [87791.817114] br0: port 3(veth14445) entered disabled state
+
+Aug 28 21:35:09 ip-172-31-13-120 kernel: [87791.817234] device veth14445 entered promiscuous mode
+
+Aug 28 21:35:09 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57811 seen, reloading interface list
+
+Aug 28 21:35:09 ip-172-31-13-120 systemd-udevd[799374]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:09 ip-172-31-13-120 systemd-networkd[409]: veth24bda96: Link UP
+
+Aug 28 21:35:09 ip-172-31-13-120 kernel: [87791.837368] docker_gwbridge: port 2(veth24bda96) entered blocking state
+
+Aug 28 21:35:09 ip-172-31-13-120 kernel: [87791.837376] docker_gwbridge: port 2(veth24bda96) entered disabled state
+
+Aug 28 21:35:09 ip-172-31-13-120 kernel: [87791.837764] device veth24bda96 entered promiscuous mode
+
+Aug 28 21:35:09 ip-172-31-13-120 kernel: [87791.841498] docker_gwbridge: port 2(veth24bda96) entered blocking state
+
+Aug 28 21:35:09 ip-172-31-13-120 kernel: [87791.841504] docker_gwbridge: port 2(veth24bda96) entered forwarding state
+
+Aug 28 21:35:09 ip-172-31-13-120 systemd-udevd[799374]: Using default interface naming scheme 'v245'.
+
+Aug 28 21:35:09 ip-172-31-13-120 systemd-udevd[799374]: veth749c929: Could not generate persistent MAC: No data available
+
+Aug 28 21:35:09 ip-172-31-13-120 networkd-dispatcher[472]: ERROR:Unknown interface index 57811 seen even after reload
+
+Aug 28 21:35:09 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57811 seen, reloading interface list
+
+Aug 28 21:35:09 ip-172-31-13-120 systemd-udevd[799375]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:09 ip-172-31-13-120 systemd-udevd[799375]: Using default interface naming scheme 'v245'.
+
+Aug 28 21:35:09 ip-172-31-13-120 systemd-udevd[799375]: veth24bda96: Could not generate persistent MAC: No data available
+
+Aug 28 21:35:09 ip-172-31-13-120 kernel: [87791.911459] veth14446: renamed from vethfe671bf
+
+Aug 28 21:35:09 ip-172-31-13-120 systemd-udevd[799361]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:09 ip-172-31-13-120 systemd-udevd[799361]: veth008005e: Could not generate persistent MAC: No data available
+
+Aug 28 21:35:09 ip-172-31-13-120 kernel: [87791.920026] br0: port 6(veth14446) entered blocking state
+
+Aug 28 21:35:09 ip-172-31-13-120 kernel: [87791.920034] br0: port 6(veth14446) entered disabled state
+
+Aug 28 21:35:09 ip-172-31-13-120 kernel: [87791.920161] device veth14446 entered promiscuous mode
+
+Aug 28 21:35:09 ip-172-31-13-120 kernel: [87791.920288] br0: port 6(veth14446) entered blocking state
+
+Aug 28 21:35:09 ip-172-31-13-120 kernel: [87791.920293] br0: port 6(veth14446) entered forwarding state
+
+Aug 28 21:35:09 ip-172-31-13-120 systemd-udevd[799381]: vethfe671bf: Failed to get link config: No such device
+
+Aug 28 21:35:09 ip-172-31-13-120 networkd-dispatcher[472]: ERROR:Unknown interface index 57811 seen even after reload
+
+Aug 28 21:35:09 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57815 seen, reloading interface list
+
+Aug 28 21:35:09 ip-172-31-13-120 kernel: [87791.938867] docker_gwbridge: port 5(vethf30105c) entered blocking state
+
+Aug 28 21:35:09 ip-172-31-13-120 kernel: [87791.938875] docker_gwbridge: port 5(vethf30105c) entered disabled state
+
+Aug 28 21:35:09 ip-172-31-13-120 kernel: [87791.939332] device vethf30105c entered promiscuous mode
+
+Aug 28 21:35:09 ip-172-31-13-120 systemd-networkd[409]: vethf30105c: Link UP
+
+Aug 28 21:35:09 ip-172-31-13-120 kernel: [87791.952361] docker_gwbridge: port 5(vethf30105c) entered blocking state
+
+Aug 28 21:35:09 ip-172-31-13-120 kernel: [87791.952369] docker_gwbridge: port 5(vethf30105c) entered forwarding state
+
+Aug 28 21:35:09 ip-172-31-13-120 systemd-udevd[799377]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:09 ip-172-31-13-120 systemd-udevd[799377]: Using default interface naming scheme 'v245'.
+
+Aug 28 21:35:09 ip-172-31-13-120 systemd-udevd[799377]: vethf30105c: Could not generate persistent MAC: No data available
+
+Aug 28 21:35:09 ip-172-31-13-120 networkd-dispatcher[472]: ERROR:Unknown interface index 57815 seen even after reload
+
+Aug 28 21:35:09 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57815 seen, reloading interface list
+
+Aug 28 21:35:10 ip-172-31-13-120 systemd-udevd[799363]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:10 ip-172-31-13-120 systemd-udevd[799363]: Using default interface naming scheme 'v245'.
+
+Aug 28 21:35:10 ip-172-31-13-120 systemd-udevd[799363]: vethcdaffe7: Could not generate persistent MAC: No data available
+
+Aug 28 21:35:10 ip-172-31-13-120 networkd-dispatcher[472]: ERROR:Unknown interface index 57815 seen even after reload
+
+Aug 28 21:35:10 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:10.053883326Z" level=info msg="loading plugin \"io.containerd.event.v1.publisher\"..." runtime=io.containerd.runc.v2 type=io.containerd.event.v1
+
+Aug 28 21:35:10 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:10.054090879Z" level=info msg="loading plugin \"io.containerd.internal.v1.shutdown\"..." runtime=io.containerd.runc.v2 type=io.containerd.internal.v1
+
+Aug 28 21:35:10 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:10.054116870Z" level=info msg="loading plugin \"io.containerd.ttrpc.v1.task\"..." runtime=io.containerd.runc.v2 type=io.containerd.ttrpc.v1
+
+Aug 28 21:35:10 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:10.057992426Z" level=info msg="starting signal loop" namespace=moby path=/run/containerd/io.containerd.runtime.v2.task/moby/bd4e0a1df4f6012011f725c37e92aa1160ee34550671f54f5776ce05627528ef pid=799403 runtime=io.containerd.runc.v2
+
+Aug 28 21:35:10 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:10.140637819Z" level=info msg="loading plugin \"io.containerd.event.v1.publisher\"..." runtime=io.containerd.runc.v2 type=io.containerd.event.v1
+
+Aug 28 21:35:10 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:10.140776181Z" level=info msg="loading plugin \"io.containerd.internal.v1.shutdown\"..." runtime=io.containerd.runc.v2 type=io.containerd.internal.v1
+
+Aug 28 21:35:10 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:10.140799632Z" level=info msg="loading plugin \"io.containerd.ttrpc.v1.task\"..." runtime=io.containerd.runc.v2 type=io.containerd.ttrpc.v1
+
+Aug 28 21:35:10 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:10.141724807Z" level=info msg="starting signal loop" namespace=moby path=/run/containerd/io.containerd.runtime.v2.task/moby/9902a01f312f595441f3bed4e4d329d1171d1fc1bceef8bcd54a39e8fdafd3a1 pid=799430 runtime=io.containerd.runc.v2
+
+Aug 28 21:35:10 ip-172-31-13-120 kernel: [87792.358692] eth0: renamed from veth3e64fee
+
+Aug 28 21:35:10 ip-172-31-13-120 kernel: [87792.369197] docker_gwbridge: port 2(veth24bda96) entered disabled state
+
+Aug 28 21:35:10 ip-172-31-13-120 kernel: [87792.369263] br0: port 6(veth14446) entered disabled state
+
+Aug 28 21:35:10 ip-172-31-13-120 kernel: [87792.369300] docker_gwbridge: port 5(vethf30105c) entered disabled state
+
+Aug 28 21:35:10 ip-172-31-13-120 kernel: [87792.369339] br0: port 3(veth14445) entered blocking state
+
+Aug 28 21:35:10 ip-172-31-13-120 kernel: [87792.369342] br0: port 3(veth14445) entered forwarding state
+
+Aug 28 21:35:10 ip-172-31-13-120 kernel: [87792.395691] eth1: renamed from veth749c929
+
+Aug 28 21:35:10 ip-172-31-13-120 systemd-networkd[409]: veth24bda96: Gained carrier
+
+Aug 28 21:35:10 ip-172-31-13-120 kernel: [87792.423085] IPv6: ADDRCONF(NETDEV_CHANGE): veth24bda96: link becomes ready
+
+Aug 28 21:35:10 ip-172-31-13-120 kernel: [87792.423149] docker_gwbridge: port 2(veth24bda96) entered blocking state
+
+Aug 28 21:35:10 ip-172-31-13-120 kernel: [87792.423154] docker_gwbridge: port 2(veth24bda96) entered forwarding state
+
+Aug 28 21:35:10 ip-172-31-13-120 kernel: [87792.451042] eth0: renamed from veth008005e
+
+Aug 28 21:35:10 ip-172-31-13-120 kernel: [87792.463419] br0: port 6(veth14446) entered blocking state
+
+Aug 28 21:35:10 ip-172-31-13-120 kernel: [87792.463427] br0: port 6(veth14446) entered forwarding state
+
+Aug 28 21:35:10 ip-172-31-13-120 kernel: [87792.485469] eth1: renamed from vethcdaffe7
+
+Aug 28 21:35:10 ip-172-31-13-120 systemd-networkd[409]: vethf30105c: Gained carrier
+
+Aug 28 21:35:10 ip-172-31-13-120 kernel: [87792.497959] IPv6: ADDRCONF(NETDEV_CHANGE): vethf30105c: link becomes ready
+
+Aug 28 21:35:10 ip-172-31-13-120 kernel: [87792.498011] docker_gwbridge: port 5(vethf30105c) entered blocking state
+
+Aug 28 21:35:10 ip-172-31-13-120 kernel: [87792.498016] docker_gwbridge: port 5(vethf30105c) entered forwarding state
+
+Aug 28 21:35:11 ip-172-31-13-120 systemd-networkd[409]: veth24bda96: Gained IPv6LL
+
+Aug 28 21:35:11 ip-172-31-13-120 systemd-networkd[409]: vethf30105c: Gained IPv6LL
+
+Aug 28 21:35:15 ip-172-31-13-120 dockerd[664]: time="2023-08-28T21:35:15.891974981Z" level=info msg="ignoring event" container=bd4e0a1df4f6012011f725c37e92aa1160ee34550671f54f5776ce05627528ef module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+
+Aug 28 21:35:15 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:15.893873274Z" level=info msg="shim disconnected" id=bd4e0a1df4f6012011f725c37e92aa1160ee34550671f54f5776ce05627528ef
+
+Aug 28 21:35:15 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:15.894472884Z" level=warning msg="cleaning up after shim disconnected" id=bd4e0a1df4f6012011f725c37e92aa1160ee34550671f54f5776ce05627528ef namespace=moby
+
+Aug 28 21:35:15 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:15.894706108Z" level=info msg="cleaning up dead shim"
+
+Aug 28 21:35:15 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:15.917915202Z" level=warning msg="cleanup warnings time=\"2023-08-28T21:35:15Z\" level=info msg=\"starting signal loop\" namespace=moby pid=799988 runtime=io.containerd.runc.v2\n"
+
+Aug 28 21:35:15 ip-172-31-13-120 kernel: [87797.903814] br0: port 3(veth14445) entered disabled state
+
+Aug 28 21:35:15 ip-172-31-13-120 kernel: [87797.903880] veth3e64fee: renamed from eth0
+
+Aug 28 21:35:15 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57810 seen, reloading interface list
+
+Aug 28 21:35:15 ip-172-31-13-120 systemd-udevd[800001]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:15 ip-172-31-13-120 systemd-udevd[800001]: Using default interface naming scheme 'v245'.
+
+Aug 28 21:35:16 ip-172-31-13-120 systemd-udevd[800001]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:16 ip-172-31-13-120 kernel: [87797.991983] docker_gwbridge: port 2(veth24bda96) entered disabled state
+
+Aug 28 21:35:16 ip-172-31-13-120 systemd-networkd[409]: veth24bda96: Lost carrier
+
+Aug 28 21:35:16 ip-172-31-13-120 kernel: [87797.997449] veth749c929: renamed from eth1
+
+Aug 28 21:35:16 ip-172-31-13-120 systemd-udevd[800001]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:16 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57812 seen, reloading interface list
+
+Aug 28 21:35:16 ip-172-31-13-120 systemd-networkd[409]: veth24bda96: Link DOWN
+
+Aug 28 21:35:16 ip-172-31-13-120 kernel: [87798.048855] docker_gwbridge: port 2(veth24bda96) entered disabled state
+
+Aug 28 21:35:16 ip-172-31-13-120 kernel: [87798.063243] device veth24bda96 left promiscuous mode
+
+Aug 28 21:35:16 ip-172-31-13-120 kernel: [87798.063252] docker_gwbridge: port 2(veth24bda96) entered disabled state
+
+Aug 28 21:35:16 ip-172-31-13-120 systemd-networkd[409]: rtnl: received neighbor for link '57813' we don't know about, ignoring.
+
+Aug 28 21:35:16 ip-172-31-13-120 systemd-networkd[409]: rtnl: received neighbor for link '57813' we don't know about, ignoring.
+
+Aug 28 21:35:16 ip-172-31-13-120 systemd-udevd[800001]: veth749c929: Failed to get link config: No such device
+
+Aug 28 21:35:16 ip-172-31-13-120 networkd-dispatcher[472]: ERROR:Unknown interface index 57812 seen even after reload
+
+Aug 28 21:35:16 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57812 seen, reloading interface list
+
+Aug 28 21:35:16 ip-172-31-13-120 kernel: [87798.105140] br0: port 3(veth14445) entered disabled state
+
+Aug 28 21:35:16 ip-172-31-13-120 kernel: [87798.109827] device veth14445 left promiscuous mode
+
+Aug 28 21:35:16 ip-172-31-13-120 kernel: [87798.109851] br0: port 3(veth14445) entered disabled state
+
+Aug 28 21:35:16 ip-172-31-13-120 networkd-dispatcher[472]: ERROR:Unknown interface index 57812 seen even after reload
+
+Aug 28 21:35:16 ip-172-31-13-120 systemd[2245909]: run-docker-netns-f4abc6f8942b.mount: Succeeded.
+
+Aug 28 21:35:16 ip-172-31-13-120 systemd[1]: run-docker-netns-f4abc6f8942b.mount: Succeeded.
+
+Aug 28 21:35:16 ip-172-31-13-120 systemd[2245909]: var-lib-docker-overlay2-1d35321f9e186750c1985c55ca70136358e40328507d44c8b97d64a567340a6d-merged.mount: Succeeded.
+
+Aug 28 21:35:16 ip-172-31-13-120 systemd[1]: var-lib-docker-overlay2-1d35321f9e186750c1985c55ca70136358e40328507d44c8b97d64a567340a6d-merged.mount: Succeeded.
+
+Aug 28 21:35:16 ip-172-31-13-120 dockerd[664]: time="2023-08-28T21:35:16.234888623Z" level=error msg="fatal task error" error="task: non-zero exit (1)" module=node/agent/taskmanager node.id=zty32p3j8m2gzqfalm4zctrto service.id=d3hpeh8tkwwv8o2zdviaswjff task.id=en67slm63xk21l962tkv26bw8
+
+Aug 28 21:35:17 ip-172-31-13-120 systemd[2245909]: var-lib-docker-overlay2-91c9de7cd147f9759e5acaeb99601437a62d26638225186252707d6f91a17057\x2dinit-merged.mount: Succeeded.
+
+Aug 28 21:35:17 ip-172-31-13-120 systemd[1]: var-lib-docker-overlay2-91c9de7cd147f9759e5acaeb99601437a62d26638225186252707d6f91a17057\x2dinit-merged.mount: Succeeded.
+
+Aug 28 21:35:17 ip-172-31-13-120 dockerd[664]: time="2023-08-28T21:35:17.737638404Z" level=info msg="ignoring event" container=9902a01f312f595441f3bed4e4d329d1171d1fc1bceef8bcd54a39e8fdafd3a1 module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+
+Aug 28 21:35:17 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:17.738552290Z" level=info msg="shim disconnected" id=9902a01f312f595441f3bed4e4d329d1171d1fc1bceef8bcd54a39e8fdafd3a1
+
+Aug 28 21:35:17 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:17.738658022Z" level=warning msg="cleaning up after shim disconnected" id=9902a01f312f595441f3bed4e4d329d1171d1fc1bceef8bcd54a39e8fdafd3a1 namespace=moby
+
+Aug 28 21:35:17 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:17.738677742Z" level=info msg="cleaning up dead shim"
+
+Aug 28 21:35:17 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:17.754174885Z" level=warning msg="cleanup warnings time=\"2023-08-28T21:35:17Z\" level=info msg=\"starting signal loop\" namespace=moby pid=800026 runtime=io.containerd.runc.v2\n"
+
+Aug 28 21:35:17 ip-172-31-13-120 kernel: [87799.725137] br0: port 6(veth14446) entered disabled state
+
+Aug 28 21:35:17 ip-172-31-13-120 kernel: [87799.725197] veth008005e: renamed from eth0
+
+Aug 28 21:35:17 ip-172-31-13-120 systemd-udevd[800001]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:17 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57814 seen, reloading interface list
+
+Aug 28 21:35:17 ip-172-31-13-120 systemd-udevd[800001]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:17 ip-172-31-13-120 systemd-networkd[409]: vethf30105c: Lost carrier
+
+Aug 28 21:35:17 ip-172-31-13-120 kernel: [87799.780948] docker_gwbridge: port 5(vethf30105c) entered disabled state
+
+Aug 28 21:35:17 ip-172-31-13-120 kernel: [87799.783040] vethcdaffe7: renamed from eth1
+
+Aug 28 21:35:17 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57816 seen, reloading interface list
+
+Aug 28 21:35:17 ip-172-31-13-120 systemd-udevd[800001]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:17 ip-172-31-13-120 systemd-networkd[409]: vethf30105c: Link DOWN
+
+Aug 28 21:35:17 ip-172-31-13-120 kernel: [87799.813543] docker_gwbridge: port 5(vethf30105c) entered disabled state
+
+Aug 28 21:35:17 ip-172-31-13-120 kernel: [87799.815022] device vethf30105c left promiscuous mode
+
+Aug 28 21:35:17 ip-172-31-13-120 kernel: [87799.815030] docker_gwbridge: port 5(vethf30105c) entered disabled state
+
+Aug 28 21:35:17 ip-172-31-13-120 systemd-networkd[409]: rtnl: received neighbor for link '57817' we don't know about, ignoring.
+
+Aug 28 21:35:17 ip-172-31-13-120 systemd-networkd[409]: rtnl: received neighbor for link '57817' we don't know about, ignoring.
+
+Aug 28 21:35:17 ip-172-31-13-120 systemd-udevd[800001]: vethcdaffe7: Failed to get link config: No such device
+
+Aug 28 21:35:17 ip-172-31-13-120 networkd-dispatcher[472]: ERROR:Unknown interface index 57816 seen even after reload
+
+Aug 28 21:35:17 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57816 seen, reloading interface list
+
+Aug 28 21:35:17 ip-172-31-13-120 networkd-dispatcher[472]: ERROR:Unknown interface index 57816 seen even after reload
+
+Aug 28 21:35:17 ip-172-31-13-120 kernel: [87799.857515] br0: port 6(veth14446) entered disabled state
+
+Aug 28 21:35:17 ip-172-31-13-120 kernel: [87799.859412] device veth14446 left promiscuous mode
+
+Aug 28 21:35:17 ip-172-31-13-120 kernel: [87799.859421] br0: port 6(veth14446) entered disabled state
+
+Aug 28 21:35:17 ip-172-31-13-120 systemd[2245909]: run-docker-netns-0d4560ef8330.mount: Succeeded.
+
+Aug 28 21:35:17 ip-172-31-13-120 systemd[1]: run-docker-netns-0d4560ef8330.mount: Succeeded.
+
+Aug 28 21:35:17 ip-172-31-13-120 systemd[1]: var-lib-docker-overlay2-89fe9f746f8d1f41fa63cba127f05a3cbb6c0baf28db2dda28bd5e317fa6e01d-merged.mount: Succeeded.
+
+Aug 28 21:35:17 ip-172-31-13-120 systemd[2245909]: var-lib-docker-overlay2-89fe9f746f8d1f41fa63cba127f05a3cbb6c0baf28db2dda28bd5e317fa6e01d-merged.mount: Succeeded.
+
+Aug 28 21:35:17 ip-172-31-13-120 dockerd[664]: time="2023-08-28T21:35:17.975818928Z" level=error msg="fatal task error" error="task: non-zero exit (1)" module=node/agent/taskmanager node.id=zty32p3j8m2gzqfalm4zctrto service.id=fb8gn0f65kejq7x4v7bj5jzmr task.id=62h14sal04f9dwlesa8fbo92j
+
+Aug 28 21:35:19 ip-172-31-13-120 systemd[2245909]: var-lib-docker-overlay2-8378e72d26b125676c82ff8a00f36084d2820ab57713e754683a0648a98bd55c\x2dinit-merged.mount: Succeeded.
+
+Aug 28 21:35:19 ip-172-31-13-120 systemd[1]: var-lib-docker-overlay2-8378e72d26b125676c82ff8a00f36084d2820ab57713e754683a0648a98bd55c-merged.mount: Succeeded.
+
+Aug 28 21:35:21 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57818 seen, reloading interface list
+
+Aug 28 21:35:21 ip-172-31-13-120 systemd-udevd[800054]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:21 ip-172-31-13-120 systemd-udevd[800054]: Using default interface naming scheme 'v245'.
+
+Aug 28 21:35:21 ip-172-31-13-120 systemd-udevd[800054]: veth971c3b7: Could not generate persistent MAC: No data available
+
+Aug 28 21:35:21 ip-172-31-13-120 systemd-udevd[800053]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:21 ip-172-31-13-120 systemd-udevd[800053]: Using default interface naming scheme 'v245'.
+
+Aug 28 21:35:21 ip-172-31-13-120 systemd-udevd[800053]: veth1472bed: Could not generate persistent MAC: No data available
+
+Aug 28 21:35:21 ip-172-31-13-120 kernel: [87803.409820] veth14447: renamed from veth971c3b7
+
+Aug 28 21:35:21 ip-172-31-13-120 kernel: [87803.446085] br0: port 3(veth14447) entered blocking state
+
+Aug 28 21:35:21 ip-172-31-13-120 kernel: [87803.446094] br0: port 3(veth14447) entered disabled state
+
+Aug 28 21:35:21 ip-172-31-13-120 kernel: [87803.446242] device veth14447 entered promiscuous mode
+
+Aug 28 21:35:21 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57819 seen, reloading interface list
+
+Aug 28 21:35:21 ip-172-31-13-120 kernel: [87803.471204] docker_gwbridge: port 2(vethed10906) entered blocking state
+
+Aug 28 21:35:21 ip-172-31-13-120 kernel: [87803.471212] docker_gwbridge: port 2(vethed10906) entered disabled state
+
+Aug 28 21:35:21 ip-172-31-13-120 systemd-networkd[409]: vethed10906: Link UP
+
+Aug 28 21:35:21 ip-172-31-13-120 kernel: [87803.473061] device vethed10906 entered promiscuous mode
+
+Aug 28 21:35:21 ip-172-31-13-120 kernel: [87803.473390] docker_gwbridge: port 2(vethed10906) entered blocking state
+
+Aug 28 21:35:21 ip-172-31-13-120 kernel: [87803.473399] docker_gwbridge: port 2(vethed10906) entered forwarding state
+
+Aug 28 21:35:21 ip-172-31-13-120 networkd-dispatcher[472]: ERROR:Unknown interface index 57819 seen even after reload
+
+Aug 28 21:35:21 ip-172-31-13-120 systemd-udevd[800060]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:21 ip-172-31-13-120 systemd-udevd[800060]: Using default interface naming scheme 'v245'.
+
+Aug 28 21:35:21 ip-172-31-13-120 systemd-udevd[800060]: vethed10906: Could not generate persistent MAC: No data available
+
+Aug 28 21:35:21 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57819 seen, reloading interface list
+
+Aug 28 21:35:21 ip-172-31-13-120 systemd-udevd[800054]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:21 ip-172-31-13-120 systemd-udevd[800054]: veth28b94a3: Could not generate persistent MAC: No data available
+
+Aug 28 21:35:21 ip-172-31-13-120 networkd-dispatcher[472]: ERROR:Unknown interface index 57819 seen even after reload
+
+Aug 28 21:35:21 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:21.587055766Z" level=info msg="loading plugin \"io.containerd.event.v1.publisher\"..." runtime=io.containerd.runc.v2 type=io.containerd.event.v1
+
+Aug 28 21:35:21 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:21.587142667Z" level=info msg="loading plugin \"io.containerd.internal.v1.shutdown\"..." runtime=io.containerd.runc.v2 type=io.containerd.internal.v1
+
+Aug 28 21:35:21 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:21.587160298Z" level=info msg="loading plugin \"io.containerd.ttrpc.v1.task\"..." runtime=io.containerd.runc.v2 type=io.containerd.ttrpc.v1
+
+Aug 28 21:35:21 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:21.588384058Z" level=info msg="starting signal loop" namespace=moby path=/run/containerd/io.containerd.runtime.v2.task/moby/e931814633a4a5ef68dcac87f37767da9a2746e0f83bc24a0aa42482d345e0e8 pid=800081 runtime=io.containerd.runc.v2
+
+Aug 28 21:35:21 ip-172-31-13-120 systemd[1]: run-docker-runtime\x2drunc-moby-e931814633a4a5ef68dcac87f37767da9a2746e0f83bc24a0aa42482d345e0e8-runc.KEKuTO.mount: Succeeded.
+
+Aug 28 21:35:21 ip-172-31-13-120 systemd[2245909]: run-docker-runtime\x2drunc-moby-e931814633a4a5ef68dcac87f37767da9a2746e0f83bc24a0aa42482d345e0e8-runc.KEKuTO.mount: Succeeded.
+
+Aug 28 21:35:21 ip-172-31-13-120 kernel: [87803.782932] eth0: renamed from veth1472bed
+
+Aug 28 21:35:21 ip-172-31-13-120 kernel: [87803.801129] docker_gwbridge: port 2(vethed10906) entered disabled state
+
+Aug 28 21:35:21 ip-172-31-13-120 kernel: [87803.801199] br0: port 3(veth14447) entered blocking state
+
+Aug 28 21:35:21 ip-172-31-13-120 kernel: [87803.801202] br0: port 3(veth14447) entered forwarding state
+
+Aug 28 21:35:21 ip-172-31-13-120 kernel: [87803.817563] eth1: renamed from veth28b94a3
+
+Aug 28 21:35:21 ip-172-31-13-120 systemd-networkd[409]: vethed10906: Gained carrier
+
+Aug 28 21:35:21 ip-172-31-13-120 kernel: [87803.837262] IPv6: ADDRCONF(NETDEV_CHANGE): vethed10906: link becomes ready
+
+Aug 28 21:35:21 ip-172-31-13-120 kernel: [87803.837313] docker_gwbridge: port 2(vethed10906) entered blocking state
+
+Aug 28 21:35:21 ip-172-31-13-120 kernel: [87803.837319] docker_gwbridge: port 2(vethed10906) entered forwarding state
+
+Aug 28 21:35:23 ip-172-31-13-120 systemd-udevd[800064]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:23 ip-172-31-13-120 systemd-udevd[800064]: Using default interface naming scheme 'v245'.
+
+Aug 28 21:35:23 ip-172-31-13-120 systemd-udevd[800064]: vethe46e897: Could not generate persistent MAC: No data available
+
+Aug 28 21:35:23 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57822 seen, reloading interface list
+
+Aug 28 21:35:23 ip-172-31-13-120 systemd-udevd[800062]: veth1957906: Failed to get link config: No such device
+
+Aug 28 21:35:23 ip-172-31-13-120 kernel: [87805.122037] veth14448: renamed from veth1957906
+
+Aug 28 21:35:23 ip-172-31-13-120 kernel: [87805.135572] br0: port 6(veth14448) entered blocking state
+
+Aug 28 21:35:23 ip-172-31-13-120 kernel: [87805.135580] br0: port 6(veth14448) entered disabled state
+
+Aug 28 21:35:23 ip-172-31-13-120 kernel: [87805.135703] device veth14448 entered promiscuous mode
+
+Aug 28 21:35:23 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57823 seen, reloading interface list
+
+Aug 28 21:35:23 ip-172-31-13-120 systemd-networkd[409]: veth212a8cc: Link UP
+
+Aug 28 21:35:23 ip-172-31-13-120 kernel: [87805.149698] docker_gwbridge: port 5(veth212a8cc) entered blocking state
+
+Aug 28 21:35:23 ip-172-31-13-120 kernel: [87805.149706] docker_gwbridge: port 5(veth212a8cc) entered disabled state
+
+Aug 28 21:35:23 ip-172-31-13-120 kernel: [87805.149826] device veth212a8cc entered promiscuous mode
+
+Aug 28 21:35:23 ip-172-31-13-120 kernel: [87805.150186] docker_gwbridge: port 5(veth212a8cc) entered blocking state
+
+Aug 28 21:35:23 ip-172-31-13-120 kernel: [87805.150191] docker_gwbridge: port 5(veth212a8cc) entered forwarding state
+
+Aug 28 21:35:23 ip-172-31-13-120 systemd-udevd[800053]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:23 ip-172-31-13-120 systemd-udevd[800053]: veth212a8cc: Could not generate persistent MAC: No data available
+
+Aug 28 21:35:23 ip-172-31-13-120 systemd-udevd[800062]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:23 ip-172-31-13-120 systemd-udevd[800062]: Using default interface naming scheme 'v245'.
+
+Aug 28 21:35:23 ip-172-31-13-120 systemd-udevd[800062]: veth588f75e: Could not generate persistent MAC: No data available
+
+Aug 28 21:35:23 ip-172-31-13-120 networkd-dispatcher[472]: ERROR:Unknown interface index 57823 seen even after reload
+
+Aug 28 21:35:23 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57823 seen, reloading interface list
+
+Aug 28 21:35:23 ip-172-31-13-120 networkd-dispatcher[472]: ERROR:Unknown interface index 57823 seen even after reload
+
+Aug 28 21:35:23 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:23.245719246Z" level=info msg="loading plugin \"io.containerd.event.v1.publisher\"..." runtime=io.containerd.runc.v2 type=io.containerd.event.v1
+
+Aug 28 21:35:23 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:23.245800527Z" level=info msg="loading plugin \"io.containerd.internal.v1.shutdown\"..." runtime=io.containerd.runc.v2 type=io.containerd.internal.v1
+
+Aug 28 21:35:23 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:23.245816838Z" level=info msg="loading plugin \"io.containerd.ttrpc.v1.task\"..." runtime=io.containerd.runc.v2 type=io.containerd.ttrpc.v1
+
+Aug 28 21:35:23 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:23.246036841Z" level=info msg="starting signal loop" namespace=moby path=/run/containerd/io.containerd.runtime.v2.task/moby/7f0c426a8dd38ccf92e0baae1eff07bf2d53c84d943170716300a3efd485d149 pid=800334 runtime=io.containerd.runc.v2
+
+Aug 28 21:35:23 ip-172-31-13-120 systemd[1]: run-docker-runtime\x2drunc-moby-7f0c426a8dd38ccf92e0baae1eff07bf2d53c84d943170716300a3efd485d149-runc.2QwOZi.mount: Succeeded.
+
+Aug 28 21:35:23 ip-172-31-13-120 systemd[2245909]: run-docker-runtime\x2drunc-moby-7f0c426a8dd38ccf92e0baae1eff07bf2d53c84d943170716300a3efd485d149-runc.2QwOZi.mount: Succeeded.
+
+Aug 28 21:35:23 ip-172-31-13-120 kernel: [87805.453016] eth0: renamed from vethe46e897
+
+Aug 28 21:35:23 ip-172-31-13-120 kernel: [87805.469126] docker_gwbridge: port 5(veth212a8cc) entered disabled state
+
+Aug 28 21:35:23 ip-172-31-13-120 kernel: [87805.469202] br0: port 6(veth14448) entered blocking state
+
+Aug 28 21:35:23 ip-172-31-13-120 kernel: [87805.469207] br0: port 6(veth14448) entered forwarding state
+
+Aug 28 21:35:23 ip-172-31-13-120 kernel: [87805.485262] eth1: renamed from veth588f75e
+
+Aug 28 21:35:23 ip-172-31-13-120 systemd-networkd[409]: veth212a8cc: Gained carrier
+
+Aug 28 21:35:23 ip-172-31-13-120 kernel: [87805.501105] IPv6: ADDRCONF(NETDEV_CHANGE): veth212a8cc: link becomes ready
+
+Aug 28 21:35:23 ip-172-31-13-120 kernel: [87805.501156] docker_gwbridge: port 5(veth212a8cc) entered blocking state
+
+Aug 28 21:35:23 ip-172-31-13-120 kernel: [87805.501160] docker_gwbridge: port 5(veth212a8cc) entered forwarding state
+
+Aug 28 21:35:23 ip-172-31-13-120 systemd-networkd[409]: vethed10906: Gained IPv6LL
+
+Aug 28 21:35:25 ip-172-31-13-120 systemd-networkd[409]: veth212a8cc: Gained IPv6LL
+
+Aug 28 21:35:27 ip-172-31-13-120 dockerd[664]: time="2023-08-28T21:35:27.311032345Z" level=info msg="ignoring event" container=e931814633a4a5ef68dcac87f37767da9a2746e0f83bc24a0aa42482d345e0e8 module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+
+Aug 28 21:35:27 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:27.313298394Z" level=info msg="shim disconnected" id=e931814633a4a5ef68dcac87f37767da9a2746e0f83bc24a0aa42482d345e0e8
+
+Aug 28 21:35:27 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:27.313394475Z" level=warning msg="cleaning up after shim disconnected" id=e931814633a4a5ef68dcac87f37767da9a2746e0f83bc24a0aa42482d345e0e8 namespace=moby
+
+Aug 28 21:35:27 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:27.313413336Z" level=info msg="cleaning up dead shim"
+
+Aug 28 21:35:27 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:27.330664769Z" level=warning msg="cleanup warnings time=\"2023-08-28T21:35:27Z\" level=info msg=\"starting signal loop\" namespace=moby pid=800667 runtime=io.containerd.runc.v2\n"
+
+Aug 28 21:35:27 ip-172-31-13-120 kernel: [87809.306937] br0: port 3(veth14447) entered disabled state
+
+Aug 28 21:35:27 ip-172-31-13-120 kernel: [87809.306991] veth1472bed: renamed from eth0
+
+Aug 28 21:35:27 ip-172-31-13-120 systemd-udevd[800690]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:27 ip-172-31-13-120 systemd-udevd[800690]: Using default interface naming scheme 'v245'.
+
+Aug 28 21:35:27 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57818 seen, reloading interface list
+
+Aug 28 21:35:27 ip-172-31-13-120 systemd-udevd[800690]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:27 ip-172-31-13-120 kernel: [87809.383640] docker_gwbridge: port 2(vethed10906) entered disabled state
+
+Aug 28 21:35:27 ip-172-31-13-120 kernel: [87809.383786] veth28b94a3: renamed from eth1
+
+Aug 28 21:35:27 ip-172-31-13-120 systemd-networkd[409]: vethed10906: Lost carrier
+
+Aug 28 21:35:27 ip-172-31-13-120 systemd-udevd[800690]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:27 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57820 seen, reloading interface list
+
+Aug 28 21:35:27 ip-172-31-13-120 kernel: [87809.419622] docker_gwbridge: port 2(vethed10906) entered disabled state
+
+Aug 28 21:35:27 ip-172-31-13-120 systemd-networkd[409]: vethed10906: Link DOWN
+
+Aug 28 21:35:27 ip-172-31-13-120 kernel: [87809.425719] device vethed10906 left promiscuous mode
+
+Aug 28 21:35:27 ip-172-31-13-120 kernel: [87809.425730] docker_gwbridge: port 2(vethed10906) entered disabled state
+
+Aug 28 21:35:27 ip-172-31-13-120 systemd-networkd[409]: rtnl: received neighbor for link '57821' we don't know about, ignoring.
+
+Aug 28 21:35:27 ip-172-31-13-120 systemd-networkd[409]: rtnl: received neighbor for link '57821' we don't know about, ignoring.
+
+Aug 28 21:35:27 ip-172-31-13-120 systemd-udevd[800697]: veth28b94a3: Failed to get link config: No such device
+
+Aug 28 21:35:27 ip-172-31-13-120 networkd-dispatcher[472]: ERROR:Unknown interface index 57820 seen even after reload
+
+Aug 28 21:35:27 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57820 seen, reloading interface list
+
+Aug 28 21:35:27 ip-172-31-13-120 kernel: [87809.461815] br0: port 3(veth14447) entered disabled state
+
+Aug 28 21:35:27 ip-172-31-13-120 kernel: [87809.464041] device veth14447 left promiscuous mode
+
+Aug 28 21:35:27 ip-172-31-13-120 kernel: [87809.464052] br0: port 3(veth14447) entered disabled state
+
+Aug 28 21:35:27 ip-172-31-13-120 networkd-dispatcher[472]: ERROR:Unknown interface index 57820 seen even after reload
+
+Aug 28 21:35:27 ip-172-31-13-120 systemd[1]: run-docker-netns-d7f400433577.mount: Succeeded.
+
+Aug 28 21:35:27 ip-172-31-13-120 systemd[2245909]: run-docker-netns-d7f400433577.mount: Succeeded.
+
+Aug 28 21:35:27 ip-172-31-13-120 systemd[1]: var-lib-docker-overlay2-91c9de7cd147f9759e5acaeb99601437a62d26638225186252707d6f91a17057-merged.mount: Succeeded.
+
+Aug 28 21:35:27 ip-172-31-13-120 systemd[2245909]: var-lib-docker-overlay2-91c9de7cd147f9759e5acaeb99601437a62d26638225186252707d6f91a17057-merged.mount: Succeeded.
+
+Aug 28 21:35:27 ip-172-31-13-120 dockerd[664]: time="2023-08-28T21:35:27.597776523Z" level=error msg="fatal task error" error="task: non-zero exit (1)" module=node/agent/taskmanager node.id=zty32p3j8m2gzqfalm4zctrto service.id=d3hpeh8tkwwv8o2zdviaswjff task.id=flik5xa5k7j9vatdhnubeks4x
+
+Aug 28 21:35:28 ip-172-31-13-120 systemd[2245909]: var-lib-docker-overlay2-fe71507fe300d036e79ba2dc93c071f48995c723431e8da1c4a4a954ff1f3f8e\x2dinit-merged.mount: Succeeded.
+
+Aug 28 21:35:28 ip-172-31-13-120 systemd[1]: var-lib-docker-overlay2-fe71507fe300d036e79ba2dc93c071f48995c723431e8da1c4a4a954ff1f3f8e\x2dinit-merged.mount: Succeeded.
+
+Aug 28 21:35:28 ip-172-31-13-120 systemd[2245909]: var-lib-docker-overlay2-fe71507fe300d036e79ba2dc93c071f48995c723431e8da1c4a4a954ff1f3f8e-merged.mount: Succeeded.
+
+Aug 28 21:35:28 ip-172-31-13-120 systemd[1]: var-lib-docker-overlay2-fe71507fe300d036e79ba2dc93c071f48995c723431e8da1c4a4a954ff1f3f8e-merged.mount: Succeeded.
+
+Aug 28 21:35:30 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:30.620196997Z" level=info msg="shim disconnected" id=7f0c426a8dd38ccf92e0baae1eff07bf2d53c84d943170716300a3efd485d149
+
+Aug 28 21:35:30 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:30.620275388Z" level=warning msg="cleaning up after shim disconnected" id=7f0c426a8dd38ccf92e0baae1eff07bf2d53c84d943170716300a3efd485d149 namespace=moby
+
+Aug 28 21:35:30 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:30.620293888Z" level=info msg="cleaning up dead shim"
+
+Aug 28 21:35:30 ip-172-31-13-120 dockerd[664]: time="2023-08-28T21:35:30.624716634Z" level=info msg="ignoring event" container=7f0c426a8dd38ccf92e0baae1eff07bf2d53c84d943170716300a3efd485d149 module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+
+Aug 28 21:35:30 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:30.653677475Z" level=warning msg="cleanup warnings time=\"2023-08-28T21:35:30Z\" level=info msg=\"starting signal loop\" namespace=moby pid=800716 runtime=io.containerd.runc.v2\n"
+
+Aug 28 21:35:30 ip-172-31-13-120 kernel: [87812.638347] br0: port 6(veth14448) entered disabled state
+
+Aug 28 21:35:30 ip-172-31-13-120 kernel: [87812.638411] vethe46e897: renamed from eth0
+
+Aug 28 21:35:30 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57822 seen, reloading interface list
+
+Aug 28 21:35:30 ip-172-31-13-120 systemd-udevd[800697]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:30 ip-172-31-13-120 systemd-udevd[800697]: Using default interface naming scheme 'v245'.
+
+Aug 28 21:35:30 ip-172-31-13-120 systemd-udevd[800697]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:30 ip-172-31-13-120 systemd-networkd[409]: veth212a8cc: Lost carrier
+
+Aug 28 21:35:30 ip-172-31-13-120 kernel: [87812.697440] docker_gwbridge: port 5(veth212a8cc) entered disabled state
+
+Aug 28 21:35:30 ip-172-31-13-120 kernel: [87812.697587] veth588f75e: renamed from eth1
+
+Aug 28 21:35:30 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57824 seen, reloading interface list
+
+Aug 28 21:35:30 ip-172-31-13-120 systemd-udevd[800697]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:30 ip-172-31-13-120 systemd-networkd[409]: veth212a8cc: Link DOWN
+
+Aug 28 21:35:30 ip-172-31-13-120 kernel: [87812.759204] docker_gwbridge: port 5(veth212a8cc) entered disabled state
+
+Aug 28 21:35:30 ip-172-31-13-120 kernel: [87812.760258] device veth212a8cc left promiscuous mode
+
+Aug 28 21:35:30 ip-172-31-13-120 kernel: [87812.760265] docker_gwbridge: port 5(veth212a8cc) entered disabled state
+
+Aug 28 21:35:30 ip-172-31-13-120 systemd-networkd[409]: rtnl: received neighbor for link '57825' we don't know about, ignoring.
+
+Aug 28 21:35:30 ip-172-31-13-120 systemd-networkd[409]: rtnl: received neighbor for link '57825' we don't know about, ignoring.
+
+Aug 28 21:35:30 ip-172-31-13-120 systemd-udevd[800697]: veth588f75e: Failed to get link config: No such device
+
+Aug 28 21:35:30 ip-172-31-13-120 kernel: [87812.809569] br0: port 6(veth14448) entered disabled state
+
+Aug 28 21:35:30 ip-172-31-13-120 kernel: [87812.811238] device veth14448 left promiscuous mode
+
+Aug 28 21:35:30 ip-172-31-13-120 kernel: [87812.811247] br0: port 6(veth14448) entered disabled state
+
+Aug 28 21:35:30 ip-172-31-13-120 systemd[1]: run-docker-netns-bea76be00a1a.mount: Succeeded.
+
+Aug 28 21:35:30 ip-172-31-13-120 systemd[2245909]: run-docker-netns-bea76be00a1a.mount: Succeeded.
+
+Aug 28 21:35:30 ip-172-31-13-120 systemd[2245909]: var-lib-docker-overlay2-8378e72d26b125676c82ff8a00f36084d2820ab57713e754683a0648a98bd55c-merged.mount: Succeeded.
+
+Aug 28 21:35:30 ip-172-31-13-120 systemd[1]: var-lib-docker-overlay2-8378e72d26b125676c82ff8a00f36084d2820ab57713e754683a0648a98bd55c-merged.mount: Succeeded.
+
+Aug 28 21:35:30 ip-172-31-13-120 dockerd[664]: time="2023-08-28T21:35:30.934888460Z" level=error msg="fatal task error" error="task: non-zero exit (1)" module=node/agent/taskmanager node.id=zty32p3j8m2gzqfalm4zctrto service.id=fb8gn0f65kejq7x4v7bj5jzmr task.id=y6pt2jch9ngk4t7j7qgojoj7z
+
+Aug 28 21:35:31 ip-172-31-13-120 systemd[2245909]: var-lib-docker-overlay2-41a7ff84a4f6b4dbe66aa883c64c3dc03b41f4171989f9a2560b99e5d7835d41\x2dinit-merged.mount: Succeeded.
+
+Aug 28 21:35:31 ip-172-31-13-120 systemd[1]: var-lib-docker-overlay2-41a7ff84a4f6b4dbe66aa883c64c3dc03b41f4171989f9a2560b99e5d7835d41\x2dinit-merged.mount: Succeeded.
+
+Aug 28 21:35:31 ip-172-31-13-120 systemd[2245909]: var-lib-docker-overlay2-41a7ff84a4f6b4dbe66aa883c64c3dc03b41f4171989f9a2560b99e5d7835d41-merged.mount: Succeeded.
+
+Aug 28 21:35:31 ip-172-31-13-120 systemd[1]: var-lib-docker-overlay2-41a7ff84a4f6b4dbe66aa883c64c3dc03b41f4171989f9a2560b99e5d7835d41-merged.mount: Succeeded.
+
+Aug 28 21:35:32 ip-172-31-13-120 systemd-udevd[800697]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:32 ip-172-31-13-120 systemd-udevd[800697]: veth162dc0c: Could not generate persistent MAC: No data available
+
+Aug 28 21:35:32 ip-172-31-13-120 systemd-udevd[800702]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:32 ip-172-31-13-120 systemd-udevd[800702]: Using default interface naming scheme 'v245'.
+
+Aug 28 21:35:32 ip-172-31-13-120 systemd-udevd[800702]: veth5568be5: Could not generate persistent MAC: No data available
+
+Aug 28 21:35:32 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57826 seen, reloading interface list
+
+Aug 28 21:35:32 ip-172-31-13-120 kernel: [87814.742212] veth14449: renamed from veth5568be5
+
+Aug 28 21:35:32 ip-172-31-13-120 kernel: [87814.761354] br0: port 3(veth14449) entered blocking state
+
+Aug 28 21:35:32 ip-172-31-13-120 kernel: [87814.761379] br0: port 3(veth14449) entered disabled state
+
+Aug 28 21:35:32 ip-172-31-13-120 kernel: [87814.761500] device veth14449 entered promiscuous mode
+
+Aug 28 21:35:32 ip-172-31-13-120 systemd-networkd[409]: veth5568be5: Could not find device, waiting for device initialization: No such device
+
+Aug 28 21:35:32 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57827 seen, reloading interface list
+
+Aug 28 21:35:32 ip-172-31-13-120 systemd-udevd[800697]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:32 ip-172-31-13-120 systemd-udevd[800697]: veth96a89d3: Could not generate persistent MAC: No data available
+
+Aug 28 21:35:32 ip-172-31-13-120 systemd-udevd[800696]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:32 ip-172-31-13-120 systemd-udevd[800696]: Using default interface naming scheme 'v245'.
+
+Aug 28 21:35:32 ip-172-31-13-120 systemd-udevd[800696]: veth06d3fe1: Could not generate persistent MAC: No data available
+
+Aug 28 21:35:32 ip-172-31-13-120 systemd-networkd[409]: veth06d3fe1: Link UP
+
+Aug 28 21:35:32 ip-172-31-13-120 kernel: [87814.816382] docker_gwbridge: port 2(veth06d3fe1) entered blocking state
+
+Aug 28 21:35:32 ip-172-31-13-120 kernel: [87814.816392] docker_gwbridge: port 2(veth06d3fe1) entered disabled state
+
+Aug 28 21:35:32 ip-172-31-13-120 kernel: [87814.816639] device veth06d3fe1 entered promiscuous mode
+
+Aug 28 21:35:32 ip-172-31-13-120 kernel: [87814.818658] docker_gwbridge: port 2(veth06d3fe1) entered blocking state
+
+Aug 28 21:35:32 ip-172-31-13-120 kernel: [87814.818667] docker_gwbridge: port 2(veth06d3fe1) entered forwarding state
+
+Aug 28 21:35:32 ip-172-31-13-120 networkd-dispatcher[472]: ERROR:Unknown interface index 57827 seen even after reload
+
+Aug 28 21:35:32 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57827 seen, reloading interface list
+
+Aug 28 21:35:32 ip-172-31-13-120 networkd-dispatcher[472]: ERROR:Unknown interface index 57827 seen even after reload
+
+Aug 28 21:35:32 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:32.979895096Z" level=info msg="loading plugin \"io.containerd.event.v1.publisher\"..." runtime=io.containerd.runc.v2 type=io.containerd.event.v1
+
+Aug 28 21:35:32 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:32.979990738Z" level=info msg="loading plugin \"io.containerd.internal.v1.shutdown\"..." runtime=io.containerd.runc.v2 type=io.containerd.internal.v1
+
+Aug 28 21:35:32 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:32.980015108Z" level=info msg="loading plugin \"io.containerd.ttrpc.v1.task\"..." runtime=io.containerd.runc.v2 type=io.containerd.ttrpc.v1
+
+Aug 28 21:35:32 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:32.981388241Z" level=info msg="starting signal loop" namespace=moby path=/run/containerd/io.containerd.runtime.v2.task/moby/cc90fdc9820e5d61b21653bd6f3f8b6d20298ba5268d4651d62b2413151a0241 pid=800766 runtime=io.containerd.runc.v2
+
+Aug 28 21:35:33 ip-172-31-13-120 kernel: [87815.218889] eth0: renamed from veth162dc0c
+
+Aug 28 21:35:33 ip-172-31-13-120 kernel: [87815.232872] docker_gwbridge: port 2(veth06d3fe1) entered disabled state
+
+Aug 28 21:35:33 ip-172-31-13-120 kernel: [87815.232940] br0: port 3(veth14449) entered blocking state
+
+Aug 28 21:35:33 ip-172-31-13-120 kernel: [87815.232944] br0: port 3(veth14449) entered forwarding state
+
+Aug 28 21:35:33 ip-172-31-13-120 kernel: [87815.254769] eth1: renamed from veth96a89d3
+
+Aug 28 21:35:33 ip-172-31-13-120 systemd-networkd[409]: veth06d3fe1: Gained carrier
+
+Aug 28 21:35:33 ip-172-31-13-120 kernel: [87815.268984] IPv6: ADDRCONF(NETDEV_CHANGE): veth06d3fe1: link becomes ready
+
+Aug 28 21:35:33 ip-172-31-13-120 kernel: [87815.269042] docker_gwbridge: port 2(veth06d3fe1) entered blocking state
+
+Aug 28 21:35:33 ip-172-31-13-120 kernel: [87815.269047] docker_gwbridge: port 2(veth06d3fe1) entered forwarding state
+
+Aug 28 21:35:34 ip-172-31-13-120 systemd-networkd[409]: veth06d3fe1: Gained IPv6LL
+
+Aug 28 21:35:36 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57830 seen, reloading interface list
+
+Aug 28 21:35:36 ip-172-31-13-120 systemd-udevd[800697]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:36 ip-172-31-13-120 systemd-udevd[800697]: vethf99b926: Could not generate persistent MAC: No data available
+
+Aug 28 21:35:36 ip-172-31-13-120 systemd-udevd[800702]: vethb34b7c1: Failed to get link config: No such device
+
+Aug 28 21:35:36 ip-172-31-13-120 systemd-networkd[409]: vethb34b7c1: Could not find device, waiting for device initialization: No such device
+
+Aug 28 21:35:36 ip-172-31-13-120 kernel: [87818.153091] veth14450: renamed from vethb34b7c1
+
+Aug 28 21:35:36 ip-172-31-13-120 kernel: [87818.165230] br0: port 6(veth14450) entered blocking state
+
+Aug 28 21:35:36 ip-172-31-13-120 kernel: [87818.165237] br0: port 6(veth14450) entered disabled state
+
+Aug 28 21:35:36 ip-172-31-13-120 kernel: [87818.165430] device veth14450 entered promiscuous mode
+
+Aug 28 21:35:36 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57831 seen, reloading interface list
+
+Aug 28 21:35:36 ip-172-31-13-120 kernel: [87818.181107] docker_gwbridge: port 5(vethd7e3fb2) entered blocking state
+
+Aug 28 21:35:36 ip-172-31-13-120 kernel: [87818.181115] docker_gwbridge: port 5(vethd7e3fb2) entered disabled state
+
+Aug 28 21:35:36 ip-172-31-13-120 systemd-networkd[409]: vethd7e3fb2: Link UP
+
+Aug 28 21:35:36 ip-172-31-13-120 kernel: [87818.187253] device vethd7e3fb2 entered promiscuous mode
+
+Aug 28 21:35:36 ip-172-31-13-120 kernel: [87818.190968] docker_gwbridge: port 5(vethd7e3fb2) entered blocking state
+
+Aug 28 21:35:36 ip-172-31-13-120 kernel: [87818.190976] docker_gwbridge: port 5(vethd7e3fb2) entered forwarding state
+
+Aug 28 21:35:36 ip-172-31-13-120 systemd-udevd[800696]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:36 ip-172-31-13-120 systemd-udevd[800696]: veth3c828ef: Could not generate persistent MAC: No data available
+
+Aug 28 21:35:36 ip-172-31-13-120 systemd-udevd[801050]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:36 ip-172-31-13-120 systemd-udevd[801050]: Using default interface naming scheme 'v245'.
+
+Aug 28 21:35:36 ip-172-31-13-120 systemd-udevd[801050]: vethd7e3fb2: Could not generate persistent MAC: No data available
+
+Aug 28 21:35:36 ip-172-31-13-120 networkd-dispatcher[472]: ERROR:Unknown interface index 57831 seen even after reload
+
+Aug 28 21:35:36 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57831 seen, reloading interface list
+
+Aug 28 21:35:36 ip-172-31-13-120 networkd-dispatcher[472]: ERROR:Unknown interface index 57831 seen even after reload
+
+Aug 28 21:35:36 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:36.337070062Z" level=info msg="loading plugin \"io.containerd.event.v1.publisher\"..." runtime=io.containerd.runc.v2 type=io.containerd.event.v1
+
+Aug 28 21:35:36 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:36.337159244Z" level=info msg="loading plugin \"io.containerd.internal.v1.shutdown\"..." runtime=io.containerd.runc.v2 type=io.containerd.internal.v1
+
+Aug 28 21:35:36 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:36.337183594Z" level=info msg="loading plugin \"io.containerd.ttrpc.v1.task\"..." runtime=io.containerd.runc.v2 type=io.containerd.ttrpc.v1
+
+Aug 28 21:35:36 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:36.337435369Z" level=info msg="starting signal loop" namespace=moby path=/run/containerd/io.containerd.runtime.v2.task/moby/e4c16ec52ceb423c299243249e8bc3bda37665ade157dff16748b9a2a90996a1 pid=801066 runtime=io.containerd.runc.v2
+
+Aug 28 21:35:36 ip-172-31-13-120 systemd[2245909]: run-docker-runtime\x2drunc-moby-e4c16ec52ceb423c299243249e8bc3bda37665ade157dff16748b9a2a90996a1-runc.MNaXyr.mount: Succeeded.
+
+Aug 28 21:35:36 ip-172-31-13-120 systemd[1]: run-docker-runtime\x2drunc-moby-e4c16ec52ceb423c299243249e8bc3bda37665ade157dff16748b9a2a90996a1-runc.MNaXyr.mount: Succeeded.
+
+Aug 28 21:35:36 ip-172-31-13-120 kernel: [87818.491888] eth0: renamed from vethf99b926
+
+Aug 28 21:35:36 ip-172-31-13-120 kernel: [87818.504816] docker_gwbridge: port 5(vethd7e3fb2) entered disabled state
+
+Aug 28 21:35:36 ip-172-31-13-120 kernel: [87818.504889] br0: port 6(veth14450) entered blocking state
+
+Aug 28 21:35:36 ip-172-31-13-120 kernel: [87818.504893] br0: port 6(veth14450) entered forwarding state
+
+Aug 28 21:35:36 ip-172-31-13-120 kernel: [87818.526011] eth1: renamed from veth3c828ef
+
+Aug 28 21:35:36 ip-172-31-13-120 systemd-networkd[409]: vethd7e3fb2: Gained carrier
+
+Aug 28 21:35:36 ip-172-31-13-120 kernel: [87818.540839] IPv6: ADDRCONF(NETDEV_CHANGE): vethd7e3fb2: link becomes ready
+
+Aug 28 21:35:36 ip-172-31-13-120 kernel: [87818.540906] docker_gwbridge: port 5(vethd7e3fb2) entered blocking state
+
+Aug 28 21:35:36 ip-172-31-13-120 kernel: [87818.540910] docker_gwbridge: port 5(vethd7e3fb2) entered forwarding state
+
+Aug 28 21:35:38 ip-172-31-13-120 systemd-networkd[409]: vethd7e3fb2: Gained IPv6LL
+
+Aug 28 21:35:38 ip-172-31-13-120 dockerd[664]: time="2023-08-28T21:35:38.638370602Z" level=info msg="ignoring event" container=cc90fdc9820e5d61b21653bd6f3f8b6d20298ba5268d4651d62b2413151a0241 module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+
+Aug 28 21:35:38 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:38.639114225Z" level=info msg="shim disconnected" id=cc90fdc9820e5d61b21653bd6f3f8b6d20298ba5268d4651d62b2413151a0241
+
+Aug 28 21:35:38 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:38.639198566Z" level=warning msg="cleaning up after shim disconnected" id=cc90fdc9820e5d61b21653bd6f3f8b6d20298ba5268d4651d62b2413151a0241 namespace=moby
+
+Aug 28 21:35:38 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:38.639215837Z" level=info msg="cleaning up dead shim"
+
+Aug 28 21:35:38 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:38.669887967Z" level=warning msg="cleanup warnings time=\"2023-08-28T21:35:38Z\" level=info msg=\"starting signal loop\" namespace=moby pid=801321 runtime=io.containerd.runc.v2\n"
+
+Aug 28 21:35:38 ip-172-31-13-120 kernel: [87820.653799] br0: port 3(veth14449) entered disabled state
+
+Aug 28 21:35:38 ip-172-31-13-120 kernel: [87820.653860] veth162dc0c: renamed from eth0
+
+Aug 28 21:35:38 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57826 seen, reloading interface list
+
+Aug 28 21:35:38 ip-172-31-13-120 systemd-udevd[801049]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:38 ip-172-31-13-120 systemd-udevd[801049]: Using default interface naming scheme 'v245'.
+
+Aug 28 21:35:38 ip-172-31-13-120 kernel: [87820.713466] docker_gwbridge: port 2(veth06d3fe1) entered disabled state
+
+Aug 28 21:35:38 ip-172-31-13-120 kernel: [87820.713573] veth96a89d3: renamed from eth1
+
+Aug 28 21:35:38 ip-172-31-13-120 systemd-networkd[409]: veth06d3fe1: Lost carrier
+
+Aug 28 21:35:38 ip-172-31-13-120 systemd-udevd[801049]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:38 ip-172-31-13-120 systemd-udevd[801050]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:38 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57828 seen, reloading interface list
+
+Aug 28 21:35:38 ip-172-31-13-120 systemd-networkd[409]: veth06d3fe1: Link DOWN
+
+Aug 28 21:35:38 ip-172-31-13-120 kernel: [87820.764964] docker_gwbridge: port 2(veth06d3fe1) entered disabled state
+
+Aug 28 21:35:38 ip-172-31-13-120 kernel: [87820.766433] device veth06d3fe1 left promiscuous mode
+
+Aug 28 21:35:38 ip-172-31-13-120 kernel: [87820.766441] docker_gwbridge: port 2(veth06d3fe1) entered disabled state
+
+Aug 28 21:35:38 ip-172-31-13-120 systemd-networkd[409]: rtnl: received neighbor for link '57829' we don't know about, ignoring.
+
+Aug 28 21:35:38 ip-172-31-13-120 systemd-networkd[409]: rtnl: received neighbor for link '57829' we don't know about, ignoring.
+
+Aug 28 21:35:38 ip-172-31-13-120 systemd-udevd[801049]: veth96a89d3: Failed to get link config: No such device
+
+Aug 28 21:35:38 ip-172-31-13-120 networkd-dispatcher[472]: ERROR:Unknown interface index 57828 seen even after reload
+
+Aug 28 21:35:38 ip-172-31-13-120 kernel: [87820.794563] br0: port 3(veth14449) entered disabled state
+
+Aug 28 21:35:38 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57828 seen, reloading interface list
+
+Aug 28 21:35:38 ip-172-31-13-120 kernel: [87820.797888] device veth14449 left promiscuous mode
+
+Aug 28 21:35:38 ip-172-31-13-120 kernel: [87820.797897] br0: port 3(veth14449) entered disabled state
+
+Aug 28 21:35:38 ip-172-31-13-120 networkd-dispatcher[472]: ERROR:Unknown interface index 57828 seen even after reload
+
+Aug 28 21:35:38 ip-172-31-13-120 systemd[2245909]: run-docker-netns-b92ca1de0d73.mount: Succeeded.
+
+Aug 28 21:35:38 ip-172-31-13-120 systemd[1]: run-docker-netns-b92ca1de0d73.mount: Succeeded.
+
+Aug 28 21:35:38 ip-172-31-13-120 systemd[1]: var-lib-docker-overlay2-fe71507fe300d036e79ba2dc93c071f48995c723431e8da1c4a4a954ff1f3f8e-merged.mount: Succeeded.
+
+Aug 28 21:35:38 ip-172-31-13-120 systemd[2245909]: var-lib-docker-overlay2-fe71507fe300d036e79ba2dc93c071f48995c723431e8da1c4a4a954ff1f3f8e-merged.mount: Succeeded.
+
+Aug 28 21:35:38 ip-172-31-13-120 dockerd[664]: time="2023-08-28T21:35:38.951619481Z" level=error msg="fatal task error" error="task: non-zero exit (1)" module=node/agent/taskmanager node.id=zty32p3j8m2gzqfalm4zctrto service.id=d3hpeh8tkwwv8o2zdviaswjff task.id=ucjxku2jk3f7dib2aeu31qqnl
+
+Aug 28 21:35:39 ip-172-31-13-120 systemd[2245909]: var-lib-docker-overlay2-1cf72703ee5602fe461336e2c1c0a3a5c68ebcce5d755c48cb743aba735cc559\x2dinit-merged.mount: Succeeded.
+
+Aug 28 21:35:39 ip-172-31-13-120 systemd[1]: var-lib-docker-overlay2-1cf72703ee5602fe461336e2c1c0a3a5c68ebcce5d755c48cb743aba735cc559\x2dinit-merged.mount: Succeeded.
+
+Aug 28 21:35:39 ip-172-31-13-120 systemd[2245909]: var-lib-docker-overlay2-1cf72703ee5602fe461336e2c1c0a3a5c68ebcce5d755c48cb743aba735cc559-merged.mount: Succeeded.
+
+Aug 28 21:35:39 ip-172-31-13-120 systemd[1]: var-lib-docker-overlay2-1cf72703ee5602fe461336e2c1c0a3a5c68ebcce5d755c48cb743aba735cc559-merged.mount: Succeeded.
+
+Aug 28 21:35:43 ip-172-31-13-120 dockerd[664]: time="2023-08-28T21:35:43.693593779Z" level=info msg="ignoring event" container=e4c16ec52ceb423c299243249e8bc3bda37665ade157dff16748b9a2a90996a1 module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+
+Aug 28 21:35:43 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:43.694989562Z" level=info msg="shim disconnected" id=e4c16ec52ceb423c299243249e8bc3bda37665ade157dff16748b9a2a90996a1
+
+Aug 28 21:35:43 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:43.695470591Z" level=warning msg="cleaning up after shim disconnected" id=e4c16ec52ceb423c299243249e8bc3bda37665ade157dff16748b9a2a90996a1 namespace=moby
+
+Aug 28 21:35:43 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:43.695646214Z" level=info msg="cleaning up dead shim"
+
+Aug 28 21:35:43 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:43.707902892Z" level=warning msg="cleanup warnings time=\"2023-08-28T21:35:43Z\" level=info msg=\"starting signal loop\" namespace=moby pid=801403 runtime=io.containerd.runc.v2\n"
+
+Aug 28 21:35:43 ip-172-31-13-120 kernel: [87825.679894] br0: port 6(veth14450) entered disabled state
+
+Aug 28 21:35:43 ip-172-31-13-120 kernel: [87825.679953] vethf99b926: renamed from eth0
+
+Aug 28 21:35:43 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57830 seen, reloading interface list
+
+Aug 28 21:35:43 ip-172-31-13-120 systemd-udevd[801417]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:43 ip-172-31-13-120 systemd-udevd[801417]: Using default interface naming scheme 'v245'.
+
+Aug 28 21:35:43 ip-172-31-13-120 systemd-networkd[409]: vethd7e3fb2: Lost carrier
+
+Aug 28 21:35:43 ip-172-31-13-120 kernel: [87825.730682] docker_gwbridge: port 5(vethd7e3fb2) entered disabled state
+
+Aug 28 21:35:43 ip-172-31-13-120 kernel: [87825.733509] veth3c828ef: renamed from eth1
+
+Aug 28 21:35:43 ip-172-31-13-120 systemd-udevd[801417]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:43 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57832 seen, reloading interface list
+
+Aug 28 21:35:43 ip-172-31-13-120 systemd-udevd[801421]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:43 ip-172-31-13-120 systemd-udevd[801421]: Using default interface naming scheme 'v245'.
+
+Aug 28 21:35:43 ip-172-31-13-120 systemd-networkd[409]: vethd7e3fb2: Link DOWN
+
+Aug 28 21:35:43 ip-172-31-13-120 kernel: [87825.792627] docker_gwbridge: port 5(vethd7e3fb2) entered disabled state
+
+Aug 28 21:35:43 ip-172-31-13-120 kernel: [87825.796822] device vethd7e3fb2 left promiscuous mode
+
+Aug 28 21:35:43 ip-172-31-13-120 kernel: [87825.796831] docker_gwbridge: port 5(vethd7e3fb2) entered disabled state
+
+Aug 28 21:35:43 ip-172-31-13-120 systemd-networkd[409]: rtnl: received neighbor for link '57833' we don't know about, ignoring.
+
+Aug 28 21:35:43 ip-172-31-13-120 systemd-networkd[409]: rtnl: received neighbor for link '57833' we don't know about, ignoring.
+
+Aug 28 21:35:43 ip-172-31-13-120 networkd-dispatcher[472]: ERROR:Unknown interface index 57832 seen even after reload
+
+Aug 28 21:35:43 ip-172-31-13-120 systemd-udevd[801417]: veth3c828ef: Failed to get link config: No such device
+
+Aug 28 21:35:43 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57832 seen, reloading interface list
+
+Aug 28 21:35:43 ip-172-31-13-120 kernel: [87825.833445] br0: port 6(veth14450) entered disabled state
+
+Aug 28 21:35:43 ip-172-31-13-120 kernel: [87825.835838] device veth14450 left promiscuous mode
+
+Aug 28 21:35:43 ip-172-31-13-120 kernel: [87825.835849] br0: port 6(veth14450) entered disabled state
+
+Aug 28 21:35:43 ip-172-31-13-120 networkd-dispatcher[472]: ERROR:Unknown interface index 57832 seen even after reload
+
+Aug 28 21:35:43 ip-172-31-13-120 systemd[2245909]: run-docker-netns-cca28f6a86af.mount: Succeeded.
+
+Aug 28 21:35:43 ip-172-31-13-120 systemd[1]: run-docker-netns-cca28f6a86af.mount: Succeeded.
+
+Aug 28 21:35:43 ip-172-31-13-120 systemd[1]: var-lib-docker-overlay2-41a7ff84a4f6b4dbe66aa883c64c3dc03b41f4171989f9a2560b99e5d7835d41-merged.mount: Succeeded.
+
+Aug 28 21:35:43 ip-172-31-13-120 systemd[2245909]: var-lib-docker-overlay2-41a7ff84a4f6b4dbe66aa883c64c3dc03b41f4171989f9a2560b99e5d7835d41-merged.mount: Succeeded.
+
+Aug 28 21:35:43 ip-172-31-13-120 dockerd[664]: time="2023-08-28T21:35:43.939587115Z" level=error msg="fatal task error" error="task: non-zero exit (1)" module=node/agent/taskmanager node.id=zty32p3j8m2gzqfalm4zctrto service.id=fb8gn0f65kejq7x4v7bj5jzmr task.id=tb2ncu38yy967v0tn90rdgc9a
+
+Aug 28 21:35:44 ip-172-31-13-120 systemd-udevd[801421]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:44 ip-172-31-13-120 systemd-udevd[801421]: veth907fe8d: Could not generate persistent MAC: No data available
+
+Aug 28 21:35:44 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57834 seen, reloading interface list
+
+Aug 28 21:35:44 ip-172-31-13-120 systemd-udevd[801417]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:44 ip-172-31-13-120 systemd-udevd[801417]: vethc12690c: Could not generate persistent MAC: No data available
+
+Aug 28 21:35:44 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57835 seen, reloading interface list
+
+Aug 28 21:35:44 ip-172-31-13-120 kernel: [87826.138156] veth14451: renamed from veth907fe8d
+
+Aug 28 21:35:44 ip-172-31-13-120 kernel: [87826.156637] br0: port 3(veth14451) entered blocking state
+
+Aug 28 21:35:44 ip-172-31-13-120 kernel: [87826.156645] br0: port 3(veth14451) entered disabled state
+
+Aug 28 21:35:44 ip-172-31-13-120 kernel: [87826.157718] device veth14451 entered promiscuous mode
+
+Aug 28 21:35:44 ip-172-31-13-120 kernel: [87826.159784] br0: port 3(veth14451) entered blocking state
+
+Aug 28 21:35:44 ip-172-31-13-120 kernel: [87826.159791] br0: port 3(veth14451) entered forwarding state
+
+Aug 28 21:35:44 ip-172-31-13-120 networkd-dispatcher[472]: ERROR:Unknown interface index 57835 seen even after reload
+
+Aug 28 21:35:44 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57835 seen, reloading interface list
+
+Aug 28 21:35:44 ip-172-31-13-120 systemd-networkd[409]: veth0c0d4ff: Link UP
+
+Aug 28 21:35:44 ip-172-31-13-120 systemd-udevd[801417]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:44 ip-172-31-13-120 kernel: [87826.168911] docker_gwbridge: port 2(veth0c0d4ff) entered blocking state
+
+Aug 28 21:35:44 ip-172-31-13-120 kernel: [87826.168919] docker_gwbridge: port 2(veth0c0d4ff) entered disabled state
+
+Aug 28 21:35:44 ip-172-31-13-120 kernel: [87826.169114] device veth0c0d4ff entered promiscuous mode
+
+Aug 28 21:35:44 ip-172-31-13-120 kernel: [87826.171371] docker_gwbridge: port 2(veth0c0d4ff) entered blocking state
+
+Aug 28 21:35:44 ip-172-31-13-120 kernel: [87826.171377] docker_gwbridge: port 2(veth0c0d4ff) entered forwarding state
+
+Aug 28 21:35:44 ip-172-31-13-120 systemd-udevd[801417]: vethfcc7ba3: Could not generate persistent MAC: No data available
+
+Aug 28 21:35:44 ip-172-31-13-120 systemd-udevd[801435]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:44 ip-172-31-13-120 systemd-udevd[801435]: Using default interface naming scheme 'v245'.
+
+Aug 28 21:35:44 ip-172-31-13-120 systemd-udevd[801435]: veth0c0d4ff: Could not generate persistent MAC: No data available
+
+Aug 28 21:35:44 ip-172-31-13-120 networkd-dispatcher[472]: ERROR:Unknown interface index 57835 seen even after reload
+
+Aug 28 21:35:44 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57835 seen, reloading interface list
+
+Aug 28 21:35:44 ip-172-31-13-120 networkd-dispatcher[472]: ERROR:Unknown interface index 57835 seen even after reload
+
+Aug 28 21:35:44 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:44.275439748Z" level=info msg="loading plugin \"io.containerd.event.v1.publisher\"..." runtime=io.containerd.runc.v2 type=io.containerd.event.v1
+
+Aug 28 21:35:44 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:44.275578660Z" level=info msg="loading plugin \"io.containerd.internal.v1.shutdown\"..." runtime=io.containerd.runc.v2 type=io.containerd.internal.v1
+
+Aug 28 21:35:44 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:44.275757663Z" level=info msg="loading plugin \"io.containerd.ttrpc.v1.task\"..." runtime=io.containerd.runc.v2 type=io.containerd.ttrpc.v1
+
+Aug 28 21:35:44 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:44.276105759Z" level=info msg="starting signal loop" namespace=moby path=/run/containerd/io.containerd.runtime.v2.task/moby/0a99de8d8bb30a066475a060606dc5da68866264287b035b791aad486a5d1593 pid=801456 runtime=io.containerd.runc.v2
+
+Aug 28 21:35:44 ip-172-31-13-120 systemd[2245909]: run-docker-runtime\x2drunc-moby-0a99de8d8bb30a066475a060606dc5da68866264287b035b791aad486a5d1593-runc.9sCEaY.mount: Succeeded.
+
+Aug 28 21:35:44 ip-172-31-13-120 systemd[1]: run-docker-runtime\x2drunc-moby-0a99de8d8bb30a066475a060606dc5da68866264287b035b791aad486a5d1593-runc.9sCEaY.mount: Succeeded.
+
+Aug 28 21:35:44 ip-172-31-13-120 kernel: [87826.462836] eth0: renamed from vethc12690c
+
+Aug 28 21:35:44 ip-172-31-13-120 kernel: [87826.476925] docker_gwbridge: port 2(veth0c0d4ff) entered disabled state
+
+Aug 28 21:35:44 ip-172-31-13-120 kernel: [87826.495230] eth1: renamed from vethfcc7ba3
+
+Aug 28 21:35:44 ip-172-31-13-120 systemd-networkd[409]: veth0c0d4ff: Gained carrier
+
+Aug 28 21:35:44 ip-172-31-13-120 kernel: [87826.508709] IPv6: ADDRCONF(NETDEV_CHANGE): veth0c0d4ff: link becomes ready
+
+Aug 28 21:35:44 ip-172-31-13-120 kernel: [87826.508754] docker_gwbridge: port 2(veth0c0d4ff) entered blocking state
+
+Aug 28 21:35:44 ip-172-31-13-120 kernel: [87826.508759] docker_gwbridge: port 2(veth0c0d4ff) entered forwarding state
+
+Aug 28 21:35:44 ip-172-31-13-120 systemd[2245909]: var-lib-docker-overlay2-01349bb8551ed4e388864169145c074693d98fd6665d05802d3daf8435dcb11e\x2dinit-merged.mount: Succeeded.
+
+Aug 28 21:35:44 ip-172-31-13-120 systemd[1]: var-lib-docker-overlay2-01349bb8551ed4e388864169145c074693d98fd6665d05802d3daf8435dcb11e\x2dinit-merged.mount: Succeeded.
+
+Aug 28 21:35:45 ip-172-31-13-120 systemd[2245909]: var-lib-docker-overlay2-01349bb8551ed4e388864169145c074693d98fd6665d05802d3daf8435dcb11e-merged.mount: Succeeded.
+
+Aug 28 21:35:45 ip-172-31-13-120 systemd[1]: var-lib-docker-overlay2-01349bb8551ed4e388864169145c074693d98fd6665d05802d3daf8435dcb11e-merged.mount: Succeeded.
+
+Aug 28 21:35:46 ip-172-31-13-120 systemd-networkd[409]: veth0c0d4ff: Gained IPv6LL
+
+Aug 28 21:35:49 ip-172-31-13-120 systemd-udevd[801727]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:49 ip-172-31-13-120 systemd-udevd[801727]: Using default interface naming scheme 'v245'.
+
+Aug 28 21:35:49 ip-172-31-13-120 systemd-udevd[801727]: veth5a31d2c: Could not generate persistent MAC: No data available
+
+Aug 28 21:35:49 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57838 seen, reloading interface list
+
+Aug 28 21:35:49 ip-172-31-13-120 systemd-udevd[801728]: vethb4d3e81: Failed to get link config: No such device
+
+Aug 28 21:35:49 ip-172-31-13-120 kernel: [87831.092899] veth14452: renamed from vethb4d3e81
+
+Aug 28 21:35:49 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57839 seen, reloading interface list
+
+Aug 28 21:35:49 ip-172-31-13-120 kernel: [87831.112975] br0: port 6(veth14452) entered blocking state
+
+Aug 28 21:35:49 ip-172-31-13-120 kernel: [87831.112982] br0: port 6(veth14452) entered disabled state
+
+Aug 28 21:35:49 ip-172-31-13-120 kernel: [87831.115734] device veth14452 entered promiscuous mode
+
+Aug 28 21:35:49 ip-172-31-13-120 networkd-dispatcher[472]: ERROR:Unknown interface index 57839 seen even after reload
+
+Aug 28 21:35:49 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57839 seen, reloading interface list
+
+Aug 28 21:35:49 ip-172-31-13-120 systemd-udevd[801727]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:49 ip-172-31-13-120 kernel: [87831.127308] docker_gwbridge: port 5(veth9feb261) entered blocking state
+
+Aug 28 21:35:49 ip-172-31-13-120 kernel: [87831.127316] docker_gwbridge: port 5(veth9feb261) entered disabled state
+
+Aug 28 21:35:49 ip-172-31-13-120 systemd-networkd[409]: veth9feb261: Link UP
+
+Aug 28 21:35:49 ip-172-31-13-120 systemd-udevd[801735]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:49 ip-172-31-13-120 kernel: [87831.128405] device veth9feb261 entered promiscuous mode
+
+Aug 28 21:35:49 ip-172-31-13-120 kernel: [87831.131145] docker_gwbridge: port 5(veth9feb261) entered blocking state
+
+Aug 28 21:35:49 ip-172-31-13-120 kernel: [87831.131151] docker_gwbridge: port 5(veth9feb261) entered forwarding state
+
+Aug 28 21:35:49 ip-172-31-13-120 systemd-udevd[801727]: vethb1b9544: Could not generate persistent MAC: No data available
+
+Aug 28 21:35:49 ip-172-31-13-120 systemd-udevd[801735]: Using default interface naming scheme 'v245'.
+
+Aug 28 21:35:49 ip-172-31-13-120 systemd-udevd[801735]: veth9feb261: Could not generate persistent MAC: No data available
+
+Aug 28 21:35:49 ip-172-31-13-120 networkd-dispatcher[472]: ERROR:Unknown interface index 57839 seen even after reload
+
+Aug 28 21:35:49 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:49.297977130Z" level=info msg="loading plugin \"io.containerd.event.v1.publisher\"..." runtime=io.containerd.runc.v2 type=io.containerd.event.v1
+
+Aug 28 21:35:49 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:49.300415441Z" level=info msg="loading plugin \"io.containerd.internal.v1.shutdown\"..." runtime=io.containerd.runc.v2 type=io.containerd.internal.v1
+
+Aug 28 21:35:49 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:49.300658075Z" level=info msg="loading plugin \"io.containerd.ttrpc.v1.task\"..." runtime=io.containerd.runc.v2 type=io.containerd.ttrpc.v1
+
+Aug 28 21:35:49 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:49.301972578Z" level=info msg="starting signal loop" namespace=moby path=/run/containerd/io.containerd.runtime.v2.task/moby/56337bcd40251a5172982267f07b2f9585708e0cd9d504d5fcda32f0f5267d55 pid=801756 runtime=io.containerd.runc.v2
+
+Aug 28 21:35:49 ip-172-31-13-120 systemd[2245909]: run-docker-runtime\x2drunc-moby-56337bcd40251a5172982267f07b2f9585708e0cd9d504d5fcda32f0f5267d55-runc.bAST9T.mount: Succeeded.
+
+Aug 28 21:35:49 ip-172-31-13-120 systemd[1]: run-docker-runtime\x2drunc-moby-56337bcd40251a5172982267f07b2f9585708e0cd9d504d5fcda32f0f5267d55-runc.bAST9T.mount: Succeeded.
+
+Aug 28 21:35:49 ip-172-31-13-120 kernel: [87831.455510] eth0: renamed from veth5a31d2c
+
+Aug 28 21:35:49 ip-172-31-13-120 kernel: [87831.472679] docker_gwbridge: port 5(veth9feb261) entered disabled state
+
+Aug 28 21:35:49 ip-172-31-13-120 kernel: [87831.472742] br0: port 6(veth14452) entered blocking state
+
+Aug 28 21:35:49 ip-172-31-13-120 kernel: [87831.472746] br0: port 6(veth14452) entered forwarding state
+
+Aug 28 21:35:49 ip-172-31-13-120 kernel: [87831.498676] eth1: renamed from vethb1b9544
+
+Aug 28 21:35:49 ip-172-31-13-120 systemd-networkd[409]: veth9feb261: Gained carrier
+
+Aug 28 21:35:49 ip-172-31-13-120 kernel: [87831.512680] IPv6: ADDRCONF(NETDEV_CHANGE): veth9feb261: link becomes ready
+
+Aug 28 21:35:49 ip-172-31-13-120 kernel: [87831.512737] docker_gwbridge: port 5(veth9feb261) entered blocking state
+
+Aug 28 21:35:49 ip-172-31-13-120 kernel: [87831.512740] docker_gwbridge: port 5(veth9feb261) entered forwarding state
+
+Aug 28 21:35:49 ip-172-31-13-120 dockerd[664]: time="2023-08-28T21:35:49.953383367Z" level=info msg="ignoring event" container=0a99de8d8bb30a066475a060606dc5da68866264287b035b791aad486a5d1593 module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+
+Aug 28 21:35:49 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:49.954535917Z" level=info msg="shim disconnected" id=0a99de8d8bb30a066475a060606dc5da68866264287b035b791aad486a5d1593
+
+Aug 28 21:35:49 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:49.955477923Z" level=warning msg="cleaning up after shim disconnected" id=0a99de8d8bb30a066475a060606dc5da68866264287b035b791aad486a5d1593 namespace=moby
+
+Aug 28 21:35:49 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:49.955704137Z" level=info msg="cleaning up dead shim"
+
+Aug 28 21:35:49 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:49.967685430Z" level=warning msg="cleanup warnings time=\"2023-08-28T21:35:49Z\" level=info msg=\"starting signal loop\" namespace=moby pid=801996 runtime=io.containerd.runc.v2\n"
+
+Aug 28 21:35:49 ip-172-31-13-120 kernel: [87831.952366] br0: port 3(veth14451) entered disabled state
+
+Aug 28 21:35:49 ip-172-31-13-120 kernel: [87831.952433] vethc12690c: renamed from eth0
+
+Aug 28 21:35:50 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57834 seen, reloading interface list
+
+Aug 28 21:35:50 ip-172-31-13-120 systemd-networkd[409]: veth0c0d4ff: Lost carrier
+
+Aug 28 21:35:50 ip-172-31-13-120 kernel: [87831.996315] docker_gwbridge: port 2(veth0c0d4ff) entered disabled state
+
+Aug 28 21:35:50 ip-172-31-13-120 kernel: [87831.998850] vethfcc7ba3: renamed from eth1
+
+Aug 28 21:35:50 ip-172-31-13-120 systemd-udevd[801733]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:50 ip-172-31-13-120 systemd-udevd[801733]: Using default interface naming scheme 'v245'.
+
+Aug 28 21:35:50 ip-172-31-13-120 systemd-udevd[801733]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:50 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57836 seen, reloading interface list
+
+Aug 28 21:35:50 ip-172-31-13-120 systemd-udevd[801746]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:50 ip-172-31-13-120 systemd-udevd[801746]: Using default interface naming scheme 'v245'.
+
+Aug 28 21:35:50 ip-172-31-13-120 systemd-networkd[409]: veth0c0d4ff: Link DOWN
+
+Aug 28 21:35:50 ip-172-31-13-120 kernel: [87832.041354] docker_gwbridge: port 2(veth0c0d4ff) entered disabled state
+
+Aug 28 21:35:50 ip-172-31-13-120 kernel: [87832.042813] device veth0c0d4ff left promiscuous mode
+
+Aug 28 21:35:50 ip-172-31-13-120 kernel: [87832.042823] docker_gwbridge: port 2(veth0c0d4ff) entered disabled state
+
+Aug 28 21:35:50 ip-172-31-13-120 systemd-networkd[409]: rtnl: received neighbor for link '57837' we don't know about, ignoring.
+
+Aug 28 21:35:50 ip-172-31-13-120 systemd-networkd[409]: rtnl: received neighbor for link '57837' we don't know about, ignoring.
+
+Aug 28 21:35:50 ip-172-31-13-120 systemd-udevd[801733]: vethfcc7ba3: Failed to get link config: No such device
+
+Aug 28 21:35:50 ip-172-31-13-120 kernel: [87832.068984] br0: port 3(veth14451) entered disabled state
+
+Aug 28 21:35:50 ip-172-31-13-120 kernel: [87832.069290] device veth14451 left promiscuous mode
+
+Aug 28 21:35:50 ip-172-31-13-120 kernel: [87832.069294] br0: port 3(veth14451) entered disabled state
+
+Aug 28 21:35:50 ip-172-31-13-120 systemd[2245909]: run-docker-netns-f2f798071d3d.mount: Succeeded.
+
+Aug 28 21:35:50 ip-172-31-13-120 systemd[1]: run-docker-netns-f2f798071d3d.mount: Succeeded.
+
+Aug 28 21:35:50 ip-172-31-13-120 systemd[2245909]: var-lib-docker-overlay2-1cf72703ee5602fe461336e2c1c0a3a5c68ebcce5d755c48cb743aba735cc559-merged.mount: Succeeded.
+
+Aug 28 21:35:50 ip-172-31-13-120 systemd[1]: var-lib-docker-overlay2-1cf72703ee5602fe461336e2c1c0a3a5c68ebcce5d755c48cb743aba735cc559-merged.mount: Succeeded.
+
+Aug 28 21:35:50 ip-172-31-13-120 dockerd[664]: time="2023-08-28T21:35:50.188000081Z" level=error msg="fatal task error" error="task: non-zero exit (1)" module=node/agent/taskmanager node.id=zty32p3j8m2gzqfalm4zctrto service.id=d3hpeh8tkwwv8o2zdviaswjff task.id=f7m51l33jnrhs4rupzan3j65d
+
+Aug 28 21:35:51 ip-172-31-13-120 systemd[2245909]: var-lib-docker-overlay2-b608a445fa0faa0f9e34ea8358aeae1caa796185dea7dbff81a007b3930ed53b\x2dinit-merged.mount: Succeeded.
+
+Aug 28 21:35:51 ip-172-31-13-120 systemd[1]: var-lib-docker-overlay2-b608a445fa0faa0f9e34ea8358aeae1caa796185dea7dbff81a007b3930ed53b\x2dinit-merged.mount: Succeeded.
+
+Aug 28 21:35:51 ip-172-31-13-120 systemd-networkd[409]: veth9feb261: Gained IPv6LL
+
+Aug 28 21:35:55 ip-172-31-13-120 systemd-udevd[802095]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:55 ip-172-31-13-120 systemd-udevd[802095]: Using default interface naming scheme 'v245'.
+
+Aug 28 21:35:55 ip-172-31-13-120 systemd-udevd[802095]: vethb6d505f: Could not generate persistent MAC: No data available
+
+Aug 28 21:35:55 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57842 seen, reloading interface list
+
+Aug 28 21:35:55 ip-172-31-13-120 kernel: [87837.345640] veth14453: renamed from veth134c3e0
+
+Aug 28 21:35:55 ip-172-31-13-120 systemd-udevd[802096]: veth134c3e0: Failed to get link config: No such device
+
+Aug 28 21:35:55 ip-172-31-13-120 kernel: [87837.373235] br0: port 3(veth14453) entered blocking state
+
+Aug 28 21:35:55 ip-172-31-13-120 kernel: [87837.373242] br0: port 3(veth14453) entered disabled state
+
+Aug 28 21:35:55 ip-172-31-13-120 kernel: [87837.373699] device veth14453 entered promiscuous mode
+
+Aug 28 21:35:55 ip-172-31-13-120 kernel: [87837.383915] docker_gwbridge: port 2(vethaa86c96) entered blocking state
+
+Aug 28 21:35:55 ip-172-31-13-120 kernel: [87837.383926] docker_gwbridge: port 2(vethaa86c96) entered disabled state
+
+Aug 28 21:35:55 ip-172-31-13-120 kernel: [87837.386080] device vethaa86c96 entered promiscuous mode
+
+Aug 28 21:35:55 ip-172-31-13-120 kernel: [87837.386396] docker_gwbridge: port 2(vethaa86c96) entered blocking state
+
+Aug 28 21:35:55 ip-172-31-13-120 kernel: [87837.386401] docker_gwbridge: port 2(vethaa86c96) entered forwarding state
+
+Aug 28 21:35:55 ip-172-31-13-120 systemd-networkd[409]: vethaa86c96: Link UP
+
+Aug 28 21:35:55 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57843 seen, reloading interface list
+
+Aug 28 21:35:55 ip-172-31-13-120 systemd-udevd[802106]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:55 ip-172-31-13-120 systemd-udevd[802107]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:55 ip-172-31-13-120 systemd-udevd[802106]: Using default interface naming scheme 'v245'.
+
+Aug 28 21:35:55 ip-172-31-13-120 systemd-udevd[802106]: veth5c2affb: Could not generate persistent MAC: No data available
+
+Aug 28 21:35:55 ip-172-31-13-120 systemd-udevd[802107]: Using default interface naming scheme 'v245'.
+
+Aug 28 21:35:55 ip-172-31-13-120 networkd-dispatcher[472]: ERROR:Unknown interface index 57843 seen even after reload
+
+Aug 28 21:35:55 ip-172-31-13-120 systemd-udevd[802107]: vethaa86c96: Could not generate persistent MAC: No data available
+
+Aug 28 21:35:55 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57843 seen, reloading interface list
+
+Aug 28 21:35:55 ip-172-31-13-120 networkd-dispatcher[472]: ERROR:Unknown interface index 57843 seen even after reload
+
+Aug 28 21:35:55 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:55.555414840Z" level=info msg="loading plugin \"io.containerd.event.v1.publisher\"..." runtime=io.containerd.runc.v2 type=io.containerd.event.v1
+
+Aug 28 21:35:55 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:55.556416247Z" level=info msg="loading plugin \"io.containerd.internal.v1.shutdown\"..." runtime=io.containerd.runc.v2 type=io.containerd.internal.v1
+
+Aug 28 21:35:55 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:55.556642500Z" level=info msg="loading plugin \"io.containerd.ttrpc.v1.task\"..." runtime=io.containerd.runc.v2 type=io.containerd.ttrpc.v1
+
+Aug 28 21:35:55 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:55.557116549Z" level=info msg="starting signal loop" namespace=moby path=/run/containerd/io.containerd.runtime.v2.task/moby/dd26de362319a0411b7f66d130706329f5a2a9ef41c19044326967cdd62b8c42 pid=802122 runtime=io.containerd.runc.v2
+
+Aug 28 21:35:55 ip-172-31-13-120 systemd[2245909]: run-docker-runtime\x2drunc-moby-dd26de362319a0411b7f66d130706329f5a2a9ef41c19044326967cdd62b8c42-runc.mcUcCg.mount: Succeeded.
+
+Aug 28 21:35:55 ip-172-31-13-120 systemd[1]: run-docker-runtime\x2drunc-moby-dd26de362319a0411b7f66d130706329f5a2a9ef41c19044326967cdd62b8c42-runc.mcUcCg.mount: Succeeded.
+
+Aug 28 21:35:55 ip-172-31-13-120 kernel: [87837.778502] eth0: renamed from vethb6d505f
+
+Aug 28 21:35:55 ip-172-31-13-120 kernel: [87837.796636] docker_gwbridge: port 2(vethaa86c96) entered disabled state
+
+Aug 28 21:35:55 ip-172-31-13-120 kernel: [87837.796715] br0: port 3(veth14453) entered blocking state
+
+Aug 28 21:35:55 ip-172-31-13-120 kernel: [87837.796719] br0: port 3(veth14453) entered forwarding state
+
+Aug 28 21:35:55 ip-172-31-13-120 kernel: [87837.822252] eth1: renamed from veth5c2affb
+
+Aug 28 21:35:55 ip-172-31-13-120 systemd-networkd[409]: vethaa86c96: Gained carrier
+
+Aug 28 21:35:55 ip-172-31-13-120 kernel: [87837.840773] IPv6: ADDRCONF(NETDEV_CHANGE): vethaa86c96: link becomes ready
+
+Aug 28 21:35:55 ip-172-31-13-120 kernel: [87837.840831] docker_gwbridge: port 2(vethaa86c96) entered blocking state
+
+Aug 28 21:35:55 ip-172-31-13-120 kernel: [87837.840837] docker_gwbridge: port 2(vethaa86c96) entered forwarding state
+
+Aug 28 21:35:56 ip-172-31-13-120 dockerd[664]: time="2023-08-28T21:35:56.610898751Z" level=info msg="ignoring event" container=56337bcd40251a5172982267f07b2f9585708e0cd9d504d5fcda32f0f5267d55 module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+
+Aug 28 21:35:56 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:56.611724735Z" level=info msg="shim disconnected" id=56337bcd40251a5172982267f07b2f9585708e0cd9d504d5fcda32f0f5267d55
+
+Aug 28 21:35:56 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:56.611791216Z" level=warning msg="cleaning up after shim disconnected" id=56337bcd40251a5172982267f07b2f9585708e0cd9d504d5fcda32f0f5267d55 namespace=moby
+
+Aug 28 21:35:56 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:56.611808856Z" level=info msg="cleaning up dead shim"
+
+Aug 28 21:35:56 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:35:56.633768729Z" level=warning msg="cleanup warnings time=\"2023-08-28T21:35:56Z\" level=info msg=\"starting signal loop\" namespace=moby pid=802358 runtime=io.containerd.runc.v2\n"
+
+Aug 28 21:35:56 ip-172-31-13-120 kernel: [87838.606239] br0: port 6(veth14452) entered disabled state
+
+Aug 28 21:35:56 ip-172-31-13-120 kernel: [87838.606310] veth5a31d2c: renamed from eth0
+
+Aug 28 21:35:56 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57838 seen, reloading interface list
+
+Aug 28 21:35:56 ip-172-31-13-120 kernel: [87838.652592] vethb1b9544: renamed from eth1
+
+Aug 28 21:35:56 ip-172-31-13-120 systemd-udevd[802106]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:56 ip-172-31-13-120 systemd-udevd[802096]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:56 ip-172-31-13-120 systemd-udevd[802096]: Using default interface naming scheme 'v245'.
+
+Aug 28 21:35:56 ip-172-31-13-120 systemd-networkd[409]: veth9feb261: Lost carrier
+
+Aug 28 21:35:56 ip-172-31-13-120 kernel: [87838.701174] docker_gwbridge: port 5(veth9feb261) entered disabled state
+
+Aug 28 21:35:56 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57840 seen, reloading interface list
+
+Aug 28 21:35:56 ip-172-31-13-120 systemd-networkd[409]: veth9feb261: Link DOWN
+
+Aug 28 21:35:56 ip-172-31-13-120 kernel: [87838.733219] docker_gwbridge: port 5(veth9feb261) entered disabled state
+
+Aug 28 21:35:56 ip-172-31-13-120 kernel: [87838.736232] device veth9feb261 left promiscuous mode
+
+Aug 28 21:35:56 ip-172-31-13-120 kernel: [87838.736264] docker_gwbridge: port 5(veth9feb261) entered disabled state
+
+Aug 28 21:35:56 ip-172-31-13-120 systemd-networkd[409]: rtnl: received neighbor for link '57841' we don't know about, ignoring.
+
+Aug 28 21:35:56 ip-172-31-13-120 systemd-networkd[409]: rtnl: received neighbor for link '57841' we don't know about, ignoring.
+
+Aug 28 21:35:56 ip-172-31-13-120 systemd-udevd[802096]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:35:56 ip-172-31-13-120 systemd-udevd[802106]: vethb1b9544: Failed to get link config: No such device
+
+Aug 28 21:35:56 ip-172-31-13-120 kernel: [87838.781123] br0: port 6(veth14452) entered disabled state
+
+Aug 28 21:35:56 ip-172-31-13-120 kernel: [87838.783353] device veth14452 left promiscuous mode
+
+Aug 28 21:35:56 ip-172-31-13-120 kernel: [87838.783364] br0: port 6(veth14452) entered disabled state
+
+Aug 28 21:35:56 ip-172-31-13-120 systemd[1]: run-docker-netns-45494c130d73.mount: Succeeded.
+
+Aug 28 21:35:56 ip-172-31-13-120 systemd[2245909]: run-docker-netns-45494c130d73.mount: Succeeded.
+
+Aug 28 21:35:56 ip-172-31-13-120 systemd[1]: var-lib-docker-overlay2-01349bb8551ed4e388864169145c074693d98fd6665d05802d3daf8435dcb11e-merged.mount: Succeeded.
+
+Aug 28 21:35:56 ip-172-31-13-120 systemd[2245909]: var-lib-docker-overlay2-01349bb8551ed4e388864169145c074693d98fd6665d05802d3daf8435dcb11e-merged.mount: Succeeded.
+
+Aug 28 21:35:56 ip-172-31-13-120 dockerd[664]: time="2023-08-28T21:35:56.938024215Z" level=error msg="fatal task error" error="task: non-zero exit (1)" module=node/agent/taskmanager node.id=zty32p3j8m2gzqfalm4zctrto service.id=fb8gn0f65kejq7x4v7bj5jzmr task.id=zdid1lnnmo9ebqessl07ols22
+
+Aug 28 21:35:57 ip-172-31-13-120 systemd-networkd[409]: vethaa86c96: Gained IPv6LL
+
+Aug 28 21:35:57 ip-172-31-13-120 systemd[2245909]: var-lib-docker-overlay2-c57637c955a08c1b866afd6761285f16c2365126fb5a83080a0ebb338c66cd55\x2dinit-merged.mount: Succeeded.
+
+Aug 28 21:35:57 ip-172-31-13-120 systemd[1]: var-lib-docker-overlay2-c57637c955a08c1b866afd6761285f16c2365126fb5a83080a0ebb338c66cd55\x2dinit-merged.mount: Succeeded.
+
+Aug 28 21:35:58 ip-172-31-13-120 systemd[2245909]: var-lib-docker-overlay2-c57637c955a08c1b866afd6761285f16c2365126fb5a83080a0ebb338c66cd55-merged.mount: Succeeded.
+
+Aug 28 21:35:58 ip-172-31-13-120 systemd[1]: var-lib-docker-overlay2-c57637c955a08c1b866afd6761285f16c2365126fb5a83080a0ebb338c66cd55-merged.mount: Succeeded.
+
+Aug 28 21:36:01 ip-172-31-13-120 dockerd[664]: time="2023-08-28T21:36:01.366594206Z" level=info msg="ignoring event" container=dd26de362319a0411b7f66d130706329f5a2a9ef41c19044326967cdd62b8c42 module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+
+Aug 28 21:36:01 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:36:01.367519282Z" level=info msg="shim disconnected" id=dd26de362319a0411b7f66d130706329f5a2a9ef41c19044326967cdd62b8c42
+
+Aug 28 21:36:01 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:36:01.367607133Z" level=warning msg="cleaning up after shim disconnected" id=dd26de362319a0411b7f66d130706329f5a2a9ef41c19044326967cdd62b8c42 namespace=moby
+
+Aug 28 21:36:01 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:36:01.367626163Z" level=info msg="cleaning up dead shim"
+
+Aug 28 21:36:01 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:36:01.397990859Z" level=warning msg="cleanup warnings time=\"2023-08-28T21:36:01Z\" level=info msg=\"starting signal loop\" namespace=moby pid=802454 runtime=io.containerd.runc.v2\n"
+
+Aug 28 21:36:01 ip-172-31-13-120 kernel: [87843.382333] vethb6d505f: renamed from eth0
+
+Aug 28 21:36:01 ip-172-31-13-120 kernel: [87843.428083] br0: port 3(veth14453) entered disabled state
+
+Aug 28 21:36:01 ip-172-31-13-120 systemd-udevd[802472]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:36:01 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57842 seen, reloading interface list
+
+Aug 28 21:36:01 ip-172-31-13-120 systemd-udevd[802472]: Using default interface naming scheme 'v245'.
+
+Aug 28 21:36:01 ip-172-31-13-120 kernel: [87843.451896] docker_gwbridge: port 2(vethaa86c96) entered disabled state
+
+Aug 28 21:36:01 ip-172-31-13-120 systemd-networkd[409]: vethaa86c96: Lost carrier
+
+Aug 28 21:36:01 ip-172-31-13-120 kernel: [87843.454094] veth5c2affb: renamed from eth1
+
+Aug 28 21:36:01 ip-172-31-13-120 systemd-udevd[802472]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:36:01 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57844 seen, reloading interface list
+
+Aug 28 21:36:01 ip-172-31-13-120 systemd-udevd[802472]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:36:01 ip-172-31-13-120 systemd-networkd[409]: vethaa86c96: Link DOWN
+
+Aug 28 21:36:01 ip-172-31-13-120 kernel: [87843.512513] docker_gwbridge: port 2(vethaa86c96) entered disabled state
+
+Aug 28 21:36:01 ip-172-31-13-120 kernel: [87843.513160] device vethaa86c96 left promiscuous mode
+
+Aug 28 21:36:01 ip-172-31-13-120 kernel: [87843.513166] docker_gwbridge: port 2(vethaa86c96) entered disabled state
+
+Aug 28 21:36:01 ip-172-31-13-120 systemd-networkd[409]: rtnl: received neighbor for link '57845' we don't know about, ignoring.
+
+Aug 28 21:36:01 ip-172-31-13-120 systemd-networkd[409]: rtnl: received neighbor for link '57845' we don't know about, ignoring.
+
+Aug 28 21:36:01 ip-172-31-13-120 networkd-dispatcher[472]: ERROR:Unknown interface index 57844 seen even after reload
+
+Aug 28 21:36:01 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57844 seen, reloading interface list
+
+Aug 28 21:36:01 ip-172-31-13-120 kernel: [87843.545441] br0: port 3(veth14453) entered disabled state
+
+Aug 28 21:36:01 ip-172-31-13-120 kernel: [87843.546147] device veth14453 left promiscuous mode
+
+Aug 28 21:36:01 ip-172-31-13-120 kernel: [87843.546155] br0: port 3(veth14453) entered disabled state
+
+Aug 28 21:36:01 ip-172-31-13-120 networkd-dispatcher[472]: ERROR:Unknown interface index 57844 seen even after reload
+
+Aug 28 21:36:01 ip-172-31-13-120 systemd[2245909]: run-docker-netns-60e711161ee4.mount: Succeeded.
+
+Aug 28 21:36:01 ip-172-31-13-120 systemd[1]: run-docker-netns-60e711161ee4.mount: Succeeded.
+
+Aug 28 21:36:01 ip-172-31-13-120 systemd-udevd[802472]: veth5c2affb: Failed to get link config: No such device
+
+Aug 28 21:36:01 ip-172-31-13-120 systemd[2245909]: var-lib-docker-overlay2-b608a445fa0faa0f9e34ea8358aeae1caa796185dea7dbff81a007b3930ed53b-merged.mount: Succeeded.
+
+Aug 28 21:36:01 ip-172-31-13-120 systemd[1]: var-lib-docker-overlay2-b608a445fa0faa0f9e34ea8358aeae1caa796185dea7dbff81a007b3930ed53b-merged.mount: Succeeded.
+
+Aug 28 21:36:01 ip-172-31-13-120 dockerd[664]: time="2023-08-28T21:36:01.681304669Z" level=error msg="fatal task error" error="task: non-zero exit (1)" module=node/agent/taskmanager node.id=zty32p3j8m2gzqfalm4zctrto service.id=d3hpeh8tkwwv8o2zdviaswjff task.id=4ljvyil861i6fwe010h1x51ka
+
+Aug 28 21:36:02 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57846 seen, reloading interface list
+
+Aug 28 21:36:02 ip-172-31-13-120 systemd-udevd[802472]: veth5217a22: Failed to get link config: No such device
+
+Aug 28 21:36:02 ip-172-31-13-120 systemd-udevd[802488]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:36:02 ip-172-31-13-120 systemd-udevd[802488]: Using default interface naming scheme 'v245'.
+
+Aug 28 21:36:02 ip-172-31-13-120 systemd-udevd[802488]: vethec789c6: Could not generate persistent MAC: No data available
+
+Aug 28 21:36:02 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57847 seen, reloading interface list
+
+Aug 28 21:36:02 ip-172-31-13-120 kernel: [87844.169393] veth14454: renamed from veth5217a22
+
+Aug 28 21:36:02 ip-172-31-13-120 kernel: [87844.180409] br0: port 3(veth14454) entered blocking state
+
+Aug 28 21:36:02 ip-172-31-13-120 kernel: [87844.180433] br0: port 3(veth14454) entered disabled state
+
+Aug 28 21:36:02 ip-172-31-13-120 kernel: [87844.180546] device veth14454 entered promiscuous mode
+
+Aug 28 21:36:02 ip-172-31-13-120 kernel: [87844.180700] br0: port 3(veth14454) entered blocking state
+
+Aug 28 21:36:02 ip-172-31-13-120 kernel: [87844.180705] br0: port 3(veth14454) entered forwarding state
+
+Aug 28 21:36:02 ip-172-31-13-120 networkd-dispatcher[472]: ERROR:Unknown interface index 57847 seen even after reload
+
+Aug 28 21:36:02 ip-172-31-13-120 systemd-udevd[802485]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:36:02 ip-172-31-13-120 systemd-udevd[802485]: Using default interface naming scheme 'v245'.
+
+Aug 28 21:36:02 ip-172-31-13-120 systemd-udevd[802485]: veth95f6cd5: Could not generate persistent MAC: No data available
+
+Aug 28 21:36:02 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57847 seen, reloading interface list
+
+Aug 28 21:36:02 ip-172-31-13-120 kernel: [87844.220271] docker_gwbridge: port 2(vethd078623) entered blocking state
+
+Aug 28 21:36:02 ip-172-31-13-120 kernel: [87844.220280] docker_gwbridge: port 2(vethd078623) entered disabled state
+
+Aug 28 21:36:02 ip-172-31-13-120 kernel: [87844.224571] device vethd078623 entered promiscuous mode
+
+Aug 28 21:36:02 ip-172-31-13-120 kernel: [87844.225206] docker_gwbridge: port 2(vethd078623) entered blocking state
+
+Aug 28 21:36:02 ip-172-31-13-120 kernel: [87844.225219] docker_gwbridge: port 2(vethd078623) entered forwarding state
+
+Aug 28 21:36:02 ip-172-31-13-120 systemd-udevd[802486]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:36:02 ip-172-31-13-120 systemd-networkd[409]: vethd078623: Link UP
+
+Aug 28 21:36:02 ip-172-31-13-120 systemd-udevd[802486]: Using default interface naming scheme 'v245'.
+
+Aug 28 21:36:02 ip-172-31-13-120 systemd-udevd[802486]: vethd078623: Could not generate persistent MAC: No data available
+
+Aug 28 21:36:02 ip-172-31-13-120 networkd-dispatcher[472]: ERROR:Unknown interface index 57847 seen even after reload
+
+Aug 28 21:36:02 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:36:02.367628322Z" level=info msg="loading plugin \"io.containerd.event.v1.publisher\"..." runtime=io.containerd.runc.v2 type=io.containerd.event.v1
+
+Aug 28 21:36:02 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:36:02.367741874Z" level=info msg="loading plugin \"io.containerd.internal.v1.shutdown\"..." runtime=io.containerd.runc.v2 type=io.containerd.internal.v1
+
+Aug 28 21:36:02 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:36:02.367800635Z" level=info msg="loading plugin \"io.containerd.ttrpc.v1.task\"..." runtime=io.containerd.runc.v2 type=io.containerd.ttrpc.v1
+
+Aug 28 21:36:02 ip-172-31-13-120 containerd[494]: time="2023-08-28T21:36:02.368197602Z" level=info msg="starting signal loop" namespace=moby path=/run/containerd/io.containerd.runtime.v2.task/moby/854485f371ab42cf13ae033d230cfb65485d831603ddc8f014240fdd57581b50 pid=802527 runtime=io.containerd.runc.v2
+
+Aug 28 21:36:02 ip-172-31-13-120 systemd[2245909]: run-docker-runtime\x2drunc-moby-854485f371ab42cf13ae033d230cfb65485d831603ddc8f014240fdd57581b50-runc.bxfLgI.mount: Succeeded.
+
+Aug 28 21:36:02 ip-172-31-13-120 systemd[1]: run-docker-runtime\x2drunc-moby-854485f371ab42cf13ae033d230cfb65485d831603ddc8f014240fdd57581b50-runc.bxfLgI.mount: Succeeded.
+
+Aug 28 21:36:02 ip-172-31-13-120 kernel: [87844.459600] br0: port 3(veth14454) entered disabled state
+
+Aug 28 21:36:02 ip-172-31-13-120 kernel: [87844.459734] docker_gwbridge: port 2(vethd078623) entered disabled state
+
+Aug 28 21:36:02 ip-172-31-13-120 systemd[2245909]: var-lib-docker-overlay2-ebc0cc75fc2a2e7871477c214b5eb98034f8d41ce9dd407c12139ed56797fbf4\x2dinit-merged.mount: Succeeded.
+
+Aug 28 21:36:02 ip-172-31-13-120 systemd[1]: var-lib-docker-overlay2-ebc0cc75fc2a2e7871477c214b5eb98034f8d41ce9dd407c12139ed56797fbf4\x2dinit-merged.mount: Succeeded.
+
+Aug 28 21:36:02 ip-172-31-13-120 systemd[2245909]: var-lib-docker-overlay2-ebc0cc75fc2a2e7871477c214b5eb98034f8d41ce9dd407c12139ed56797fbf4-merged.mount: Succeeded.
+
+Aug 28 21:36:03 ip-172-31-13-120 kernel: [87845.353347] eth0: renamed from vethec789c6
+
+Aug 28 21:36:03 ip-172-31-13-120 kernel: [87845.379116] br0: port 3(veth14454) entered blocking state
+
+Aug 28 21:36:03 ip-172-31-13-120 kernel: [87845.379125] br0: port 3(veth14454) entered forwarding state
+
+Aug 28 21:36:03 ip-172-31-13-120 kernel: [87845.409035] eth1: renamed from veth95f6cd5
+
+Aug 28 21:36:03 ip-172-31-13-120 kernel: [87845.432778] IPv6: ADDRCONF(NETDEV_CHANGE): vethd078623: link becomes ready
+
+Aug 28 21:36:03 ip-172-31-13-120 kernel: [87845.432831] docker_gwbridge: port 2(vethd078623) entered blocking state
+
+Aug 28 21:36:03 ip-172-31-13-120 kernel: [87845.432835] docker_gwbridge: port 2(vethd078623) entered forwarding state
+
+Aug 28 21:36:03 ip-172-31-13-120 systemd-networkd[409]: vethd078623: Gained carrier
+
+Aug 28 21:36:04 ip-172-31-13-120 systemd-networkd[409]: vethd078623: Gained IPv6LL
+
+Aug 28 21:36:07 ip-172-31-13-120 kernel: [87849.268819] veth14455: renamed from veth8be0fb7
+
+Aug 28 21:36:07 ip-172-31-13-120 systemd-udevd[802776]: ethtool: autonegotiation is unset or enabled, the speed and duplex are not writable.
+
+Aug 28 21:36:07 ip-172-31-13-120 kernel: [87849.296845] br0: port 6(veth14455) entered blocking state
+
+Aug 28 21:36:07 ip-172-31-13-120 kernel: [87849.296853] br0: port 6(veth14455) entered disabled state
+
+Aug 28 21:36:07 ip-172-31-13-120 kernel: [87849.296954] device veth14455 entered promiscuous mode
+
+Aug 28 21:36:11 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57850 seen, reloading interface list
+
+Aug 28 21:36:13 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57851 seen, reloading interface list
+
+Aug 28 21:36:16 ip-172-31-13-120 systemd-udevd[802776]: Using default interface naming scheme 'v245'.
+
+Aug 28 21:36:17 ip-172-31-13-120 systemd-udevd[802776]: veth23319bf: Could not generate persistent MAC: No data available
+
+Aug 28 21:36:19 ip-172-31-13-120 systemd-networkd[409]: veth8be0fb7: Could not find device, waiting for device initialization: No such device
+
+Aug 28 21:36:29 ip-172-31-13-120 systemd-udevd[802777]: veth8be0fb7: Failed to get link config: No such device
+
+Aug 28 21:43:28 ip-172-31-13-120 systemd-networkd[409]: eth0: Could not set DHCPv4 address: Connection timed out
+
+Aug 28 21:50:15 ip-172-31-13-120 systemd-networkd[409]: eth0: Failed
+
+Aug 28 21:52:49 ip-172-31-13-120 systemd[1]: snapd.service: Watchdog timeout (limit 5min)!
+
+Aug 28 21:55:30 ip-172-31-13-120 systemd[1]: snapd.service: Killing process 484 (snapd) with signal SIGABRT.
+
+Aug 28 21:59:46 ip-172-31-13-120 networkd-dispatcher[472]: ERROR:Unknown interface index 57851 seen even after reload
+
+Aug 28 22:01:53 ip-172-31-13-120 networkd-dispatcher[472]: WARNING:Unknown index 57851 seen, reloading interface list
+
+Aug 28 22:06:01 ip-172-31-13-120 systemd[1]: snapd.service: State 'stop-watchdog' timed out. Terminating.
+
+Aug 28 22:21:05 ip-172-31-13-120 systemd[1]: snapd.service: State 'stop-sigterm' timed out. Killing.
+
+Aug 28 22:21:40 ip-172-31-13-120 systemd[1]: snapd.service: Killing process 484 (snapd) with signal SIGKILL.
+
+Aug 28 22:22:17 ip-172-31-13-120 CRON[802833]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+
+Aug 28 22:22:41 ip-172-31-13-120 systemd[1]: Starting Message of the Day...
+
+Aug 28 22:22:57 ip-172-31-13-120 networkd-dispatcher[472]: ERROR:Unknown interface index 57851 seen even after reload
+
+Aug 28 22:23:06 ip-172-31-13-120 systemd[1]: snapd.service: Main process exited, code=killed, status=9/KILL
+
+Aug 28 22:23:20 ip-172-31-13-120 systemd[1]: snapd.service: Failed with result 'watchdog'.
+
+Aug 28 22:23:41 ip-172-31-13-120 systemd[1]: session-22.scope: Succeeded.
+
+Aug 28 22:24:25 ip-172-31-13-120 systemd[1]: snapd.service: Scheduled restart job, restart counter is at 1.
+
+Aug 28 23:01:19 ip-172-31-13-120 systemd-timesyncd[344]: Network configuration changed, trying to establish connection.
+
+Aug 29 00:24:39 ip-172-31-13-120 CRON[802867]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+
+Aug 29 01:19:52 ip-172-31-13-120 CRON[802881]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+
+Aug 29 01:20:20 ip-172-31-13-120 CRON[802894]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+
+Aug 29 01:20:29 ip-172-31-13-120 systemd[1]: Stopped Snap Daemon.
+
+Aug 29 01:25:33 ip-172-31-13-120 systemd[1]: Starting Snap Daemon...
+
+Aug 29 01:25:39 ip-172-31-13-120 systemd[1]: Stopping User Manager for UID 1000...
+
+Aug 29 01:25:44 ip-172-31-13-120 systemd[1]: Starting Rotate log files...
+
+Aug 29 01:25:49 ip-172-31-13-120 systemd[1]: Starting Daily man-db regeneration...
+
+Aug 29 01:25:52 ip-172-31-13-120 systemd[1]: snapd.service: start operation timed out. Terminating.
+
+Aug 29 01:25:55 ip-172-31-13-120 systemd[1]: user@1000.service: State 'stop-sigterm' timed out. Killing.
+
+Aug 29 01:25:55 ip-172-31-13-120 systemd[1]: user@1000.service: Killing process 2245909 (systemd) with signal SIGKILL.
+
+Aug 29 01:25:55 ip-172-31-13-120 systemd[1]: snapd.service: Failed with result 'timeout'.
+
+Aug 29 01:25:55 ip-172-31-13-120 systemd[1]: Failed to start Snap Daemon.
+
+Aug 29 01:25:56 ip-172-31-13-120 systemd[1]: user@1000.service: Main process exited, code=killed, status=9/KILL
+
+Aug 29 01:25:56 ip-172-31-13-120 systemd[1]: user@1000.service: Failed with result 'timeout'.
+
+Aug 29 01:25:56 ip-172-31-13-120 systemd[1]: Stopped User Manager for UID 1000.
+
+Aug 29 01:25:57 ip-172-31-13-120 systemd[1]: Stopping User Runtime Directory /run/user/1000...
+
+Aug 29 01:25:57 ip-172-31-13-120 systemd[1]: snapd.service: Scheduled restart job, restart counter is at 2.
+
+Aug 29 01:25:57 ip-172-31-13-120 systemd[1]: Stopped Snap Daemon.
+
+Aug 29 01:25:58 ip-172-31-13-120 dockerd[664]: time="2023-08-29T01:25:56.197808225Z" level=warning msg="[resolver] connect failed" error="dial udp 172.31.0.2:53: i/o timeout"
+
+Aug 29 01:25:58 ip-172-31-13-120 systemd[1]: Starting Snap Daemon...
+
+Aug 29 01:25:58 ip-172-31-13-120 systemd[1]: run-user-1000.mount: Succeeded.
+
+Aug 29 01:25:59 ip-172-31-13-120 systemd[1]: user-runtime-dir@1000.service: Succeeded.
+
+Aug 29 01:25:59 ip-172-31-13-120 dockerd[664]: time="2023-08-29T01:25:58.553356125Z" level=error msg="Failed to get event" error="rpc error: code = Unavailable desc = error reading from server: EOF" module=libcontainerd namespace=plugins.moby
+
+Aug 29 01:25:59 ip-172-31-13-120 systemd[1]: Stopped User Runtime Directory /run/user/1000.
+
+Aug 29 01:25:59 ip-172-31-13-120 systemd[1]: Removed slice User Slice of UID 1000.
+
+Aug 29 01:25:59 ip-172-31-13-120 dockerd[664]: time="2023-08-29T01:25:58.644008946Z" level=error msg="heartbeat to manager { } failed" error="rpc error: code = DeadlineExceeded desc = context deadline exceeded" method="(*session).heartbeat" module=node/agent node.id=zty32p3j8m2gzqfalm4zctrto session.id=7qnt0qr8lwid5rnmo0h28uv8h sessionID=7qnt0qr8lwid5rnmo0h28uv8h
+
+Aug 29 01:26:00 ip-172-31-13-120 dockerd[664]: time="2023-08-29T01:25:59.576226387Z" level=info msg="NetworkDB stats ip-172-31-13-120(32850961216c) - netID:vxw4te6ez6ijc4cxjhj94jfiz leaving:false netPeers:1 entries:2 Queue qLen:0 netMsg/s:0"
+
+Aug 29 01:26:00 ip-172-31-13-120 dockerd[664]: time="2023-08-29T01:26:00.005305509Z" level=info msg="NetworkDB stats ip-172-31-13-120(32850961216c) - netID:zxw33cfl7lztpy7wwszzfxhns leaving:false netPeers:1 entries:11 Queue qLen:0 netMsg/s:1"
+
+Aug 29 01:26:00 ip-172-31-13-120 systemd[1]: man-db.service: Succeeded.

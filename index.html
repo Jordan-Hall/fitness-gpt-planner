@@ -3,22 +3,573 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fitness GPT Planner</title>
-    <meta name="description" content="Fitness GPT Planner - Get a personalized fitness plan powered by AI.">
-    <meta property="og:title" content="Fitness GPT Planner" />
-    <meta property="og:description" content="Get a personalized fitness plan powered by AI." />
-    <meta property="og:image" content="/strong.png" />
-    <meta property="og:url" content="https://fitness.libertyware.io" />
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@JordanHall_dev">
-    <meta name="twitter:title" content="Fitness GPT Planner">
-    <meta name="twitter:description" content="Get a personalized fitness plan powered by AI.">
-    <meta name="twitter:image" content="/strong.png">
 
-
+    <title>Evolviva.fit: Connect with Personal Trainers or Find Clients</title>
+    <meta
+      property="og:title"
+      content="Evolviva.fit - The Future of Fitness Today!"
+    />
+    <meta
+      property="og:description"
+      content="Join the revolution in fitness with our AI-Powered Custom Workouts, Global Network of Personal Trainers, Nutrition Guide and an Active Fitness Community."
+    />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:title"
+      content="Evolviva.fit - The Future of Fitness Today!"
+    />
+    <meta
+      property="twitter:description"
+      content="Join the revolution in fitness with our AI-Powered Custom Workouts, Global Network of Personal Trainers, Nutrition Guide and an Active Fitness Community."
+    />
+    <meta
+      property="og:image"
+      content="https://media.gettyimages.com/id/1314945563/photo/clinical-nutritionist-or-dietitian-builds-a-personalized-meal-plan-for-a-patient-which.jpg?b=1&s=612x612&w=0&k=20&c=532ZNBgi0ExbOnpgoT1oXZvZmxDYK6vtg5mHrhlIJOU="
+    />
+    <meta
+      name="twitter:image"
+      content="https://media.gettyimages.com/id/1314945563/photo/clinical-nutritionist-or-dietitian-builds-a-personalized-meal-plan-for-a-patient-which.jpg?b=1&s=612x612&w=0&k=20&c=532ZNBgi0ExbOnpgoT1oXZvZmxDYK6vtg5mHrhlIJOU="
+    />
   </head>
-  <body>
-    <div id="app" class="min-h-screen w-full  flex justify-center items-center flex-col"></div>
+
+  <body class="bg-gray-100 text-gray-900 font-sans">
+    <section class="code-section bg-gray-50">
+      <!-- Open Source Notice -->
+      <div
+        class="bg-green-100 border border-green-400 p-4 rounded mb-6 text-center"
+      >
+        <h2 class="text-xl font-semibold mb-2">Trust Through Transparency</h2>
+        <p class="text-xl text-gray-700">
+          Evolviva.fit is, and will always remain, open source. We believe in
+          building trust through transparency. Check out our code and
+          contribute on
+          <a href="https://github.com/Jordan-Hall/fitness-gpt-planner" class="text-blue-600 hover:underline">our repository</a
+          >.
+        </p>
+      </div>
+    </section>
+    <!-- Header -->
+    <header id="top" class="code-section">
+      <nav class="container mx-auto px-6 py-10">
+        <div class="flex flex-wrap justify-between items-center">
+          <div class="text-xl font-bold">
+            <a
+              id="nav-name-text"
+              href="/"
+              class="primary-color-text text-xl lg:text-3xl text-blue-600"
+              >Evolviva.fit</a
+            >
+          </div>
+          <button id="previewBtn"
+        class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded mt-4 md:mt-0"
+      >
+        Preview Personalized Plan
+      </button>
+
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <section>
+      
+
+      <section>
+        <div
+          class="container mx-auto my-12 p-8 bg-blue-600 text-white rounded-lg"
+        >
+          <h1 class="text-4xl font-bold mb-4">
+            Welcome to Evolviva.fit: The Evolution of Fitness and Life
+          </h1>
+          <p class="text-lg mb-8">
+            Join waiting list for our community today and redefine your fitness
+            journey. Experience tailor-made workouts, expert trainer advice, a
+            supportive community, and more. Let's evolve together towards a
+            healthier, fitter, and happier you.
+          </p>
+          <form method="post" action="https://campaign.evolviva.fit/subscription/form" class="listmonk-form flex w-full flex-col justify-center p-8  md:pr-14">
+
+
+
+            <!-- hCaptcha integration -->
+        
+            <!-- Now, include the required ListMonk form fields -->
+            <input type="hidden" name="nonce" />
+
+            <!-- E-mail field with your original design -->
+
+            <div id="cta-waitlist-input" class="relative mb-12">
+              <input
+              name="email"
+            type="email"
+            class="mb-4 w-full py-2 pl-4 rounded border border-white bg-opacity-50 placeholder-white"
+            placeholder="Enter your email to join the waitlist"
+          />
+          
+          <button
+          class="w-full py-2 px-4 rounded bg-white text-blue-600 font-semibold"
+          >
+          Join waiting list
+        </button>
+        <div class="captcha mb-4 mt-2 flex justify-center">
+          <div class="h-captcha" data-sitekey="8721565f-c155-4ad6-b6df-1b68091a5ade"></div>
+      </div>
+        <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+      </div>
+
+            <!-- Opt-in checkbox; this can be hidden if you always want it checked -->
+            <input id="55b24" type="checkbox" name="l" checked value="55b2482e-f06d-4115-8559-e2b90a9da40d" class="hidden" />
+          </form>
+
+
+          
+        </div>
+      </section>
+
+      <!-- How Evolviva.fit Works Section -->
+      <section id="how-it-works" class="code-section py-20">
+        <div class="container mx-auto px-6">
+          <h2 id="hiw-header" class="mb-6 text-center text-6xl font-bold">
+            How Evolviva.fit Works
+          </h2>
+          <h3 id="hiw-subtext" class="mb-12 text-center text-xl text-gray-700">
+            Engage with our platform across four simple steps - from
+            registration to result tracking. We redefine convenience with our
+            user-friendly interface, custom-made for your fitness journey.
+          </h3>
+          <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            <div
+              id="hiw-step-1"
+              class="flex-1 rounded-3xl bg-white p-8 text-center shadow-lg shadow-blue-100 md:max-w-xs md:p-12"
+            >
+              <div
+                id="hiw-step-1-circle"
+                class="primary-color-bg primary-color-[50] mx-auto mb-12 flex h-20 w-20 items-center justify-center rounded-full text-4xl bg-blue-50"
+              >
+                <span
+                  class="primary-color-gradient primary-color-from-[200] primary-color-to-[500] bg-gradient-to-b bg-clip-text text-transparent from-blue-200 to-blue-500"
+                  >1</span
+                >
+              </div>
+              <h4 id="hiw-step-1-header" class="mb-2 text-2xl font-semibold">
+                Step 1: Register for Free
+              </h4>
+              <p id="hiw-step-1-text" class="text-gray-700">
+                Start your evolution by registering on our platform absolutely
+                free. Fill in your details, preferences, and get ready to step
+                into the incredible world of Evolviva.fit.
+              </p>
+            </div>
+            <div
+              id="hiw-step-2"
+              class="flex-1 rounded-3xl bg-white p-8 text-center shadow-lg shadow-blue-100 md:max-w-xs md:p-12"
+            >
+              <div
+                id="hiw-step-2-circle"
+                class="primary-color-bg primary-color-[50] mx-auto mb-12 flex h-20 w-20 items-center justify-center rounded-full text-4xl bg-blue-50"
+              >
+                <span
+                  class="primary-color-gradient primary-color-from-[200] primary-color-to-[500] bg-gradient-to-b bg-clip-text text-transparent from-blue-200 to-blue-500"
+                  >2</span
+                >
+              </div>
+              <h4 id="hiw-step-2-header" class="mb-2 text-2xl font-semibold">
+                Step 2: Customise Your Fitness Plan
+              </h4>
+              <p id="hiw-step-2-text" class="text-gray-700">
+                Post registration, harness the power of AI to customize your
+                fitness plan. From beginners to seasoned athletes, our platform
+                uniquely tailors every workout to your unique requirements,
+                ensuring that progress and comfort go hand in hand.
+              </p>
+            </div>
+            <div
+              id="hiw-step-3"
+              class="flex-1 rounded-3xl bg-white p-8 text-center shadow-lg shadow-blue-100 md:max-w-xs md:p-12"
+            >
+              <div
+                id="hiw-step-3-circle"
+                class="primary-color-bg primary-color-[50] mx-auto mb-12 flex h-20 w-20 items-center justify-center rounded-full text-4xl bg-blue-50"
+              >
+                <span
+                  class="primary-color-gradient primary-color-from-[200] primary-color-to-[500] bg-gradient-to-b bg-clip-text text-transparent from-blue-200 to-blue-500"
+                  >3</span
+                >
+              </div>
+              <h4 id="hiw-step-3-header" class="mb-2 text-2xl font-semibold">
+                Step 3: Connect with Personal Trainers
+              </h4>
+              <p id="hiw-step-3-text" class="text-gray-700">
+                Gain exclusive access to a worldwide network of elite personal
+                trainers. Whether you want to refine your routine or learn new
+                exercises, our professional trainers stand by your side, guiding
+                you at every step.
+              </p>
+            </div>
+            <div
+              id="hiw-step-4"
+              class="flex-1 rounded-3xl bg-white p-8 text-center shadow-lg shadow-blue-100 md:max-w-xs md:p-12"
+            >
+              <div
+                id="hiw-step-4-circle"
+                class="primary-color-bg primary-color-[50] mx-auto mb-12 flex h-20 w-20 items-center justify-center rounded-full text-4xl bg-blue-50"
+              >
+                <span
+                  class="primary-color-gradient primary-color-from-[200] primary-color-to-[500] bg-gradient-to-b bg-clip-text text-transparent from-blue-200 to-blue-500"
+                  >4</span
+                >
+              </div>
+              <h4 id="hiw-step-4-header" class="mb-2 text-2xl font-semibold">
+                Step 4: Track Your Progress
+              </h4>
+              <p id="hiw-step-4-text" class="text-gray-700">
+                Monitor your progress with our AI-powered tracking system.
+                Capture your fitness journey, indulge in healthy competition,
+                and remain motivated through active community engagement.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="code-sectio" id="hnvp57">
+        <div class="container mx-auto px-6 pb-12 pt-12 lg:pt-24">
+          <div
+            id="hero-ltr"
+            class="flex flex-col-reverse items-stretch lg:flex-row"
+          >
+            <div
+              class="flex w-full flex-col justify-center p-8 md:w-[45%] md:pr-14"
+            >
+              <h2
+                id="merged-header"
+                class="mb-4 text-center text-3xl font-bold sm:text-5xl lg:text-left"
+              >
+                Why Choose Evolviva.fit?
+              </h2>
+
+              <!-- Subtext -->
+              <p
+                id="merged-subtext"
+                class="mb-6 text-center text-xl text-gray-500 lg:text-left"
+              >
+                Our approach to fitness is holistic and interconnected.
+                Alongside physical training, we place great emphasis on mental
+                well-being, nutrition, and recovery. Discover the true meaning
+                of fitness and enhance your life with Evolviva.fit. Furthermore,
+                Evolviva.fit is currently developing its platforms, and we are
+                inviting trainers to join us. We are offering ZERO commission on
+                PT earnings for the first year.
+              </p>
+
+              <!-- List -->
+              <ul class="mb-12 list-disc pl-8 text-xl">
+                <li>AI-Powered Personalized Workouts.</li>
+                <li>Nutritional Guidance for Optimal Health.</li>
+                <li>Community Support and Motivation.</li>
+                <li>
+                  Stay Updated: Regular content, news, and expert insights.
+                </li>
+                <li>
+                  Special Offer: ZERO commission for trainers in the first year.
+                </li>
+              </ul>
+              <div class="flex justify-center lg:block"></div>
+            </div>
+            <div
+              class="primary-color-bg primary-color-[50] mb-4 flex flex-1 items-center justify-center rounded-3xl p-6 lg:w-1/2 bg-blue-50"
+            >
+              <img
+                class="mx-auto rounded-3xl dont-replace"
+                src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w0MzEzMzd8MHwxfHNlYXJjaHw0fHxQZXJzb25hbGl6ZWQlMjBGaXRuZXNzfGVufDB8MHx8fDE2OTM2MTc5MzZ8MA&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1920"
+                oncontextmenu="return false;"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="code-section" id="fitness-leagues">
+        <div class="container mx-auto px-6 lg:pt-24">
+          <div
+            id="fitness-league-layout"
+            class="flex flex-col items-stretch lg:flex-row"
+          >
+            <!-- Image Section -->
+            <div
+              class="primary-color-bg primary-color-[50] flex flex-1 items-center justify-center rounded-3xl p-6 lg:w-1/2 bg-blue-50"
+            >
+              <img
+                class="mx-auto rounded-3xl dont-replace"
+                src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w0MzEzMzd8MHwxfHNlYXJjaHwyfHxQZXJzb25hbGl6ZWQlMjBGaXRuZXNzJTIwYW5kJTIwZGlldCUyMHBsYW58ZW58MHwwfHx8MTY5MzYxNzY4OXww&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1920"
+                alt="Fitness League"
+                data-media='{"id":"lrQPTQs7nQQ","src":"unsplash","type":"image"}'
+                oncontextmenu="return false;"
+              />
+            </div>
+
+            <!-- Content Section -->
+            <div
+              class="flex w-full flex-col justify-center p-8 md:w-[45%] md:pr-14"
+            >
+              <!-- Header -->
+              <h2
+                id="fitness-league-header"
+                class="mb-4 text-center text-3xl font-bold lg:text-left lg:text-5xl"
+              >
+                Fitness Leagues: Earn, Compete, Evolve
+              </h2>
+
+              <!-- Subtext -->
+              <p
+                id="fitness-league-subtext"
+                class="mb-6 text-center text-xl text-gray-500 lg:text-left"
+              >
+                Dive into our fitness leagues spanning various activities. Earn
+                points for your efforts, compete against friends or the global
+                community, and unlock rewarding milestones. From steps, running,
+                to calorie burns, we've got it all covered. Plus, with seamless
+                integration with leading wearable fitness trackers, tracking
+                your progress has never been easier.
+              </p>
+
+              <!-- Call to Action -->
+              <div class="flex justify-center lg:block">
+                <button disabled
+                  href="/fitness-leagues"
+                  id="fitness-league-cta"
+                  class="primary-color-bg mb-12 inline-block rounded px-12 py-4 text-lg font-medium text-white bg-red-600">
+                  Explore Fitness Leagues (coming soon)</button>
+              </div>
+
+              <!-- Testimonial (Hidden by Default) -->
+              <div
+                id="testimonial-league"
+                class="flex items-center"
+                style="display: none"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1434682881908-b43d0467b798?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w0MzEzMzd8MHwxfHNlYXJjaHwxfHxQZXJzb25hbGl6ZWQlMjBGaXRuZXNzfGVufDB8MHx8fDE2OTM2MTc5MzZ8MA&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1920"
+                  alt="Profile"
+                  class="testimonial-image dont-replace mr-4 h-[72px] w-[72px] rounded-full object-cover"
+                  data-media='{"id":"5IsdIqwwNP4","src":"unsplash","type":"image"}'
+                  oncontextmenu="return false;"
+                />
+                <div>
+                  <i
+                    class="fa-sharp fa-solid fa-quote-left relative -top-2 mr-1"
+                  ></i>
+                  <p
+                    id="testimonial-league-quote"
+                    class="mb-2 inline text-lg text-gray-700"
+                  >
+                    Evolviva.fit's Fitness Leagues transformed the way I engage
+                    with my fitness journey. The competitive spirit keeps me
+                    going!
+                  </p>
+                  <i
+                    class="fa-sharp fa-solid fa-quote-right relative -top-2 ml-1"
+                  ></i>
+                  <p>
+                    <span
+                      id="testimonial-league-name"
+                      class="font-semibold text-gray-900"
+                      >John Smith</span
+                    ><span
+                      id="testimonial-league-job"
+                      class="primary-color-text pl-2 font-semibold text-blue-600"
+                      >Fitness Enthusiast</span
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features-section" class="code-section">
+        <div class="container mx-auto px-6 py-6 md:py-12">
+          <div
+            class="primary-color-gradient primary-color-from-[50] primary-color-to-[100] rounded-3xl bg-gradient-to-b px-4 py-8 md:py-40 from-blue-50 to-blue-100"
+          >
+            <h2
+              id="features-header"
+              class="mx-auto mb-4 max-w-4xl text-center text-3xl font-bold md:text-6xl"
+            >
+              Features of Evolviva.fit
+            </h2>
+            <p
+              id="features-subtext"
+              class="mb-8 text-center text-xl text-gray-500"
+            >
+              Offering a blend of technology, personalised approach, expert
+              trainers, and a supportive community, Evolviva.fit meets you where
+              you are and takes you where you want to be in your fitness
+              journey.
+            </p>
+          </div>
+          <div
+            class="-mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 px-4 lg:-mt-36 lg:grid lg:flex-none lg:grid-cols-3 lg:place-items-center lg:items-stretch lg:gap-y-12"
+          >
+            <div
+              id="feature-1"
+              class="max-w-sm flex-1 rounded-3xl bg-white p-14 text-center shadow-xl shadow-blue-100"
+            >
+              <div
+                id="feature-1-circle"
+                class="primary-color-bg primary-color-[50] mx-auto mb-4 mt-2 flex h-20 w-20 items-center justify-center rounded-full text-4xl bg-blue-50"
+              >
+                <span
+                  id="feature-1-icon"
+                  class="primary-color-gradient primary-color-from-[200] primary-color-to-[500] bg-gradient-to-b bg-clip-text text-transparent from-blue-200 to-blue-500"
+                  ><i class="fa fa-dev" aria-hidden="true"></i
+                ></span>
+              </div>
+              <h4 id="feature-1-header" class="mb-6 text-3xl font-semibold">
+                AI-Based Custom Workouts
+              </h4>
+              <p id="feature-1-text" class="text-gray-700">
+                Leveraging the power of artificial intelligence, Evolviva.fit
+                carefully designs workout plans that adapt to your needs. Our
+                advanced AI system takes into account your fitness level, goals,
+                and preferences to create a plan distinctive to you.
+              </p>
+            </div>
+            <div
+              id="feature-2"
+              class="max-w-sm flex-1 rounded-3xl bg-white p-14 text-center shadow-xl shadow-blue-100"
+            >
+              <div
+                id="feature-2-circle"
+                class="primary-color-bg primary-color-[50] mx-auto mb-4 mt-2 flex h-20 w-20 items-center justify-center rounded-full text-4xl bg-blue-50"
+              >
+                <span
+                  id="feature-2-icon"
+                  class="primary-color-gradient primary-color-from-[200] primary-color-to-[500] bg-gradient-to-b bg-clip-text text-transparent from-blue-200 to-blue-500"
+                  ><i class="fa fa-users" aria-hidden="true"></i
+                ></span>
+              </div>
+              <h4 id="feature-2-header" class="mb-6 text-3xl font-semibold">
+                Global Network of Trainers
+              </h4>
+              <p id="feature-2-text" class="text-gray-700">
+                Get involved with trainers from all corners of the globe. With
+                diverse fields of expertise, our trainers are ready to help you
+                refine your workout, learn new techniques, and achieve your
+                goals.
+              </p>
+            </div>
+            <div
+              id="feature-3"
+              class="max-w-sm flex-1 rounded-3xl bg-white p-14 text-center shadow-xl shadow-blue-100"
+            >
+              <div
+                id="feature-3-circle"
+                class="primary-color-bg primary-color-[50] mx-auto mb-4 mt-2 flex h-20 w-20 items-center justify-center rounded-full text-4xl bg-blue-50"
+              >
+                <span
+                  id="feature-3-icon"
+                  class="primary-color-gradient primary-color-from-[200] primary-color-to-[500] bg-gradient-to-b bg-clip-text text-transparent from-blue-200 to-blue-500"
+                  ><i class="fa fa-trophy" aria-hidden="true"></i
+                ></span>
+              </div>
+              <h4 id="feature-3-header" class="mb-6 text-3xl font-semibold">
+                Fitness Challenges
+              </h4>
+              <p id="feature-3-text" class="text-gray-700">
+                Push your boundaries with our engaging fitness challenges.
+                Suitable for all fitness levels, these challenges not only help
+                you measure your progress but also stir up competitive spirit
+                and motivate you on your journey.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="code-section mt-12 bg-gray-50 py-12" id="5gpeqc">
+        <div id="cta" class="container mx-auto flex flex-col sm:flex-row">
+          <div
+            class="mb-6 flex w-full flex-col items-center md:mb-0 md:w-[55%] md:flex-row"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1521804906057-1df8fdb718b7?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w0MzEzMzd8MHwxfHNlYXJjaHw2fHxQZXJzb25hbGl6ZWQlMjBGaXRuZXNzfGVufDB8MHx8fDE2OTM2MTc5MzZ8MA&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1920"
+              alt="CTA"
+              class="h-auto w-full"
+              data-media='{"id":"vqDAUejnwKw","src":"unsplash","type":"image"}'
+              oncontextmenu="return false;"
+            />
+          </div>
+          <!-- Begin the form with the ListMonk action and method -->
+          <form method="post" action="https://campaign.evolviva.fit/subscription/form" class="listmonk-form flex w-full flex-col justify-center p-8 md:w-[45%] md:pr-14">
+
+            <!-- Your original header and text remain the same -->
+            <h3 id="cta-header" class="mb-2 text-center text-3xl font-bold sm:text-left sm:text-6xl">
+                Ready to Evolve with Evolviva.fit?
+            </h3>
+            <p id="cta-text" class="mb-16 text-center text-lg text-gray-700 sm:text-left sm:text-xl">
+                Join our community today and redefine your fitness journey. Experience tailor-made workouts, expert trainer advice, a supportive community, and more. Let's evolve together towards a healthier, fitter, and happier you.
+            </p>
+
+            <!-- hCaptcha integration -->
+            <div class="captcha mb-4">
+              <div class="h-captcha" data-sitekey="8721565f-c155-4ad6-b6df-1b68091a5ade"></div>
+          </div>
+            <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+
+            <!-- Now, include the required ListMonk form fields -->
+            <input type="hidden" name="nonce" />
+
+            <!-- E-mail field with your original design -->
+
+            <div id="cta-waitlist-input" class="relative mb-12">
+              <input
+                type="email"
+                name="email" 
+                class="mb-2 w-full rounded border border-white py-4 pl-6 placeholder-gray-600 xl:mb-0 xl:py-6 xl:pr-20"
+                placeholder="Enter your email address"
+              /><button
+                class="xl:py-23 primary-color-bg h-[52px] w-full rounded px-5 text-lg font-semibold text-white xl:absolute xl:inset-y-0 xl:right-1 xl:top-1/2 xl:mr-4 xl:w-auto xl:-translate-y-1/2 xl:transform bg-blue-600 hover:bg-blue-500"
+              >
+                Join waiting list
+              </button>
+            </div>
+            <div id="cta-button" class="mb-12 hidden">
+                  <!-- Optional: Your original CTA button if needed -->
+            <button id="cta-button" class="mb-12">
+              <span class="primary-color-bg items-center rounded px-5 py-3 text-lg font-semibold text-white bg-blue-600 hover:bg-blue-500">Join waiting list</span>
+          </button>
+            </div>
+
+            <!-- Opt-in checkbox; this can be hidden if you always want it checked -->
+            <input id="55b24" type="checkbox" name="l" checked value="55b2482e-f06d-4115-8559-e2b90a9da40d" class="hidden" />
+          </form>
+        </div>
+      </section>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-600 text-white p-4">
+      <p class="text-center">&copy; 2023 Evolviva.fit. All rights reserved.</p>
+    </footer>
+
+    <!-- Modal -->
+    <div id="previewModal" class="fixed inset-0 flex items-center justify-center p-4 bg-black bg-opacity-40 hidden">
+      <div class="bg-white p-8 rounded-lg  h-4/5 flex flex-col items-center relative">
+          <button
+            id="closeModalBtn"
+            class="absolute top-1 right-1 text-black hover:shadow p-4 rounded-full"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+          <section id="plan-preview-app" class="w-full h-full overflow-y-auto">
+          </section>
+      </div>
+  </div>
+    <script
+      src="https://kit.fontawesome.com/d8c03b53c4.js"
+      crossorigin="anonymous"
+    ></script>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
