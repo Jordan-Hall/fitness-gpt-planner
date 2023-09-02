@@ -2,7 +2,7 @@ import './style.css'
 import MarkdownIt from 'markdown-it';
 import OpenAI from "openai";
 const md = new MarkdownIt();
-const app = document.getElementById('app') as HTMLElement;
+const app = document.getElementById('plan-preview-app') as HTMLElement;
 
 
 type ApiRequestType = 'introduction' | 'exercise' | 'diet' | 'mentalWellbeing' | 'progressTracking' | 'recoveryRest' | 'safetyPrecautions' | 'nutritionTips';
@@ -95,7 +95,7 @@ class FitnessGPTForm {
       if (!document.getElementById('markdownContainer')) {
         const markdownContainer = document.createElement('div');
         markdownContainer.id = 'markdownContainer';
-        markdownContainer.className = 'bg-white p-8 rounded-lg shadow-md w-3/4';
+        markdownContainer.className = 'bg-white rounded-lg';
         app.appendChild(markdownContainer);
       }
 
@@ -293,47 +293,7 @@ loadingText.className = "text-blue-500 font-bold mt-4 relative before:content-['
 loadingText.style.display = 'none'; // initially hidden
 
 
-function renderLandingPage() {
-  const container = document.createElement('div');
-  container.className = 'bg-white p-8 rounded-lg shadow-md my-10 mx-auto max-w-2x';
 
-  const heading = document.createElement('h1');
-  heading.className = 'text-2xl font-bold mb-4';
-  heading.textContent = 'Fitness GPT Planner';
-  container.appendChild(heading);
-
-  const description = document.createElement('p');
-  description.className = 'mb-4';
-  description.innerHTML = `
-  Get a personalized fitness plan powered by AI. By default, we use Anyscale. 
-  However, there's a hard limit of $120 on our provided key, which will be removed shortly. 
-  We recommend <a href="https://app.endpoints.anyscale.com/" target="_blank" rel="noopener noreferrer">signing up for your own Anyscale key</a>. 
-  Alternatively, if you wish to use OpenAI GPT-4, please <a href="https://platform.openai.com/" target="_blank" rel="noopener noreferrer">sign up for an OpenAI key</a>.
-  Your support helps keep this open-source service running.
-`;
-  container.appendChild(description);
-
-  const apiKeyInput = document.createElement('input');
-  apiKeyInput.type = 'text';
-  apiKeyInput.id = 'apiKey';
-  apiKeyInput.className = 'border p-2 w-full mb-4';
-  apiKeyInput.placeholder = 'API Key';
-  apiKeyInput.value = getStoreAPIKey()
-  container.appendChild(apiKeyInput);
-  const startButton = document.createElement('button');
-  startButton.className = 'bg-blue-500 hover:bg-blue-600 text-white p-2 rounded w-full mt-4';
-  startButton.textContent = 'Start';
-  startButton.onclick = () => {
-    storeAPIKey();
-    formElement.style.display = 'block';
-    container.style.display = 'none';
-  };
-  container.appendChild(startButton);
-
-  container.appendChild(createDisclaimer());
-
-  app.appendChild(container);
-}
 
 async function* streamChunks(response: Response) {
   const reader = response.body?.getReader();
@@ -376,14 +336,6 @@ async function* streamChunks(response: Response) {
   }
 }
 
-
-
-
-
-function storeAPIKey() {
-  const apiKey = (document.getElementById('apiKey') as HTMLInputElement)?.value;
-  localStorage.setItem('apiKey', apiKey);
-}
 
 function getStoreAPIKey() {
   return localStorage.getItem('apiKey') ?? import.meta.env.VITE_OPENAI_KEY ?? process.env.VITE_OPENAI_KEY;
@@ -497,8 +449,8 @@ async function streamOpenAIResponse(stage: ApiRequestType, currentWeek = 1, hasP
         assistantResponseBuffer += chunk.choices[0].delta.content;
       }
     }
-    
-    messageHistory.push({ role: "assistant", content: assistantResponseBuffer });  
+
+    messageHistory.push({ role: "assistant", content: assistantResponseBuffer });
   } else if (apiKey.startsWith('esecret_')) {
     const response = await query({
       messages: [
@@ -525,7 +477,7 @@ async function streamOpenAIResponse(stage: ApiRequestType, currentWeek = 1, hasP
         messageHistory.push({ role: "assistant", content: assistantResponseBuffer });
       }
     }
-  } else {
+  } else if (apiKey) {
     const openai = new OpenAI({ apiKey: apiKey, dangerouslyAllowBrowser: true, baseURL: 'https://api.deepinfra.com/v1/openai' });
     const completion = await openai.chat.completions.create({
       model: "gpt-4",
@@ -538,14 +490,14 @@ async function streamOpenAIResponse(stage: ApiRequestType, currentWeek = 1, hasP
     });
 
     let assistantResponseBuffer = '';
-    for await (const chunk of completion) { 
+    for await (const chunk of completion) {
       if (chunk.choices[0].delta.content) {
         processChunk(chunk.choices[0].delta.content);
         assistantResponseBuffer += chunk.choices[0].delta.content;
       }
     }
-    
-    messageHistory.push({ role: "assistant", content: assistantResponseBuffer }); 
+
+    messageHistory.push({ role: "assistant", content: assistantResponseBuffer });
   }
 
   // Transition to the next section based on your plan
@@ -702,7 +654,7 @@ function renderMarkdown(markdown: string) {
 
     const markdownContainer = document.createElement('div');
     markdownContainer.id = 'markdownContainer';
-    markdownContainer.className = 'bg-white p-8 rounded-lg shadow-md w-3/4 mx-auto mt-10 space-y-4';
+    markdownContainer.className = 'bg-white  rounded-lg mx-auto mt-5 space-y-4';
     app.appendChild(markdownContainer);
 
   }
@@ -714,14 +666,8 @@ function renderMarkdown(markdown: string) {
   }
 }
 
-renderLandingPage();
-const formElement = document.createElement('div');
-formElement.className = 'bg-white p-8 rounded-lg shadow-md w-3/4 mx-auto mt-10';
-formElement.style.display = 'none'; // initially hidden
 
-app.appendChild(formElement);
-const form = new FitnessGPTForm(formElement);
-form.render();
+
 
 function createDisclaimer(): HTMLElement {
   const disclaimer = document.createElement('p');
@@ -746,7 +692,7 @@ async function query(data: { messages: any; }) {
   const stream = false;
   const MAX_RETRIES = 3;
   let retries = 0;
-  
+
   while (retries < MAX_RETRIES) {
     try {
       const response = await fetch(`${OPENAI_API_BASE}/chat/completions`, {
@@ -779,7 +725,7 @@ async function query(data: { messages: any; }) {
       console.error("Max retries reached. Moving on.");
     }
   }
-  
+
   return null;  // Return null or some error object to signal the calling function
 }
 
@@ -791,3 +737,35 @@ function shareToX() {
   const XUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}&hashtags=${hashtags}`;
   window.open(XUrl, "_blank");
 }
+
+const formElement = document.createElement('div');
+formElement.className = 'bg-white rounded-lg mx-auto mt-5';
+
+const form = new FitnessGPTForm(formElement);
+document.addEventListener("DOMContentLoaded", function () {
+  const previewBtn = document.getElementById("previewBtn");
+  const closeModalBtn = document.getElementById("closeModalBtn");
+  const previewModal = document.getElementById("previewModal");
+
+  // Show modal when "Preview Personalized Plan" is clicked
+  previewBtn?.addEventListener("click", function () {
+
+    // renderLandingPage();
+    app.appendChild(formElement);
+    
+    form.render();
+    previewModal?.classList.remove("hidden");
+  });
+
+  // Hide modal when "Close" button inside the modal is clicked
+  closeModalBtn?.addEventListener("click", function () {
+    previewModal?.classList.add("hidden");
+  });
+
+  // Hide modal when anywhere outside the modal content is clicked
+  previewModal?.addEventListener("click", function (event) {
+    if (event.target === previewModal) {
+      previewModal?.classList.add("hidden");
+    }
+  });
+});
